@@ -73,30 +73,6 @@ implicit
 elemQuantityToQuantity : ElemQuantity -> Quantity
 elemQuantityToQuantity q = MkQuantity [(q, 1)]
 
-area : Quantity
-area = length ^ 2
-
-volume : Quantity
-volume = length ^ 3
-
-speed : Quantity
-speed = length </> time
-
-velocity : Quantity
-velocity = speed
-
-acceleration : Quantity
-acceleration = speed </> time
-
-force : Quantity
-force = acceleration <*> mass
-
-energy : Quantity
-energy = force <*> length
-
-power : Quantity
-power = energy </> time
-
 
 -- Elementary Units
 data ElemUnit : Quantity -> Type where
@@ -107,26 +83,8 @@ multiplyElemUnit n f (MkElemUnit _ g) = MkElemUnit n (f * g)
 
 syntax one [name] is [factor] [unit] = multiplyElemUnit name factor unit
 
-meter : ElemUnit length
-meter = MkElemUnit "m" 1
 
--- TODO: use general 'kilo', 'milli', etc. combinators
-kilometer : ElemUnit length
-kilometer = MkElemUnit "km" 1000
-
-second : ElemUnit time
-second = MkElemUnit "s" 1
-
-minute : ElemUnit time
-minute = one "min" is 60 second
-
-hour : ElemUnit time
-hour = one "h" is 60 minute
-
-day : ElemUnit time
-day = one "d" is 24 hour
-
-
+-- Composed units
 data Unit : Quantity -> Type where
   EmptyUnit : Unit scalar
   ConsUnit  : ElemUnit p -> (i : Integer) -> Unit q -> Unit (p ^ i <*> q)
@@ -141,12 +99,6 @@ a ^^ i = case compare i 0 of
 ratio : Unit q -> Float
 ratio EmptyUnit = 1
 ratio (ConsUnit (MkElemUnit _ f) i us) = (f ^^ i) * ratio us
-
-kmh : Unit speed
-kmh = ConsUnit kilometer 1 (ConsUnit hour (-1) EmptyUnit)
-
-ms : Unit speed
-ms = ConsUnit meter 1 (ConsUnit second (-1) EmptyUnit)
 
 
 -- Values with a unit
