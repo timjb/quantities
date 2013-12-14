@@ -1,6 +1,6 @@
 module Quantities
 
-import SortedAssociationList
+import Quantities.SortedAssociationList
 
 %default total
 

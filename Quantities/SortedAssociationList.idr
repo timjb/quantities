@@ -1,4 +1,4 @@
-module SortedAssociationList
+module Quantities.SortedAssociationList
 
 %default total
 
