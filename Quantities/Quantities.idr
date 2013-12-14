@@ -4,6 +4,23 @@ import Quantities
 
 %default total
 
+-- Elementary quantities
+
+length : ElemQuantity
+length = MkElemQuantity "Length"
+
+mass : ElemQuantity
+mass = MkElemQuantity "Mass"
+
+time : ElemQuantity
+time = MkElemQuantity "Time"
+
+temperature : ElemQuantity
+temperature = MkElemQuantity "Temperature"
+
+
+-- Composed quantities
+
 area : Quantity
 area = length ^ 2
 

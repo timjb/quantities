@@ -14,15 +14,6 @@ instance Eq ElemQuantity where
 instance Ord ElemQuantity where
   compare (MkElemQuantity a) (MkElemQuantity b) = compare a b
 
-length : ElemQuantity
-length = MkElemQuantity "Length"
-
-mass : ElemQuantity
-mass = MkElemQuantity "Mass"
-
-time : ElemQuantity
-time = MkElemQuantity "Time"
-
 
 -- Compound quantities
 -- TODO: eliminate zeros in second positions
