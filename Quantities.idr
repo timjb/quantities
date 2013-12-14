@@ -3,6 +3,7 @@ module Quantities
 import Quantities.SortedAssociationList
 
 %default total
+%access public
 
 -- Elementary quantities
 data ElemQuantity : Type where
@@ -17,14 +18,20 @@ instance Ord ElemQuantity where
 
 -- Compound quantities
 -- TODO: eliminate zeros in second positions
+abstract
 data Quantity : Type where
   MkQuantity : List (ElemQuantity, Integer) -> Quantity
 
+private
+filterZeros : List (a, Integer) -> List (a, Integer)
+filterZeros = filter ((/= 0) . snd)
+
 mkQuantity : List (ElemQuantity, Integer) -> Quantity
-mkQuantity xs = MkQuantity (sort xs)
+mkQuantity = MkQuantity . filterZeros . foldr (\x => mergeWith (+) [x]) []
 
 instance Semigroup Quantity where
-  (MkQuantity xs) <+> (MkQuantity ys) = MkQuantity $ mergeWith (+) xs ys
+  (MkQuantity xs) <+> (MkQuantity ys) =
+    MkQuantity $ filterZeros $ mergeWith (+) xs ys
 
 instance VerifiedSemigroup Quantity where
   semigroupOpIsAssociative = ?todo
@@ -92,6 +99,7 @@ a ^^ i = case compare i 0 of
   LT => pow (1 / a) (fromIntegerNat (-i))
   _  => pow a (fromIntegerNat i)
 
+private
 ratio : Unit q -> Float
 ratio EmptyUnit = 1
 ratio (ConsUnit (MkElemUnit _ f) i us) = (f ^^ i) * ratio us
@@ -101,6 +109,15 @@ ratio (ConsUnit (MkElemUnit _ f) i us) = (f ^^ i) * ratio us
 infixl 5 =| -- sensible?
 data Measurement : {q : Quantity} -> Unit q -> Type -> Type where
   (=|) : a -> (u : Unit q) -> Measurement u a
+
+instance Functor (Measurement {q} u) where
+  map f (x =| _) = f x =| u
+
+instance Eq a => Eq (Measurement {q} u a) where
+  (x =| _) == (y =| _) = x == y
+
+instance Ord a => Ord (Measurement {q} u a) where
+  compare (x =| _) (y =| _) = compare x y
 
 -- TODO: show unit
 instance Show a => Show (Measurement {q} u a) where
