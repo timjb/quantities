@@ -75,10 +75,15 @@ multiplyElemUnit n f (MkElemUnit _ g) = MkElemUnit n (f * g)
 syntax one [name] is [factor] [unit] = multiplyElemUnit name factor unit
 
 
--- Composed units
+-- Composed/derived units
 data Unit : Quantity -> Type where
   EmptyUnit : Unit scalar
   ConsUnit  : ElemUnit p -> (i : Integer) -> Unit q -> Unit (p ^ i <*> q)
+
+-- TODO: prove type correctness
+implicit
+elemUnitToUnit : ElemUnit q -> Unit q
+elemUnitToUnit u = believe_me $ ConsUnit u 1 EmptyUnit
 
 infixl 7 ^^
 

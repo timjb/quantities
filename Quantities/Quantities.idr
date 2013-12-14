@@ -27,6 +27,12 @@ area = length ^ 2
 volume : Quantity
 volume = length ^ 3
 
+concentration : Quantity
+concentration = length ^ (-3)
+
+frequency : Quantity
+frequency = time ^ (-1)
+
 speed : Quantity
 speed = length </> time
 
