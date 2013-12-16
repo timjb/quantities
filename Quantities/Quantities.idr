@@ -1,52 +1,58 @@
 module Quantities.Quantities
 
+import Quantities.FreeAbelianGroup
 import Quantities
 
 %default total
+%access public
+
 
 -- Elementary quantities
 
-length : ElemQuantity
-length = MkElemQuantity "Length"
+Length : ElemQuantity
+Length = MkElemQuantity "Length"
 
-mass : ElemQuantity
-mass = MkElemQuantity "Mass"
+Mass : ElemQuantity
+Mass = MkElemQuantity "Mass"
 
-time : ElemQuantity
-time = MkElemQuantity "Time"
+Time : ElemQuantity
+Time = MkElemQuantity "Time"
 
-temperature : ElemQuantity
-temperature = MkElemQuantity "Temperature"
+Temperature : ElemQuantity
+Temperature = MkElemQuantity "Temperature"
 
 
 -- Composed quantities
 
-area : Quantity
-area = length ^ 2
+Area : Quantity
+Area = Length ^ 2
 
-volume : Quantity
-volume = length ^ 3
+Volume : Quantity
+Volume = Length ^ 3
 
-concentration : Quantity
-concentration = length ^ (-3)
+Concentration : Quantity
+Concentration = Length ^ (-3)
 
-frequency : Quantity
-frequency = time ^ (-1)
+Frequency : Quantity
+Frequency = Time ^ (-1)
 
-speed : Quantity
-speed = length </> time
+Speed : Quantity
+Speed = Length </> Time
 
-velocity : Quantity
-velocity = speed
+Velocity : Quantity
+Velocity = Speed
 
-acceleration : Quantity
-acceleration = speed </> time
+Acceleration : Quantity
+Acceleration = Speed </> Time
 
-force : Quantity
-force = acceleration <*> mass
+Force : Quantity
+Force = Acceleration <*> Mass
 
-energy : Quantity
-energy = force <*> length
+Energy : Quantity
+Energy = Force <*> Length
 
-power : Quantity
-power = energy </> time
+Power : Quantity
+Power = Energy </> Time
+
+Pressure : Quantity
+Pressure = Force </> Area

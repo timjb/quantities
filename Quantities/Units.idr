@@ -4,6 +4,7 @@ import Quantities
 import Quantities.Quantities
 
 %default total
+%access public
 
 
 -- Scalar values
@@ -20,58 +21,58 @@ mol = MkElemUnit "mol" 6.02214129e23
 
 -- Length
 
-meter : ElemUnit length
+meter : ElemUnit Length
 meter = MkElemUnit "m" 1
 
-inch : ElemUnit length
+inch : ElemUnit Length
 inch = one "in" is 0.0254 meter
 
-foot : ElemUnit length
+foot : ElemUnit Length
 foot = one "ft" is 12 inch
 
-yard : ElemUnit length
+yard : ElemUnit Length
 yard = one "yd" is 3 foot
 
-mile : ElemUnit length
+mile : ElemUnit Length
 mile = one "mile" is 1760 yard
 
 -- TODO: use general 'kilo', 'milli', etc. combinators
-kilometer : ElemUnit length
+kilometer : ElemUnit Length
 kilometer = MkElemUnit "km" 1000
 
 -- Astronomical Unit
-au : ElemUnit length
+au : ElemUnit Length
 au = MkElemUnit "au" 149597870691
 
 
 -- Mass
 
-gram : ElemUnit mass
+gram : ElemUnit Mass
 gram = MkElemUnit "g" 0.001
 
 -- TODO: use general 'kilo', 'milli', etc. combinators
-kilogram : ElemUnit mass
+kilogram : ElemUnit Mass
 kilogram = MkElemUnit "kg" 1
 
 
 -- Time
 
-second : ElemUnit time
+second : ElemUnit Time
 second = MkElemUnit "s" 1
 
-minute : ElemUnit time
+minute : ElemUnit Time
 minute = one "min" is 60 second
 
-hour : ElemUnit time
+hour : ElemUnit Time
 hour = one "h" is 60 minute
 
-day : ElemUnit time
+day : ElemUnit Time
 day = one "d" is 24 hour
 
-week : ElemUnit time
+week : ElemUnit Time
 week = one "week" is 7 day
 
-year : ElemUnit time
+year : ElemUnit Time
 year = one "a" is 365.25 day
 
 
@@ -80,67 +81,73 @@ year = one "a" is 365.25 day
 -- Use this only for relative temparature! Not suitable for conversions of
 -- absolute temperature!
 
-kelvin : ElemUnit temperature
+kelvin : ElemUnit Temperature
 kelvin = MkElemUnit "°K" 1
 
-celsius : ElemUnit temperature
+celsius : ElemUnit Temperature
 celsius = MkElemUnit "°C" 1
 
-fahrenheit : ElemUnit temperature
+fahrenheit : ElemUnit Temperature
 fahrenheit = MkElemUnit "°F" (5/9)
 
 
 -- Frequency
 
-hz : Unit frequency
+hz : Unit Frequency
 hz = ConsUnit second (-1) EmptyUnit
 
 -- rotations per minute
-rpm : Unit frequency
-rpm = ConsUnit minute (-1) EmptyUnit
+rpm : Unit Frequency
+rpm = MkUnit $ minute ^ (-1)
 
 
 -- Area
 
-are : ElemUnit area
+are : ElemUnit Area
 are = MkElemUnit "a" 100
 
 
 -- Volume
 
-litre : ElemUnit volume
+litre : ElemUnit Volume
 litre = MkElemUnit "l" 0.001
 
 
 -- Concentration
 
-molar : Unit concentration
-molar = ConsUnit mol 1 (ConsUnit litre (-1) EmptyUnit)
+molar : Unit Concentration
+molar = MkUnit $ mol </> litre
 
 
 -- Speed
 
-kmh : Unit speed
-kmh = ConsUnit kilometer 1 (ConsUnit hour (-1) EmptyUnit)
+kmh : Unit Speed
+kmh = MkUnit $ kilometer </> hour
 
-ms : Unit speed
-ms = ConsUnit meter 1 (ConsUnit second (-1) EmptyUnit)
+ms : Unit Speed
+ms = MkUnit $ meter </> second
 
 
 -- Acceleration
 
 -- Standard gravity
-g0 : ElemUnit gravity
+g0 : ElemUnit Force
 g0 = MkElemUnit "g" 9.80665
 
 
 -- Force
 
---newton : Unit force
---newton = ConsUnit kilogram 1 (ConsUnit meter 1 (ConsUnit second (-2) EmptyUnit))
+newton : Unit Force
+newton = MkUnit $ kilogram <*> meter </> (second ^ 2)
 
 
 -- Energy
 
---joule : Unit energy
---joule = ConsUnit kilogram 1 (ConsUnit meter 2 (ConsUnit second (-2) EmptyUnit))
+joule : Unit Energy
+joule = MkUnit $ kilogram <*> (meter ^ 2) </> (second ^ 2)
+
+
+-- Pressure
+
+--pascal = Unit Pressure
+--pascal = 
