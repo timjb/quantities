@@ -28,8 +28,10 @@ filterValues p = filter (p . snd)
 mapValue : (v -> w) -> List (k, v) -> List (k, w)
 mapValue f = map (\(k, v) => (k, f v))
 
+data FreeAbGrp : Type -> Type where
+  MkFreeAbGrp : {a : Type} -> (List (a, Integer)) -> FreeAbGrp a
 
-data FreeAbGrp a = MkFreeAbGrp (List (a, Integer))
+--data FreeAbGrp a = MkFreeAbGrp (List (a, Integer))
 
 mkFreeAbGrp : Ord a => List (a, Integer) -> FreeAbGrp a
 mkFreeAbGrp = MkFreeAbGrp . filterValues (/= 0)
@@ -38,10 +40,11 @@ mkFreeAbGrp = MkFreeAbGrp . filterValues (/= 0)
 unit : FreeAbGrp a
 unit = MkFreeAbGrp []
 
+implicit
 inject : a -> FreeAbGrp a
 inject x = MkFreeAbGrp [(x, 1)]
 
-infixr 7 ^
+infixr 10 ^
 
 class Power a where
   (^) : a -> Integer -> a
@@ -79,8 +82,24 @@ instance Ord a => Group (FreeAbGrp a) where
 
 instance Ord a => AbelianGroup (FreeAbGrp a) where
 
+-- Lift a function A -> G to a group homomorphism between the freely generated
+-- abelian group of A to the group G.
 lift : (Group g, Power g) => (a -> g) -> FreeAbGrp a -> g
 lift f (MkFreeAbGrp xs) = concatMap (\(x, i) => ((f x) ^ i)) xs
+
+inject_lift_lem : (Group g, Power g) => (f : a -> g) -> (x : a) -> lift f (inject x) = f x
+inject_lift_lem f x = believe_me ()
+
+lift_power_lem : (Group g, Power g, Ord a) => (f : a -> g) -> (x : FreeAbGrp a) ->
+                 (i : Integer) -> lift f (x ^ i) = lift f x ^ i
+lift_power_lem f x i = believe_me ()
+
+lift_mult_lem : (Ord a, Group g, Power g) => (f : a -> g) -> (x : FreeAbGrp a) ->
+                (y : FreeAbGrp a) -> lift f (x <+> y) = lift f x <+> lift f y
+lift_mult_lem f x y = believe_me ()
+
+freeabgrppower_correct : (Ord a) => (x : FreeAbGrp a) -> (i : Integer) -> ((^) @{freeabgrppower}) x i = (^) x i
+freeabgrppower_correct x i = believe_me ()
 
 {-
 instance VerifiedMonoid Quantity where

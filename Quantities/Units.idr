@@ -18,7 +18,6 @@ promille = MkElemUnit "‰" 0.001
 mol : ElemUnit scalar
 mol = MkElemUnit "mol" 6.02214129e23
 
-
 -- Length
 
 meter : ElemUnit Length
@@ -94,11 +93,11 @@ fahrenheit = MkElemUnit "°F" (5/9)
 -- Frequency
 
 hz : Unit Frequency
-hz = ConsUnit second (-1) EmptyUnit
+hz = second ^^ (-1)
 
 -- rotations per minute
 rpm : Unit Frequency
-rpm = MkUnit $ minute ^ (-1)
+rpm = minute ^^ (-1)
 
 
 -- Area
@@ -116,16 +115,16 @@ litre = MkElemUnit "l" 0.001
 -- Concentration
 
 molar : Unit Concentration
-molar = MkUnit $ mol </> litre
+molar = mol <//> litre
 
 
 -- Speed
 
 kmh : Unit Speed
-kmh = MkUnit $ kilometer </> hour
+kmh = kilometer <//> hour
 
 ms : Unit Speed
-ms = MkUnit $ meter </> second
+ms = meter <//> second
 
 
 -- Acceleration
@@ -138,16 +137,16 @@ g0 = MkElemUnit "g" 9.80665
 -- Force
 
 newton : Unit Force
-newton = MkUnit $ kilogram <*> meter </> (second ^ 2)
+newton = (kilogram <**> meter) <//> (second ^^ 2)
 
 
 -- Energy
 
 joule : Unit Energy
-joule = MkUnit $ kilogram <*> (meter ^ 2) </> (second ^ 2)
+joule = (kilogram <**> (meter ^^ 2)) <//> (second ^^ 2)
 
 
 -- Pressure
 
---pascal = Unit Pressure
---pascal = 
+pascal : Unit Pressure
+pascal = newton <//> (meter ^^ 2)

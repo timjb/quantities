@@ -96,15 +96,14 @@ conversionRate' u = conversionRate (getProof u)
 joinedQuantity : FreeAbGrp ElemUnit' -> Quantity
 joinedQuantity = lift getWitness
 
--- Composed/derived units
--- TODO: normalize representation
 data Unit : Quantity -> Type where
   MkUnit : (us : FreeAbGrp ElemUnit') -> Unit (joinedQuantity us)
 
 -- TODO: prove type correctness
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
-elemUnitToUnit {q} u = believe_me MkUnit $ inject (q ** u)
+elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
+                       in MkUnit (inject (q ** u))
 
 private
 joinedConversionRate : Unit q -> Float
@@ -115,20 +114,27 @@ joinedConversionRate (MkUnit (MkFreeAbGrp us)) =
           LT => pow (1 / a) (fromIntegerNat (-i))
           _  => pow a (fromIntegerNat i)
 
+infixl 6 <**>
 
+(<**>) : Unit r -> Unit s -> Unit (r <*> s)
+(<**>) (MkUnit rs) (MkUnit ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
+                                 in MkUnit (rs <*> ss)
 
-infixr 7 ^^
+infixr 10 ^^
 
--- TODO: prove type correctness
 (^^) : Unit q -> (i : Integer) -> Unit (q ^ i)
-(^^) _ 0 = believe_me $ MkUnit neutral
-(^^) (MkUnit us) i =? MkUnit $ us ^ i
+(^^) (MkUnit us) i = rewrite (sym (lift_power_lem getWitness us i))
+                     in MkUnit (us ^ i)
 
---unitInverse : Unit q -> Unit (inverse q)
---unitInverse = believe_me $
+unitInverse : Unit q -> Unit (inverse q)
+unitInverse {q} u = rewrite (freeabgrppower_correct q (-1))
+                    in u ^^ (-1)
 
+infixl 6 <//>
 
-{-
+(<//>) : Unit r -> Unit s -> Unit (r </> s)
+(<//>) a b = a <**> unitInverse b
+
 -- Values with a unit
 infixl 5 =| -- sensible?
 data Measurement : {q : Quantity} -> Unit q -> Type -> Type where
@@ -167,7 +173,6 @@ convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
   where rateFrom = joinedConversionRate from
         rateTo   = joinedConversionRate to
-        -}
 
 -- Example:
 -- convertTo ms (50 =| kmh)
