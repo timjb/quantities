@@ -153,6 +153,17 @@ instance Ord a => Ord (Measurement {q} u a) where
 instance Show a => Show (Measurement {q} u a) where
   show (x =| _) = show x
 
+instance Num a => Semigroup (Measurement {q} u a) where
+  (x =| _) <+> (y =| _) = (x + y) =| u
+
+instance Num a => Monoid (Measurement {q} u a) where
+  neutral = fromInteger 0 =| u
+
+instance Num a => Group (Measurement {q} u a) where
+  inverse (x =| _) = (-x) =| u
+
+instance Num a => AbelianGroup (Measurement {q} u a) where
+
 -- TODO: is this sensible?
 infixl 5 :|
 
