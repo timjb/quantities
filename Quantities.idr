@@ -170,6 +170,16 @@ infixl 5 :|
 (:|) : Unit q -> Type -> Type
 (:|) = Measurement
 
+infixl 9 |*|,|/|
+
+(|*|) : Num a => {m : Quantity} -> {n : Quantity} -> {u : Unit m} -> {v : Unit n} ->
+        Measurement u a -> Measurement v a -> Measurement (u <**> v) a
+(|*|) (x =| u) (y =| v) = (x*y) =| (u <**> v)
+
+(|/|) : {m : Quantity} -> {n : Quantity} -> {u : Unit m} -> {v : Unit n} ->
+        Measurement u Float -> Measurement v Float -> Measurement (u <//> v) Float
+(|/|) (x =| u) (y =| v) = (x/y) =| (u <//> v)
+
 -- Floats with a unit
 F : Unit q -> Type
 F u = Measurement u Float
