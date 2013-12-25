@@ -59,6 +59,10 @@ syntax one [name] is [factor] [unit] = multiplyElemUnit name factor unit
 ElemUnit' : Type
 ElemUnit' = (q : Quantity ** ElemUnit q)
 
+private
+name' : ElemUnit' -> String
+name' (q ** u) = name u
+
 instance Eq ElemUnit' where
   (q ** u) == (p ** v) = p == q && name u == name v
 
@@ -94,11 +98,36 @@ joinedConversionRate : Unit q -> Float
 joinedConversionRate (MkUnit (MkFreeAbGrp us)) =
   product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
 
-infixl 6 <**>
+showUnit : Unit q -> String
+showUnit (MkUnit (MkFreeAbGrp [])) = ""
+showUnit (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" " ++) . monom) us
+  where monom : (ElemUnit', Integer) -> String
+        monom (unit, 1) = name' unit
+        monom (unit, i) = name' unit ++ "^" ++ show i
 
-(<**>) : Unit r -> Unit s -> Unit (r <*> s)
-(<**>) (MkUnit rs) (MkUnit ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
-                                 in MkUnit (rs <*> ss)
+private
+toSuperScript : Char -> Char
+toSuperScript '1' = '¹'
+toSuperScript '2' = '²'
+toSuperScript '3' = '³'
+toSuperScript '4' = '⁴'
+toSuperScript '5' = '⁵'
+toSuperScript '6' = '⁶'
+toSuperScript '7' = '⁷'
+toSuperScript '8' = '⁸'
+toSuperScript '9' = '⁹'
+toSuperScript '0' = '⁰'
+toSuperScript '-' = '⁻'
+toSuperScript x   = x
+
+showUnitUnicode : Unit q -> String
+showUnitUnicode (MkUnit (MkFreeAbGrp [])) = ""
+showUnitUnicode (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" " ++) . monom) us
+  where strMap : (Char -> Char) -> String -> String
+        strMap f = pack . map f . unpack
+        monom : (ElemUnit', Integer) -> String
+        monom (unit, 1) = name' unit
+        monom (unit, i) = name' unit ++ strMap toSuperScript (show i)
 
 infixr 10 ^^
 
@@ -110,7 +139,11 @@ unitInverse : Unit q -> Unit (inverse q)
 unitInverse {q} u = rewrite (freeabgrppower_correct q (-1))
                     in u ^^ (-1)
 
-infixl 6 <//>
+infixl 6 <**>,<//>
+
+(<**>) : Unit r -> Unit s -> Unit (r <*> s)
+(<**>) (MkUnit rs) (MkUnit ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
+                                 in MkUnit (rs <*> ss)
 
 (<//>) : Unit r -> Unit s -> Unit (r </> s)
 (<//>) a b = a <**> unitInverse b
