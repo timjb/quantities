@@ -86,6 +86,9 @@ data Unit : Quantity -> Type where
   MkUnit : (exponent : Integer) -> (elemUnits' : FreeAbGrp ElemUnit') ->
            Unit (joinedQuantity elemUnits')
 
+base10Exponent : Unit q -> Integer
+base10Exponent (MkUnit e _) = e
+
 unitLess : Unit scalar
 unitLess = MkUnit 0 neutral
 
@@ -196,7 +199,16 @@ instance Num a => Group (Measurement {q} u a) where
 
 instance Num a => AbelianGroup (Measurement {q} u a) where
 
--- TODO: is this sensible?
+showMeasurement : Show a => {q : Quantity} -> {u : Unit q} ->
+                  (Measurement u a) -> String
+showMeasurement (x =| u) =
+  show x ++ (if base10Exponent u == 0 then " " else "*") ++ showUnit u
+
+showMeasurementUnicode : Show a => {q : Quantity} -> {u : Unit q} ->
+                         (Measurement u a) -> String
+showMeasurementUnicode (x =| u) =
+  show x ++ (if base10Exponent u == 0 then " " else "·") ++ showUnit u
+
 infixl 5 :|
 
 (:|) : Unit q -> Type -> Type
