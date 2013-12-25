@@ -98,6 +98,13 @@ joinedConversionRate : Unit q -> Float
 joinedConversionRate (MkUnit (MkFreeAbGrp us)) =
   product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
 
+instance Show (Unit q) where
+  show (MkUnit (MkFreeAbGrp [])) = "unitLess"
+  show (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" <**> " ++) . monom) us
+    where monom : (ElemUnit', Integer) -> String
+          monom (unit, 1) = name' unit
+          monom (unit, i) = name' unit ++ " ^^ " ++ show i
+
 showUnit : Unit q -> String
 showUnit (MkUnit (MkFreeAbGrp [])) = ""
 showUnit (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" " ++) . monom) us
