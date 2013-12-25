@@ -147,6 +147,10 @@ infixl 5 :|
 (:|) : Unit q -> Type -> Type
 (:|) = Measurement
 
+joinUnits : {q : Quantity} -> {r : Quantity} -> {u : Unit q} -> {v : Unit r} ->
+            (u :| (v :| a)) -> (u <**> v) :| a
+joinUnits ((x =| v) =| u) = x =| (u <**> v)
+
 
 -- Floats with a unit
 F : Unit q -> Type
