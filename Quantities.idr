@@ -92,6 +92,9 @@ base10Exponent (MkUnit e _) = e
 unitLess : Unit scalar
 unitLess = MkUnit 0 neutral
 
+ten : Unit scalar
+ten = MkUnit 1 neutral
+
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
@@ -263,21 +266,3 @@ instance Num a => Num (unitLess :| a) where
   (x =| _) * (y =| _) = (x*y) =| unitLess
   abs (x =| _)        = abs x =| unitLess
   fromInteger i       = fromInteger i =| unitLess
-
-
--- Example:
--- convertTo ms (50 =| kmh)
-
-{-
-kilo : Unit a -> Unit a
-kilo = multiplyUnit 1000
-
-deci : Unit a -> Unit a
-deci = multiplyUnit 0.1
-
-centi : Unit a -> Unit a
-centi = multiplyUnit 0.01
-
-milli : Unit a -> Unit a
-milli = multiplyUnit 0.001
--}
