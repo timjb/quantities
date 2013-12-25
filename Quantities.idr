@@ -8,25 +8,25 @@ import Data.Floats
 
 
 -- Elementary quantities
-record ElemQuantity : Type where
-  MkElemQuantity : (name : String) -> ElemQuantity
+record Dimension : Type where
+  MkDimension : (name : String) -> Dimension
 
-instance Eq ElemQuantity where
-  (MkElemQuantity a) == (MkElemQuantity b) = a == b
+instance Eq Dimension where
+  (MkDimension a) == (MkDimension b) = a == b
 
-instance Ord ElemQuantity where
-  compare (MkElemQuantity a) (MkElemQuantity b) = compare a b
+instance Ord Dimension where
+  compare (MkDimension a) (MkDimension b) = compare a b
 
 
 -- Compound quantities
 
 Quantity : Type
-Quantity = FreeAbGrp ElemQuantity
+Quantity = FreeAbGrp Dimension
 
 scalar : Quantity
 scalar = unit
 
-mkQuantity : List (ElemQuantity, Integer) -> Quantity
+mkQuantity : List (Dimension, Integer) -> Quantity
 mkQuantity = mkFreeAbGrp
 
 -- Synonyms (quantites are multiplied, not added!)
@@ -39,7 +39,7 @@ infixl 6 </>
 (</>) = (<->)
 
 implicit
-elemQuantityToQuantity : ElemQuantity -> Quantity
+elemQuantityToQuantity : Dimension -> Quantity
 elemQuantityToQuantity = inject
 
 

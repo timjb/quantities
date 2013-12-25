@@ -9,17 +9,17 @@ import Quantities
 
 -- Elementary quantities
 
-Length : ElemQuantity
-Length = MkElemQuantity "Length"
+Length : Dimension
+Length = MkDimension "Length"
 
-Mass : ElemQuantity
-Mass = MkElemQuantity "Mass"
+Mass : Dimension
+Mass = MkDimension "Mass"
 
-Time : ElemQuantity
-Time = MkElemQuantity "Time"
+Time : Dimension
+Time = MkDimension "Time"
 
-Temperature : ElemQuantity
-Temperature = MkElemQuantity "Temperature"
+Temperature : Dimension
+Temperature = MkDimension "Temperature"
 
 
 -- Composed quantities
