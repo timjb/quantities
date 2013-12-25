@@ -22,15 +22,23 @@ mol = MkElemUnit "mol" 6.02214129e23
 
 meter : ElemUnit Length
 meter = MkElemUnit "m" 1
+m : ElemUnit Length
+m = meter
 
 inch : ElemUnit Length
 inch = one "in" is 0.0254 meter
+in_ : ElemUnit Length
+in_ = inch
 
 foot : ElemUnit Length
 foot = one "ft" is 12 inch
+ft : ElemUnit Length
+ft = foot
 
 yard : ElemUnit Length
 yard = one "yd" is 3 foot
+yd : ElemUnit Length
+yd = yard
 
 mile : ElemUnit Length
 mile = one "mile" is 1760 yard
@@ -48,6 +56,8 @@ au = MkElemUnit "au" 149597870691
 
 gram : ElemUnit Mass
 gram = MkElemUnit "g" 0.001
+g : ElemUnit Mass
+g = gram
 
 -- TODO: use general 'kilo', 'milli', etc. combinators
 kilogram : ElemUnit Mass
@@ -58,21 +68,31 @@ kilogram = MkElemUnit "kg" 1
 
 second : ElemUnit Time
 second = MkElemUnit "s" 1
+s : ElemUnit Time
+s = second
 
 minute : ElemUnit Time
 minute = one "min" is 60 second
+min : ElemUnit Time
+min = minute
 
 hour : ElemUnit Time
 hour = one "h" is 60 minute
+h : ElemUnit Time
+h = hour
 
 day : ElemUnit Time
 day = one "d" is 24 hour
+d : ElemUnit Time
+d = day
 
 week : ElemUnit Time
 week = one "week" is 7 day
 
 year : ElemUnit Time
 year = one "a" is 365.25 day
+a : ElemUnit Time
+a = year
 
 
 -- Temperature
@@ -81,19 +101,27 @@ year = one "a" is 365.25 day
 -- absolute temperature!
 
 kelvin : ElemUnit Temperature
-kelvin = MkElemUnit "°K" 1
+kelvin = MkElemUnit "dK" 1 -- °K
+dK : ElemUnit Temperature
+dK = kelvin
 
 celsius : ElemUnit Temperature
-celsius = MkElemUnit "°C" 1
+celsius = MkElemUnit "dC" 1 -- °C
+dC : ElemUnit Temperature
+dC = celsius
 
 fahrenheit : ElemUnit Temperature
-fahrenheit = MkElemUnit "°F" (5/9)
+fahrenheit = MkElemUnit "dF" (5/9) -- °F
+dF : ElemUnit Temperature
+dF = fahrenheit
 
 
 -- Frequency
 
-hz : Unit Frequency
-hz = second ^^ (-1)
+hertz : Unit Frequency
+hertz = second ^^ (-1)
+Hz : Unit Frequency
+Hz = hertz
 
 -- rotations per minute
 rpm : Unit Frequency
@@ -110,6 +138,8 @@ are = MkElemUnit "a" 100
 
 litre : ElemUnit Volume
 litre = MkElemUnit "l" 0.001
+l : ElemUnit Volume
+l = litre
 
 
 -- Concentration
@@ -144,9 +174,13 @@ newton = (kilogram <**> meter) <//> (second ^^ 2)
 
 joule : Unit Energy
 joule = (kilogram <**> (meter ^^ 2)) <//> (second ^^ 2)
+J : Unit Energy
+J = joule
 
 
 -- Pressure
 
 pascal : Unit Pressure
 pascal = newton <//> (meter ^^ 2)
+Pa : Unit Pressure
+Pa = pascal
