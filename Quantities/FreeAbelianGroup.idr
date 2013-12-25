@@ -1,5 +1,7 @@
 module Quantities.FreeAbelianGroup
 
+import Quantities.Power
+
 %default total
 %access public
 
@@ -43,22 +45,6 @@ unit = MkFreeAbGrp []
 implicit
 inject : a -> FreeAbGrp a
 inject x = MkFreeAbGrp [(x, 1)]
-
-infixr 10 ^
-
-class Power a where
-  (^) : a -> Integer -> a
-
--- Inefficient. Optimize!
-private
-grpPow : Group g => g -> g -> Nat -> g
-grpPow _ y Z = y
-grpPow x y (S k) = grpPow x (y <+> x) k
-
-instance Group g => Power g where
-  (^) a i = case compare i 0 of
-    LT => grpPow (inverse a) neutral (fromIntegerNat (-i))
-    _  => grpPow a neutral (fromIntegerNat i)
 
 instance [freeabgrppower] Power (FreeAbGrp a) where
   (^) _ 0 = unit
