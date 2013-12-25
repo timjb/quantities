@@ -83,34 +83,42 @@ joinedQuantity : FreeAbGrp ElemUnit' -> Quantity
 joinedQuantity = lift getWitness
 
 data Unit : Quantity -> Type where
-  MkUnit : (us : FreeAbGrp ElemUnit') -> Unit (joinedQuantity us)
+  MkUnit : (exponent : Integer) -> (elemUnits' : FreeAbGrp ElemUnit') ->
+           Unit (joinedQuantity elemUnits')
 
 unitLess : Unit scalar
-unitLess = MkUnit neutral
+unitLess = MkUnit 0 neutral
 
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
-                       in MkUnit (inject (q ** u))
+                       in MkUnit 0 (inject (q ** u))
 
 private
 joinedConversionRate : Unit q -> Float
-joinedConversionRate (MkUnit (MkFreeAbGrp us)) =
-  product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
+joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
+  where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
+        fromExponent = ((^) @{floatmultpower}) 10 e
 
 instance Show (Unit q) where
-  show (MkUnit (MkFreeAbGrp [])) = "unitLess"
-  show (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" <**> " ++) . monom) us
+  show (MkUnit 0 (MkFreeAbGrp [])) = "unitLess"
+  show (MkUnit e (MkFreeAbGrp [])) = "ten ^^ " ++ show e
+  show (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
+    else "ten ^^ " ++ show e ++ " <**> " ++ fromUnits
     where monom : (ElemUnit', Integer) -> String
           monom (unit, 1) = name' unit
           monom (unit, i) = name' unit ++ " ^^ " ++ show i
+          fromUnits = monom u ++ concatMap ((" <**> " ++) . monom) us
 
 showUnit : Unit q -> String
-showUnit (MkUnit (MkFreeAbGrp [])) = ""
-showUnit (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" " ++) . monom) us
+showUnit (MkUnit 0 (MkFreeAbGrp [])) = ""
+showUnit (MkUnit e (MkFreeAbGrp [])) = "10 ^ " ++ show e
+showUnit (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
+  else "10 ^ " ++ show e ++ " " ++ fromUnits
   where monom : (ElemUnit', Integer) -> String
         monom (unit, 1) = name' unit
         monom (unit, i) = name' unit ++ "^" ++ show i
+        fromUnits = monom u ++ concatMap ((" " ++) . monom) us
 
 private
 toSuperScript : Char -> Char
@@ -127,20 +135,25 @@ toSuperScript '0' = '⁰'
 toSuperScript '-' = '⁻'
 toSuperScript x   = x
 
+private
+toSuper : String -> String
+toSuper = pack . map toSuperScript . unpack
+
 showUnitUnicode : Unit q -> String
-showUnitUnicode (MkUnit (MkFreeAbGrp [])) = ""
-showUnitUnicode (MkUnit (MkFreeAbGrp (u :: us))) = monom u ++ concatMap ((" " ++) . monom) us
-  where strMap : (Char -> Char) -> String -> String
-        strMap f = pack . map f . unpack
-        monom : (ElemUnit', Integer) -> String
+showUnitUnicode (MkUnit 0 (MkFreeAbGrp [])) = ""
+showUnitUnicode (MkUnit e (MkFreeAbGrp [])) = "10" ++ toSuper (show e)
+showUnitUnicode (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
+  else "10" ++ toSuper (show e) ++ " " ++ fromUnits
+  where monom : (ElemUnit', Integer) -> String
         monom (unit, 1) = name' unit
-        monom (unit, i) = name' unit ++ strMap toSuperScript (show i)
+        monom (unit, i) = name' unit ++ toSuper (show i)
+        fromUnits = monom u ++ concatMap ((" " ++) . monom) us
 
 infixr 10 ^^
 
 (^^) : Unit q -> (i : Integer) -> Unit (q ^ i)
-(^^) (MkUnit us) i = rewrite (sym (lift_power_lem getWitness us i))
-                     in MkUnit (us ^ i)
+(^^) (MkUnit e us) i = rewrite (sym (lift_power_lem getWitness us i))
+                       in MkUnit (i*e) (us ^ i)
 
 unitInverse : Unit q -> Unit (inverse q)
 unitInverse {q} u = rewrite (freeabgrppower_correct q (-1))
@@ -149,8 +162,8 @@ unitInverse {q} u = rewrite (freeabgrppower_correct q (-1))
 infixl 6 <**>,<//>
 
 (<**>) : Unit r -> Unit s -> Unit (r <*> s)
-(<**>) (MkUnit rs) (MkUnit ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
-                                 in MkUnit (rs <*> ss)
+(<**>) (MkUnit e rs) (MkUnit f ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
+                                     in MkUnit (e+f) (rs <*> ss)
 
 (<//>) : Unit r -> Unit s -> Unit (r </> s)
 (<//>) a b = a <**> unitInverse b
@@ -169,9 +182,8 @@ instance Eq a => Eq (Measurement {q} u a) where
 instance Ord a => Ord (Measurement {q} u a) where
   compare (x =| _) (y =| _) = compare x y
 
--- TODO: show unit
 instance Show a => Show (Measurement {q} u a) where
-  show (x =| _) = show x
+  show (x =| _) = show x ++ " =| " ++ show u
 
 instance Num a => Semigroup (Measurement {q} u a) where
   (x =| _) <+> (y =| _) = (x + y) =| u
