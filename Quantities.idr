@@ -163,19 +163,26 @@ infixl 9 |*|,|/|
         F u -> F v -> F (u <//> v)
 (|/|) (x =| u) (y =| v) = (x/y) =| (u <//> v)
 
-infixl 10 |^| 
+infixl 10 |^|
 
 (|^|) : {q : Quantity} -> {u : Unit q} -> F u -> (i : Integer) -> F (u ^^ i)
 (|^|) (x =| u) i = (((^) @{floatmultpower}) x i) =| u ^^ i
 
-sqrt : {q : Quantity} -> {u : Unit q} ->
-       F (u ^^ 2) -> F u
+sqrt : {q : Quantity} -> {u : Unit q} -> F (u ^^ 2) -> F u
 sqrt {q} {u} (x =| _) = (sqrt x) =| u
+
+floor : {q : Quantity} -> {u : Unit q} -> F u -> F u
+floor = map floor
+
+ceiling : {q : Quantity} -> {u : Unit q} -> F u -> F u
+ceiling = map ceiling
 
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
   where rateFrom = joinedConversionRate from
         rateTo   = joinedConversionRate to
+
+-- TODO: promotion of scalars
 
 
 -- Example:
