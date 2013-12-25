@@ -81,6 +81,9 @@ joinedQuantity = lift getWitness
 data Unit : Quantity -> Type where
   MkUnit : (us : FreeAbGrp ElemUnit') -> Unit (joinedQuantity us)
 
+unitLess : Unit scalar
+unitLess = MkUnit neutral
+
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
@@ -186,7 +189,16 @@ convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
   where rateFrom = joinedConversionRate from
         rateTo   = joinedConversionRate to
 
--- TODO: promotion of scalars
+implicit
+toUnitLess : a -> Measurement unitLess a
+toUnitLess x = x =| unitLess
+
+instance Num a => Num (unitLess :| a) where
+  (x =| _) + (y =| _) = (x+y) =| unitLess
+  (x =| _) - (y =| _) = (x-y) =| unitLess
+  (x =| _) * (y =| _) = (x*y) =| unitLess
+  abs (x =| _)        = abs x =| unitLess
+  fromInteger i       = fromInteger i =| unitLess
 
 
 -- Example:
