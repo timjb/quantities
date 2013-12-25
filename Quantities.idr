@@ -1,6 +1,7 @@
 module Quantities
 
 import Quantities.FreeAbelianGroup
+import Data.Floats
 
 %default total
 %access public
@@ -18,8 +19,6 @@ instance Ord ElemQuantity where
 
 
 -- Compound quantities
--- This should be abstract (but Quantities/Units doesn't compile then)
---data Quantity = MkQuantity (FreeAbGrp ElemQuantity)
 
 Quantity : Type
 Quantity = FreeAbGrp ElemQuantity
@@ -29,23 +28,6 @@ scalar = unit
 
 mkQuantity : List (ElemQuantity, Integer) -> Quantity
 mkQuantity = mkFreeAbGrp
-
-{-
-instance Eq Quantity where
-  (MkQuantity x) == (MkQuantity y) = x == y
-
-instance Ord Quantity where
-  compare (MkQuantity x) (MkQuantity y) = compare x y
-
-instance Semigroup Quantity where
-  (MkQuantity x) <+> (MkQuantity y) = MkQuantity (x <+> y)
-
-instance VerifiedSemigroup Quantity where
-  semigroupOpIsAssociative = ?todo
-
-instance Monoid Quantity where
-  neutral = scalar
--}
 
 -- Synonyms (quantites are multiplied, not added!)
 infixl 6 <*>
@@ -99,7 +81,6 @@ joinedQuantity = lift getWitness
 data Unit : Quantity -> Type where
   MkUnit : (us : FreeAbGrp ElemUnit') -> Unit (joinedQuantity us)
 
--- TODO: prove type correctness
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
@@ -108,11 +89,7 @@ elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
 private
 joinedConversionRate : Unit q -> Float
 joinedConversionRate (MkUnit (MkFreeAbGrp us)) =
-  product $ map (\(u, i) => power (conversionRate' u) i) us
-  where power : Float -> Integer -> Float
-        power a i = case compare i 0 of
-          LT => pow (1 / a) (fromIntegerNat (-i))
-          _  => pow a (fromIntegerNat i)
+  product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
 
 infixl 6 <**>
 
@@ -170,30 +147,36 @@ infixl 5 :|
 (:|) : Unit q -> Type -> Type
 (:|) = Measurement
 
-infixl 9 |*|,|/|
-
-(|*|) : Num a => {m : Quantity} -> {n : Quantity} -> {u : Unit m} -> {v : Unit n} ->
-        Measurement u a -> Measurement v a -> Measurement (u <**> v) a
-(|*|) (x =| u) (y =| v) = (x*y) =| (u <**> v)
-
-(|/|) : {m : Quantity} -> {n : Quantity} -> {u : Unit m} -> {v : Unit n} ->
-        Measurement u Float -> Measurement v Float -> Measurement (u <//> v) Float
-(|/|) (x =| u) (y =| v) = (x/y) =| (u <//> v)
 
 -- Floats with a unit
 F : Unit q -> Type
 F u = Measurement u Float
 
-{-
--- Doubles with a unit
-D : Unit q -> Type
-D u = Measurement u Double
--}
+
+infixl 9 |*|,|/|
+
+(|*|) : Num a => {q : Quantity} -> {r : Quantity} -> {u : Unit q} -> {v : Unit r} ->
+        u :| a -> v :| a -> (u <**> v) :| a
+(|*|) (x =| u) (y =| v) = (x*y) =| (u <**> v)
+
+(|/|) : {q : Quantity} -> {r : Quantity} -> {u : Unit q} -> {v : Unit r} ->
+        F u -> F v -> F (u <//> v)
+(|/|) (x =| u) (y =| v) = (x/y) =| (u <//> v)
+
+infixl 10 |^| 
+
+(|^|) : {q : Quantity} -> {u : Unit q} -> F u -> (i : Integer) -> F (u ^^ i)
+(|^|) (x =| u) i = (((^) @{floatmultpower}) x i) =| u ^^ i
+
+sqrt : {q : Quantity} -> {u : Unit q} ->
+       F (u ^^ 2) -> F u
+sqrt {q} {u} (x =| _) = (sqrt x) =| u
 
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
   where rateFrom = joinedConversionRate from
         rateTo   = joinedConversionRate to
+
 
 -- Example:
 -- convertTo ms (50 =| kmh)
