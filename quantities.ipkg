@@ -1,3 +1,3 @@
 package quantities
 
-modules = Quantities, Quantities.FreeAbelianGroup, Quantities.Power, Quantities.SIPrefixes, Quantities.SIBaseQuantities, Quantities.SIBaseUnits, Quantities.SIDerivedQuantities, Quantities.SIDerivedUnits
+modules = Quantities, Quantities.FreeAbelianGroup, Quantities.NonSIUnits , Quantities.Power, Quantities.SIBaseQuantities, Quantities.SIBaseUnits, Quantities.SIDerivedQuantities, Quantities.SIDerivedUnits, Quantities.SIPrefixes
