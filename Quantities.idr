@@ -52,7 +52,7 @@ record ElemUnit : Quantity -> Type where
 multiplyElemUnit : String -> Float -> ElemUnit q -> ElemUnit q
 multiplyElemUnit n f (MkElemUnit _ g) = MkElemUnit n (f * g)
 
-syntax one [name] is [factor] [unit] = multiplyElemUnit name factor unit
+syntax "< one" [name] equals [factor] [unit] ">" = multiplyElemUnit name factor unit
 
 
 -- ElemUnit with its quantity hidden
@@ -89,11 +89,14 @@ data Unit : Quantity -> Type where
 base10Exponent : Unit q -> Integer
 base10Exponent (MkUnit e _) = e
 
-unitLess : Unit scalar
-unitLess = MkUnit 0 neutral
+one : Unit scalar
+one = MkUnit 0 neutral
 
 ten : Unit scalar
 ten = MkUnit 1 neutral
+
+unitLess : Unit scalar
+unitLess = one
 
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
