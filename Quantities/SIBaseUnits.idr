@@ -1,7 +1,7 @@
 module Quantities.SIBaseUnits
 
 import Quantities
-import Quantities.Prefixes
+import Quantities.SIPrefixes
 import Quantities.SIBaseQuantities
 
 %default total
