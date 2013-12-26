@@ -7,8 +7,10 @@ import Quantities.SIBaseQuantities
 %default total
 %access public
 
+metre : ElemUnit Length
+metre = MkElemUnit "m" 1
 meter : ElemUnit Length
-meter = MkElemUnit "m" 1
+meter = metre
 m : ElemUnit Length
 m = meter
 

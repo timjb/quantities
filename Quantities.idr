@@ -90,6 +90,12 @@ one = MkUnit 0 neutral
 ten : Unit scalar
 ten = MkUnit 1 neutral
 
+percent : Unit scalar
+percent = MkUnit (-2) neutral
+
+promille : Unit scalar
+promille = MkUnit (-3) neutral
+
 unitLess : Unit scalar
 unitLess = one
 
