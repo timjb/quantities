@@ -49,11 +49,6 @@ record ElemUnit : Quantity -> Type where
                (name : String) ->
                (conversionRate : Float) -> ElemUnit q
 
-multiplyElemUnit : String -> Float -> ElemUnit q -> ElemUnit q
-multiplyElemUnit n f (MkElemUnit _ g) = MkElemUnit n (f * g)
-
-syntax "< one" [name] equals [factor] [unit] ">" = multiplyElemUnit name factor unit
-
 
 -- ElemUnit with its quantity hidden
 ElemUnit' : Type
@@ -108,6 +103,11 @@ joinedConversionRate : Unit q -> Float
 joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
   where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
         fromExponent = ((^) @{floatmultpower}) 10 e
+
+defineAsMultipleOf : String -> Float -> Unit q -> ElemUnit q
+defineAsMultipleOf name factor unit = MkElemUnit name (factor * joinedConversionRate unit)
+
+syntax "< one" [name] equals [factor] [unit] ">" = defineAsMultipleOf name factor unit
 
 instance Show (Unit q) where
   show (MkUnit 0 (MkFreeAbGrp [])) = "unitLess"
