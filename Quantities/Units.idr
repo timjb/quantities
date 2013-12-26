@@ -1,7 +1,8 @@
 module Quantities.Units
 
 import Quantities
-import Quantities.Quantities
+import Quantities.SIBaseQuantities
+import Quantities.SIDerivedQuantities
 
 %default total
 %access public
@@ -14,9 +15,6 @@ percent = MkElemUnit "%" 0.01
 
 promille : ElemUnit scalar
 promille = MkElemUnit "‰" 0.001
-
-mol : ElemUnit scalar
-mol = MkElemUnit "mol" 6.02214129e23
 
 -- Length
 
@@ -140,12 +138,6 @@ litre : ElemUnit Volume
 litre = MkElemUnit "l" 0.001
 l : ElemUnit Volume
 l = litre
-
-
--- Concentration
-
-molar : Unit Concentration
-molar = mol <//> litre
 
 
 -- Speed
