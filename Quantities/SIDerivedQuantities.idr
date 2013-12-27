@@ -177,6 +177,9 @@ CatalyticActivity = AmountOfSubstance </> Time
 DynamicViscosity : Quantity
 DynamicViscosity = Stress <*> Time
 
+KinematicViscosity : Quantity
+KinematicViscosity = Area </> Time
+
 MomentOfForce : Quantity
 MomentOfForce = Force <*> Length
 

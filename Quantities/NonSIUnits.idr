@@ -4,10 +4,13 @@ import Quantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits
 import Quantities.SIDerivedUnits
---import Quantities.ImperialUnits
+import Quantities.ImperialUnits
 
 %default total
 %access public
+
+
+-- Based on http://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI
 
 
 -- Time
@@ -22,7 +25,6 @@ hour = < one "h" equals 60 minute >
 h : ElemUnit Time
 h = hour
 
-{-
 day : ElemUnit Time
 day = < one "d" equals 24 hour >
 d : ElemUnit Time
@@ -136,4 +138,54 @@ kn = knot
 -- Standard gravity
 g0 : ElemUnit Force
 g0 = MkElemUnit "g" 9.80665
--}
+
+
+-- Non-SI units associated with the CGS and the CGS-Gaussian system of units
+
+erg : Unit Energy
+erg = ten ^^ -7 <**> joule
+
+dyne : Unit Force
+dyne = ten ^^ -5 <**> newton
+dyn : Unit Force
+dyn = dyne
+
+poise : Unit DynamicViscosity
+poise = dyne <**> second <//> (centimetre ^^ 2)
+P : Unit DynamicViscosity
+P = poise
+
+stokes : Unit KinematicViscosity
+stokes = centimetre ^^ 2 <//> second
+St : Unit KinematicViscosity
+St = stokes
+
+stilb : Unit Luminance
+stilb = candela <//> (centimetre ^^ 2)
+sb : Unit Luminance
+sb = stilb
+
+phot : Unit Illuminance
+phot = candela <**> steradian <//> (centimetre ^^ 2)
+ph : Unit Illuminance
+ph = phot
+
+gal : Unit Acceleration
+gal = centimetre <//> (second ^^ 2)
+Gal : Unit Acceleration
+Gal = gal
+
+maxwell : Unit MagneticFlux
+maxwell = ten ^^ -8 <**> weber
+Mx : Unit MagneticFlux
+Mx = maxwell
+
+gauss : Unit MagneticFluxDensity
+gauss = maxwell <//> (centimetre ^^ 2)
+G : Unit MagneticFluxDensity
+G = gauss
+
+oersted : ElemUnit MagneticFieldStrength
+oersted = < one "oe" equals (250 / pi) (ampere <//> metre) >
+oe : ElemUnit MagneticFieldStrength
+oe = oersted
