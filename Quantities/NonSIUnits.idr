@@ -29,8 +29,11 @@ d = day
 week : ElemUnit Time
 week = < one "week" equals 7 day >
 
+-- Julian year
 year : ElemUnit Time
 year = < one "a" equals 365.25 day >
+julianYear : ElemUnit Time
+julianYear = year
 a : ElemUnit Time
 a = year
 
@@ -174,6 +177,36 @@ naturalUnitOfTime : ElemUnit Time
 naturalUnitOfTime = < one "nuOfTime" equals 1 (hBar <//> (m_e <**> (c_0 ^^ 2))) >
 nuOfTime : ElemUnit Time
 nuOfTime = naturalUnitOfTime
+
+lightSecond : ElemUnit Length
+lightSecond = < one "ls" equals 1 (second <**> speedOfLight) >
+ls : ElemUnit Length
+ls = lightSecond
+
+lightMinute : ElemUnit Length
+lightMinute = < one "lmin" equals 1 (minute <**> speedOfLight) >
+lmin : ElemUnit Length
+lmin = lightMinute
+
+lightHour : ElemUnit Length
+lightHour = < one "lh" equals 1 (hour <**> speedOfLight) >
+lh : ElemUnit Length
+lh = lightHour
+
+lightDay : ElemUnit Length
+lightDay = < one "ld" equals 1 (day <**> speedOfLight) >
+ld : ElemUnit Length
+ld = lightDay
+
+lightWeek : ElemUnit Length
+lightWeek = < one "ld" equals 1 (week <**> speedOfLight) >
+lw : ElemUnit Length
+lw = lightWeek
+
+lightYear : ElemUnit Length
+lightYear = < one "ly" equals 1 (year <**> speedOfLight) >
+ly : ElemUnit Length
+ly = lightYear
 
 
 -- Non-SI units associated with the CGS and the CGS-Gaussian system of units
