@@ -188,6 +188,10 @@ infixl 5 =| -- sensible?
 data Measurement : {q : Quantity} -> Unit q -> Type -> Type where
   (=|) : a -> (u : Unit q) -> Measurement u a
 
+getValue : {q : Quantity} -> {u : Unit q} ->
+           Measurement {q} u a -> a
+getValue (x =| _) = x
+
 instance Functor (Measurement {q} u) where
   map f (x =| _) = f x =| u
 
@@ -269,9 +273,9 @@ implicit
 toUnitLess : a -> Measurement unitLess a
 toUnitLess x = x =| unitLess
 
-instance Num a => Num (unitLess :| a) where
-  (x =| _) + (y =| _) = (x+y) =| unitLess
-  (x =| _) - (y =| _) = (x-y) =| unitLess
-  (x =| _) * (y =| _) = (x*y) =| unitLess
-  abs (x =| _)        = abs x =| unitLess
-  fromInteger i       = fromInteger i =| unitLess
+instance Num a => Num (Measurement unitLess a) where
+  x + y = (getValue x + getValue y) =| unitLess
+  x - y = (getValue x - getValue y) =| unitLess
+  x * y = (getValue x * getValue y) =| unitLess
+  abs x = abs (getValue x) =| unitLess
+  fromInteger i = fromInteger i =| unitLess
