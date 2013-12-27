@@ -37,6 +37,12 @@ julianYear = year
 a : ElemUnit Time
 a = year
 
+century : Unit Time
+century = hecto year
+
+millenium : Unit Time
+millenium = kilo year
+
 tonne : ElemUnit Mass
 tonne = < one "t" equals 1000 kg >
 t : ElemUnit Mass
