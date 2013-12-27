@@ -4,7 +4,6 @@ import Quantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits
 import Quantities.SIDerivedUnits
-import Quantities.ImperialUnits
 
 %default total
 %access public
@@ -105,11 +104,6 @@ millimetreOfMercury : ElemUnit Pressure
 millimetreOfMercury = < one "mmHg" equals 133.322 pascal >
 mmHg : ElemUnit Pressure
 mmHg = millimetreOfMercury
-
-knot : ElemUnit Speed
-knot = < one "kn" equals 1 (nauticalMile <//> hour) >
-kn : ElemUnit Speed
-kn = knot
 
 
 -- Non-SI units whose values in SI must be determined experimentally

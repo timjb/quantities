@@ -4,6 +4,7 @@ import Quantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits
 import Quantities.SIDerivedQuantities
+import Quantities.NonSIUnits
 
 %default total
 %access public
@@ -76,6 +77,14 @@ link = < one "link" equals (1/100) chain >
 
 rod : ElemUnit Length
 rod = < one "rod" equals (1/4) chain >
+
+
+-- Speed
+
+knot : ElemUnit Speed
+knot = < one "kn" equals 1 (nauticalMile <//> hour) >
+kn : ElemUnit Speed
+kn = knot
 
 
 -- Area
@@ -173,3 +182,4 @@ cwt : ElemUnit Mass
 cwt = hundredweight
 
 ton : ElemUnit Mass
+ton = < one "ton" equals 2240 pound >
