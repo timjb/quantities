@@ -4,6 +4,7 @@ import Quantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits
 import Quantities.SIDerivedUnits
+--import Quantities.ImperialUnits
 
 %default total
 %access public
@@ -21,6 +22,7 @@ hour = < one "h" equals 60 minute >
 h : ElemUnit Time
 h = hour
 
+{-
 day : ElemUnit Time
 day = < one "d" equals 24 hour >
 d : ElemUnit Time
@@ -62,29 +64,6 @@ arcsec = < one "arcsec" equals (1/60) arcmin >
 -- Ångström (Å)
 angstrom : ElemUnit Length
 angstrom = < one "angstrom" equals 0.1 (nano metre) >
-
-inch : ElemUnit Length
-inch = < one "in" equals 0.0254 metre >
-in_ : ElemUnit Length
-in_ = inch
-
-foot : ElemUnit Length
-foot = < one "ft" equals 12 inch >
-ft : ElemUnit Length
-ft = foot
-
-yard : ElemUnit Length
-yard = < one "yd" equals 3 foot >
-yd : ElemUnit Length
-yd = yard
-
-mile : ElemUnit Length
-mile = < one "mile" equals 1760 yard >
-
-nauticalMile : ElemUnit Length
-nauticalMile = < one "nmi" equals 1852 metre >
-nmi : ElemUnit Length
-nmi = nauticalMile
 
 -- Astronomical Unit
 au : ElemUnit Length
@@ -157,3 +136,4 @@ kn = knot
 -- Standard gravity
 g0 : ElemUnit Force
 g0 = MkElemUnit "g" 9.80665
+-}

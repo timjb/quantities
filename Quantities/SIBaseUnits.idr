@@ -14,6 +14,20 @@ meter = metre
 m : ElemUnit Length
 m = meter
 
+centimetre : Unit Length
+centimetre = centi metre
+centimeter : Unit Length
+centimeter = centimetre
+cm : Unit Length
+cm = centimetre
+
+kilometre : Unit Length
+kilometre = kilo metre
+kilometer : Unit Length
+kilometer = kilometre
+km : Unit Length
+km = kilometre
+
 gram : ElemUnit Mass
 gram = MkElemUnit "g" 0.001
 g : ElemUnit Mass
