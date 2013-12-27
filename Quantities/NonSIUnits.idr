@@ -12,9 +12,6 @@ import Quantities.ImperialUnits
 
 -- Based on http://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI
 
-
--- Time
-
 minute : ElemUnit Time
 minute = < one "min" equals 60 second >
 min : ElemUnit Time
@@ -38,16 +35,10 @@ year = < one "a" equals 365.25 day >
 a : ElemUnit Time
 a = year
 
-
--- Mass
-
 tonne : ElemUnit Mass
 tonne = < one "t" equals 1000 kg >
 t : ElemUnit Mass
 t = tonne
-
-
--- Angles
 
 degree : ElemUnit PlaneAngle
 degree = < one "deg" equals (pi / 180) rad >
@@ -60,19 +51,24 @@ arcmin = < one "arcmin" equals (1/60) degree >
 arcsec : ElemUnit PlaneAngle
 arcsec = < one "arcsec" equals (1/60) arcmin >
 
-
--- Length
-
 -- Ångström (Å)
 angstrom : ElemUnit Length
 angstrom = < one "angstrom" equals 0.1 (nano metre) >
 
--- Astronomical Unit
+astronomicalUnit : ElemUnit Length
+astronomicalUnit = < one "au" equals 149597870700 metre >
 au : ElemUnit Length
-au = MkElemUnit "au" 149597870691
+au = astronomicalUnit
 
+standardGravity : ElemUnit Acceleration
+standardGravity = < one "g_0" equals 9.80665 (metre <//> (second ^^ 2)) >
+g_0 : ElemUnit Acceleration
+g_0 = standardGravity
 
--- Temperature
+rotationsPerMinute : Unit Frequency
+rotationsPerMinute = one <//> minute
+rpm : Unit Frequency
+rpm = rotationsPerMinute
 
 -- Use this only for relative temparature! Not suitable for conversions of
 -- absolute temperature!
@@ -81,14 +77,6 @@ fahrenheit : ElemUnit Temperature
 fahrenheit = < one "dF" equals (5/9) K > -- °F
 dF : ElemUnit Temperature
 dF = fahrenheit
-
-rotationsPerMinute : Unit Frequency
-rotationsPerMinute = one <//> minute
-rpm : Unit Frequency
-rpm = rotationsPerMinute
-
-
--- Area
 
 are : ElemUnit Area
 are = < one "are" equals 100 (metre ^^ 2) >
@@ -103,18 +91,12 @@ barn = < one "b" equals 100 ((femto metre) ^^ 2) >
 b : ElemUnit Area
 b = barn
 
-
--- Volume
-
 litre : ElemUnit Volume
 litre = < one "l" equals 1 (milli (m ^^ 3)) >
 liter : ElemUnit Volume
 liter = litre
 l : ElemUnit Volume
 l = litre
-
-
--- Pressure
 
 bar : ElemUnit Pressure
 bar = < one "bar" equals 100 (kilo pascal) >
@@ -124,20 +106,80 @@ millimetreOfMercury = < one "mmHg" equals 133.322 pascal >
 mmHg : ElemUnit Pressure
 mmHg = millimetreOfMercury
 
-
--- Speed
-
 knot : ElemUnit Speed
 knot = < one "kn" equals 1 (nauticalMile <//> hour) >
 kn : ElemUnit Speed
 kn = knot
 
 
--- Acceleration
+-- Non-SI units whose values in SI must be determined experimentally
 
--- Standard gravity
-g0 : ElemUnit Force
-g0 = MkElemUnit "g" 9.80665
+electronvolt : ElemUnit Energy
+electronvolt = < one "eV" equals 1.60217653 (ten ^^ -19 <**> joule) >
+eV : ElemUnit Energy
+eV = electronvolt
+
+dalton : ElemUnit Mass
+dalton = < one "Da" equals 1.66053886 (ten ^^ -27 <**> kilogram) >
+Da : ElemUnit Mass
+Da = dalton
+unifiedAtomicMassUnit : ElemUnit Mass
+unifiedAtomicMassUnit = dalton
+u : ElemUnit Mass
+u = dalton
+
+-- Atomic and natural units
+
+elementaryCharge : ElemUnit ElectricCharge
+elementaryCharge = < one "e" equals 1.60217653 (ten ^^ -19 <**> coulomb) >
+e : ElemUnit ElectricCharge
+e = elementaryCharge
+
+massOfElectron : ElemUnit Mass
+massOfElectron = < one "m_e" equals 9.1093826 (ten ^^ -31 <**> kilogram) >
+electronMass : ElemUnit Mass
+electronMass = massOfElectron
+m_e : ElemUnit Mass
+m_e = massOfElectron
+
+bohrRadius : ElemUnit Length
+bohrRadius = < one "a_0" equals 0.5291772108 (ten ^^ -10 <**> metre) >
+bohr : ElemUnit Length
+bohr = bohrRadius
+a_0 : ElemUnit Length
+a_0 = bohrRadius
+
+hartreeEnergy : ElemUnit Energy
+hartreeEnergy = < one "E_h" equals 4.35974417 (ten ^^ -18 <**> joule) >
+hartree : ElemUnit Energy
+hartree = hartreeEnergy
+E_h : ElemUnit Energy
+E_h = hartreeEnergy
+
+planckConstant : ElemUnit (Energy <*> Time)
+planckConstant = < one "h" equals 6.62606957 (joule <**> second) >
+h_ : ElemUnit (Energy <*> Time)
+h_ = planckConstant
+
+reducedPlanckConstant : ElemUnit (Energy <*> Time)
+reducedPlanckConstant = < one "hBar" equals (1 / (2*pi)) (joule <**> second) >
+hBar : ElemUnit (Energy <*> Time)
+hBar = reducedPlanckConstant
+
+atomicUnitOfTime : ElemUnit Time
+atomicUnitOfTime = < one "auOfTime" equals 1 (hBar <//> hartree) >
+auOfTime : ElemUnit Time
+auOfTime = atomicUnitOfTime
+
+speedOfLight : ElemUnit Speed
+speedOfLight = < one "c_0" equals 299792458 (metre <//> second) >
+c_0 : ElemUnit Speed
+c_0 = speedOfLight
+
+naturalUnitOfTime : ElemUnit Time
+naturalUnitOfTime = < one "nuOfTime" equals 1 (hBar <//> (m_e <**> (c_0 ^^ 2))) >
+nuOfTime : ElemUnit Time
+nuOfTime = naturalUnitOfTime
 
 
 -- Non-SI units associated with the CGS and the CGS-Gaussian system of units
