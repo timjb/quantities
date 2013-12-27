@@ -183,3 +183,23 @@ cwt = hundredweight
 
 ton : ElemUnit Mass
 ton = < one "ton" equals 2240 pound >
+
+
+-- Energy
+
+footPound : ElemUnit Energy
+footPound = < one "ftlb" equals 1 (foot <**> pound <**> g_0) >
+ftlb : ElemUnit Energy
+ftlb = footPound
+
+
+-- Power
+
+mechanicalHorsepower : ElemUnit Power
+mechanicalHorsepower = < one "hp" equals 550 (footPound <//> second) >
+imperialHorsepower : ElemUnit Power
+imperialHorsepower = mechanicalHorsepower
+horsepower : ElemUnit Power
+horsepower = mechanicalHorsepower
+hp : ElemUnit Power
+hp = mechanicalHorsepower
