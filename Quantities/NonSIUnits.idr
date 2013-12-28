@@ -114,6 +114,13 @@ millimetreOfMercury = < one "mmHg" equals 133.322 pascal >
 mmHg : ElemUnit Pressure
 mmHg = millimetreOfMercury
 
+calorie : ElemUnit Energy
+calorie = < one "cal" equals 4.18400 joule >
+thermochemicalCalorie : ElemUnit Energy
+thermochemicalCalorie = calorie
+cal : ElemUnit Energy
+cal = calorie
+
 
 -- Non-SI units whose values in SI must be determined experimentally
 
