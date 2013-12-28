@@ -39,8 +39,8 @@ infixl 6 </>
 (</>) = (<->)
 
 implicit
-elemQuantityToQuantity : Dimension -> Quantity
-elemQuantityToQuantity = inject
+dimensionToQuantity : Dimension -> Quantity
+dimensionToQuantity = inject
 
 
 -- Elementary Units
@@ -268,6 +268,9 @@ convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
   where rateFrom = joinedConversionRate from
         rateTo   = joinedConversionRate to
+
+as : {from : Unit q} -> F from -> (to : Unit q) -> F to
+as x u = convertTo u x
 
 implicit
 toUnitLess : a -> Measurement unitLess a
