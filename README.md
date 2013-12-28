@@ -251,17 +251,17 @@ The library comes with many quantities and units predefined.
 
 From the [International System of Units (SI)](http://en.wikipedia.org/wiki/International_System_of_Units):
 
-* `[Quantities.SIBaseQuantities](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: The seven SI base quantities `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `LuminousIntensity` and `AmountOfSubstance`
-* `[Quantities.SIDerivedQuantities](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedQuantities.idr)`: SI derived quantites, e.g. `Velocity`, `Acceleration`, `ElectricResistance`, `Energy`, etc.
-* `[Quantities.SIBaseUnits](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr)`: The base units corresponding to the base quantities: `meter`, `kilogram`, `second`, `ampere`, `kelvin`, `candela` and `mole`
-* `[Quantities.SIDerivedUnits](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr)`: Various units derived from the seven base units, e.g. `joule`, `pascal`, `ohm`, `hertz`
+* [`Quantities.SIBaseQuantities`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): The seven SI base quantities `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `LuminousIntensity` and `AmountOfSubstance`
+* [`Quantities.SIDerivedQuantities`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedQuantities.idr): SI derived quantites, e.g. `Velocity`, `Acceleration`, `ElectricResistance`, `Energy`, etc.
+* [`Quantities.SIBaseUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr): The base units corresponding to the base quantities: `meter`, `kilogram`, `second`, `ampere`, `kelvin`, `candela` and `mole`
+* [`Quantities.SIDerivedUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr): Various units derived from the seven base units, e.g. `joule`, `pascal`, `ohm`, `hertz`
 
 Other quantities and units:
 
-* `[Quantities.ImperialUnits](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr)`: Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
-* `[Quantities.NonSIUnits](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr)`: Various common and uncommon units, e.g. `minute`, `electronvolt`, `calorie`, `tonne`, `lightYear`
-* `[Quantities.Information](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix)
-* `[Quantities.Screen](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: The quantity `ScreenLength` with the unit `pixel`. Useful for UI/games programming.
+* [`Quantities.ImperialUnits`](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr): Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
+* [`Quantities.NonSIUnits`](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr): Various common and uncommon units, e.g. `minute`, `electronvolt`, `calorie`, `tonne`, `lightYear`
+* [`Quantities.Information`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix)
+* [`Quantities.Screen`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): The quantity `ScreenLength` with the unit `pixel`. Useful for UI/games programming.
 
 
 ### Metric Prefixes
