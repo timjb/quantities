@@ -112,7 +112,6 @@ elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
                        in MkUnit 0 (inject (q ** u))
 
-private
 joinedConversionRate : Unit q -> Float
 joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
   where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
@@ -279,6 +278,9 @@ convertTo to (x =| from) = (x * (rateFrom / rateTo)) =| to
 
 as : {from : Unit q} -> F from -> (to : Unit q) -> F to
 as x u = convertTo u x
+
+convert : {from : Unit q} -> {to : Unit q} -> F from -> F to
+convert {to=to} x = convertTo to x
 
 implicit
 toUnitLess : a -> Measurement unitLess a
