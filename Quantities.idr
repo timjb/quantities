@@ -134,9 +134,9 @@ instance Show (Unit q) where
 
 showUnit : Unit q -> String
 showUnit (MkUnit 0 (MkFreeAbGrp [])) = ""
-showUnit (MkUnit e (MkFreeAbGrp [])) = "10 ^ " ++ show e
+showUnit (MkUnit e (MkFreeAbGrp [])) = "10^" ++ show e
 showUnit (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
-  else "10 ^ " ++ show e ++ " " ++ fromUnits
+  else "10^" ++ show e ++ " " ++ fromUnits
   where monom : (ElemUnit', Integer) -> String
         monom (unit, 1) = name' unit
         monom (unit, i) = name' unit ++ "^" ++ show i
