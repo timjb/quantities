@@ -53,12 +53,12 @@ Happiness : Dimension
 Happiness = MkDimension "Happiness"
 ```
 
-The `Quantity` datatype is now defined as the [free abelian group](http://en.wikipedia.org/wiki/Free_abelian_group) over the `Dimension` data type. There is a function, `dimensionToQuantity : Dimension -> Quantity`, which implicitly converts dimensions to quantities.
+The `Quantity` data type is now defined as the [free abelian group](http://en.wikipedia.org/wiki/Free_abelian_group) over the `Dimension` data type. There is a function, `dimensionToQuantity : Dimension -> Quantity`, which implicitly converts dimensions to quantities.
 
 
 ### Units
 
-A unit represents a specific amount of a quantity. For example, w e have
+A unit represents a specific amount of a quantity. For example, we have
 
 ```haskell
 centimetre : Unit Length
@@ -111,7 +111,7 @@ puppy : ElemUnit Happiness
 puppy = MkElemUnit "puppy" 1
 ```
 
-These are called elementary units. The number at the end of `MkElemUnit` is used as a conversion rate to the base unit of the quantity. Since `metre`, `candela` and `puppy` are the base units themselves, the conversion rate for them is `1`. Which unit you consider as a base unit for a dimension isn't important as long as you stay consistent with your choices.
+These are called elementary units. The number at the end of `MkElemUnit` is the conversion rate to the base unit of the quantity. Since `metre`, `candela` and `puppy` are the base units themselves, the conversion rate for them is `1`. Which unit you consider as a base unit for a dimension isn't important as long as you stay consistent with your choices.
 
 Elementary units are not just a way to bootstrap the system of units; they can also be used to define other units, with some syntax sugar:
 
@@ -177,12 +177,12 @@ myAgeInDogYears : F dogYear
 myAgeInDogYears = (19 =| year) `as` dogYear
 ```
 
-Since the target in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
+Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
 
 ```haskell
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
-convert : {from : Unit q} -> {to : Unit q} -> F from -> F to
-as : {from : Unit q} -> F from -> (to : Unit q) -> F to
+convert   : {from : Unit q} -> {to : Unit q} -> F from -> F to
+as        : {from : Unit q} -> F from -> (to : Unit q) -> F to
 ```
 
 
@@ -197,7 +197,7 @@ weight = 2 =| kilogram
 height : F metre
 height = 2 =| metre
 
-duration : F seconds
+duration : F second
 duration = 0.8 =| second
 
 g_0 : F (metre <//> (second ^^ 2))
@@ -214,7 +214,6 @@ This example shows how to multiply measurements using the functions
 (|*|) : Num a => {u : Unit q} -> {v : Unit r} -> u :| a -> v :| a -> (u <**> v) :| a
 (|/|) : {u : Unit q} -> {v : Unit r} -> F u -> F v -> F (u <//> v)
 (|^|) : {u : Unit q} -> F u -> (i : Integer) -> F (u ^^ i)
-(|*|)
 ```
 
 We can even use these functions to multiply measurements with scalar values:
@@ -230,7 +229,12 @@ usedEnergy : F (watt <**> hour)
 usedEnergy = convert $ energyConversionEfficiency |*| batteryCapacity
 ```
 
-TODO: addition, reference
+To add
+
+```haskell
+(<+>) : Num a => Measurement u a -> Measurement u a -> Measurement u a
+(<->) : Num a => Measurement u a -> Measurement u a -> Measurement u a
+```
 
 
 ### Predefined quantities and units
