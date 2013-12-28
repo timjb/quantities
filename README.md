@@ -44,7 +44,7 @@ Above we defined the quantities `Area`, `Speed`, `Volume` and `Frequency` in ter
 
 ### Dimensions
 
-Of course, we can't derive all quantities from existing quantities, but have to start with some base quantities. The SI system of units defines `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `AmountOfSubstance` and `LuminousIntensity` as base quantities. We can declare like follows:
+Of course, we can't derive all quantities from existing quantities, but have to start with some base quantities. The SI system of units defines `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `AmountOfSubstance` and `LuminousIntensity` as base quantities. We can declare them like this:
 
 ```haskell
 Length : Dimension
@@ -285,7 +285,37 @@ performance = 3.1 =| (mega watt)
 
 ## Example
 
+A simple example that demonstrates how one could use quantities to implement simple movement with gravity in a game.
 
+```haskell
+import Quantities
+import Quantities.SIBaseUnits
+import Quantities.Screen
+
+ScreenSpeed : Quantity
+ScreenSpeed = ScreenLength </> Time
+
+pxs : Unit ScreenSpeed
+pxs = pixel <//> second
+
+record PlayerState : Type where
+  MkPlayerState : (xSpeed : F pxs) ->
+                  (ySpeed : F pxs) ->
+                  (xPos   : F px) ->
+                  (yPos   : F px) -> PlayerState
+
+gravity : F (pxs <//> second)
+gravity = -800 =| (pxs <//> second)
+
+-- Update player position and speed after a given duration
+updatePlayerState : F second -> PlayerState -> PlayerState
+updatePlayerState dt (MkPlayerState xs ys xp yp) =
+  let newYPos = yp <+> convert (ys |*| dt)
+  in if newYPos <= (0 =| px)
+       then MkPlayerState (0 =| pxs) (0 =| pxs) xp (0 =| px)
+       else MkPlayerState xs (ys <+> convert (gravity |*| dt))
+                          (xp <+> convert (xs |*| dt)) newYPos
+```
 
 ## Contributing
 
