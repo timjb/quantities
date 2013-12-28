@@ -1,8 +1,6 @@
 # Quantities
 
-Quantities is a library for 
-
-## Example
+Quantities is a library type-safe physical computations and unit conversions in Idris.
 
 ## Installation
 
@@ -160,6 +158,7 @@ For example:
 ```idris
 distanceToMoon : F metre
 distanceToMoon = 384400000.0 =| metre
+```
 
 
 ### Converting between units
@@ -184,7 +183,6 @@ Since the target in the first example is clear from the context, we could write 
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convert : {from : Unit q} -> {to : Unit q} -> F from -> F to
 as : {from : Unit q} -> F from -> (to : Unit q) -> F to
-```
 ```
 
 
@@ -242,3 +240,7 @@ TODO
 ### Prefixes
 
 TODO
+
+## Example
+
+## License
