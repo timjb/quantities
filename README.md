@@ -1,10 +1,6 @@
 # Quantities
 
-Quantities is a library type-safe physical computations and unit conversions in Idris.
-
-![New Cuyama](images/new-cuyama.jpg)
-
-([Population Explosion!](http://www.flickr.com/photos/7-how-7/4139229048/in/photolist-7iLCA5-7k6s5z-7kan7d-9qNAwp-byuLp3-byuL93-7LTGBJ-9qNAMV-7LRM7r-hUvGJ3-7LK1as-7LJRRh-7LJZuN-7LF4UF-7LK2q5-7LTL3L-7LF2VD-7LJSsf-7LLNXx-7LQL5A-7LQMJY-7LTFgo-7LLLya-7LPJ4n-7LTEAJ-7LLMVX-7LRLu4-7RxVet-7Q9PPZ-7LLM2P-7LMFkF-7LRPFK-7LTJEN-7LNtL6-7LRAjs-7LLL6V-7LSqZJ-7LVMcC-7LRMNa-7LNsda-7LMzHt-7LMApk-7LTDZ9-7LRKHH-7LQK77-7LMBKH-7LRNtX-7QX1rM-7RxV5p-7QX1sx-7LRB1J/) by [7-how-7](http://www.flickr.com/photos/7-how-7/))
+Quantities is a library for type-safe physical computations and unit conversions in Idris.
 
 ## Installation
 
@@ -13,7 +9,7 @@ Copy this package and run
 ```bash
 $ idris --install quantities.ipkg
 ```
-To use it in your program, run idris with
+To use it in your program, run Idris with
 
 ```bash
 $ idris -p quantities yourprogram.idr
@@ -179,6 +175,7 @@ dogYear = < one "dy" equals 52 day >
 
 myAgeInDogYears : F dogYear
 myAgeInDogYears = (19 =| year) `as` dogYear
+-- = 133.46 dy
 ```
 
 Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
@@ -209,7 +206,7 @@ g_0 = 9.80665 =| (metre <//> (second ^^ 2))
 
 averagePower : F watt
 averagePower = convert $ (weight |*| height |*| g_0) |/| duration
--- = 
+-- = 49.033 watt
 ```
 
 This example shows how to multiply measurements using the functions
@@ -233,22 +230,59 @@ usedEnergy : F (watt <**> hour)
 usedEnergy = convert $ energyConversionEfficiency |*| batteryCapacity
 ```
 
-To add
+We can add and subtract measurements, too, but only if they have the same unit:
 
 ```haskell
 (<+>) : Num a => Measurement u a -> Measurement u a -> Measurement u a
 (<->) : Num a => Measurement u a -> Measurement u a -> Measurement u a
 ```
 
+For example:
+
+```haskell
+eatChocolateCake : F puppy -> F puppy
+eatChocolateCake x = x <+> (2 =| puppy)
+```
+
 
 ### Predefined quantities and units
 
-TODO
+The library comes with many quantities and units predefined.
 
-### Prefixes
+From the [International System of Units (SI)](http://en.wikipedia.org/wiki/International_System_of_Units):
 
-TODO
+* `[Quantities.SIBaseQuantities](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: The seven SI base quantities `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `LuminousIntensity` and `AmountOfSubstance`
+* `[Quantities.SIDerivedQuantities](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedQuantities.idr)`: SI derived quantites, e.g. `Velocity`, `Acceleration`, `ElectricResistance`, `Energy`, etc.
+* `[Quantities.SIBaseUnits](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr)`: The base units corresponding to the base quantities: `meter`, `kilogram`, `second`, `ampere`, `kelvin`, `candela` and `mole`
+* `[Quantities.SIDerivedUnits](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr)`: Various units derived from the seven base units, e.g. `joule`, `pascal`, `ohm`, `hertz`
+
+Other quantities and units:
+
+* `[Quantities.ImperialUnits](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr)`: Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
+* `[Quantities.NonSIUnits](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr)`: Various common and uncommon units, e.g. `minute`, `electronvolt`, `calorie`, `tonne`, `lightYear`
+* `[Quantities.Information](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix)
+* `[Quantities.Screen](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr)`: The quantity `ScreenLength` with the unit `pixel`. Useful for UI/games programming.
+
+
+### Metric Prefixes
+
+All standard [SI prefixes](http://en.wikipedia.org/wiki/Metric_prefix) are supported. For example:
+
+```haskell
+import Quantities.SIPrefixes
+
+microscopeResolution : F (nano metre)
+microscopeResolution = 180 =| (nano metre)
+
+performance : F (mega watt)
+performance = 3.1 =| (mega watt)
+```
+
 
 ## Example
 
-## License
+
+
+## Contributing
+
+Feedback and pull requests adding code and units are welcome!
