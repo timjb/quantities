@@ -84,6 +84,14 @@ data Unit : Quantity -> Type where
 base10Exponent : Unit q -> Integer
 base10Exponent (MkUnit e _) = e
 
+private
+getElemUnits' : Unit q -> FreeAbGrp ElemUnit'
+getElemUnits' (MkUnit _ us) = us
+
+instance Eq (Unit q) where
+  x == y = base10Exponent x == base10Exponent y &&
+           getElemUnits' x  == getElemUnits' y
+
 one : Unit scalar
 one = MkUnit 0 neutral
 
