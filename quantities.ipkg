@@ -3,7 +3,7 @@ package quantities
 modules = Quantities,
           Quantities.FreeAbelianGroup,
           Quantities.ImperialUnits,
-          Quantities.Information
+          Quantities.Information,
           Quantities.NonSIUnits,
           Quantities.Power,
           Quantities.Screen,
