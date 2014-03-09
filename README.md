@@ -264,8 +264,8 @@ Other quantities and units:
 
 * [`Quantities.ImperialUnits`](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr): Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
 * [`Quantities.NonSIUnits`](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr): Various common and uncommon units, e.g. `minute`, `electronvolt`, `calorie`, `tonne`, `lightYear`
-* [`Quantities.Information`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix), e.g. `mebi byte` for 1024^2 bytes.
-* [`Quantities.Screen`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): The quantity `ScreenLength` with the unit `pixel`. Useful for UI programming.
+* [`Quantities.Information`](https://github.com/timjb/quantities/blob/master/Quantities/Information.idr): Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix), e.g. `mebi byte` for 1024^2 bytes.
+* [`Quantities.Screen`](https://github.com/timjb/quantities/blob/master/Quantities/Screen.idr): The quantity `ScreenLength` with the unit `pixel`. Useful for UI programming.
 
 
 ### Metric Prefixes
