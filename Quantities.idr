@@ -34,13 +34,12 @@ mkQuantity = mkFreeAbGrp
 infixl 6 <*>
 infixl 6 </>
 
-(<*>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
 -- Synonyms (quantites are multiplied, not added!)
 ||| Product quantity
+(<*>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
 (<*>) = (<+>)
-(</>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
 ||| Quotient quantity
-(</>) : StrictTotalOrder a po => FreeAbGrp a {po=po} -> FreeAbGrp a {po=po} -> FreeAbGrp a {po=po}
+(</>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
 (</>) = (<->)
 
 ||| Convert dimensions to quantities
@@ -134,7 +133,7 @@ joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
 defineAsMultipleOf : String -> Float -> Unit q -> ElemUnit q
 defineAsMultipleOf name factor unit = MkElemUnit name (factor * joinedConversionRate unit)
 
-||| Syntax sugar for defining new units
+-- Syntax sugar for defining new units
 syntax "< one" [name] equals [factor] [unit] ">" = defineAsMultipleOf name factor unit
 
 instance Show (Unit q) where
@@ -210,8 +209,8 @@ infixl 6 <**>,<//>
 (<//>) : Unit r -> Unit s -> Unit (r </> s)
 (<//>) a b = a <**> unitInverse b
 
-||| Numbers tagged with a unit
 infixl 5 =| -- sensible?
+||| Numbers tagged with a unit
 data Measurement : {q : Quantity} -> Unit q -> Type -> Type where
   (=|) : a -> (u : Unit q) -> Measurement u a
 
@@ -296,11 +295,11 @@ sqrt {q} {u} (x =| _) = (sqrt x) =| u
 
 ||| Round measurement to the next integer below
 floor : {q : Quantity} -> {u : Unit q} -> F u -> F u
-floor = map floor
+floor = map Data.Floats.floor
 
 ||| Round measurement to the next integer above
 ceiling : {q : Quantity} -> {u : Unit q} -> F u -> F u
-ceiling = map ceiling
+ceiling = map Data.Floats.ceiling
 
 ||| Convert measurements to a given unit
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
