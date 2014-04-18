@@ -23,9 +23,9 @@ hertz = second ^^ (-1)
 Hz : Unit Frequency
 Hz = hertz
 
-newton : Unit Force
-newton = (kilogram <**> meter) <//> (second ^^ 2)
-N : Unit Force
+newton : Unit Force'
+newton = ((meter <//> second) <//> second) <**> kilogram
+N : Unit Force'
 N = newton
 
 pascal : Unit Pressure
@@ -34,7 +34,7 @@ Pa : Unit Pressure
 Pa = pascal
 
 joule : Unit Energy
-joule = (kilogram <**> (meter ^^ 2)) <//> (second ^^ 2)
+joule = newton <**> meter
 J : Unit Energy
 J = joule
 
@@ -67,7 +67,7 @@ S : Unit ElectricConductance
 S = siemens
 
 weber : Unit MagneticFlux
-weber = volt <**> second
+weber = second <**> volt
 Wb : Unit MagneticFlux
 Wb = weber
 

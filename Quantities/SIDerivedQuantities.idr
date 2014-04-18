@@ -1,6 +1,5 @@
 module Quantities.SIDerivedQuantities
 
-import Quantities.FreeAbelianGroup
 import Quantities
 import Quantities.SIBaseQuantities
 
@@ -77,17 +76,17 @@ SolidAngle = scalar
 Frequency : Quantity
 Frequency = Time ^ (-1)
 
-Force : Quantity
-Force = Acceleration <*> Mass
+Force' : Quantity
+Force' = Acceleration <*> Mass
 
 Pressure : Quantity
-Pressure = Force </> Area
+Pressure = Force' </> Area
 
 Stress : Quantity
 Stress = Pressure
 
 Energy : Quantity
-Energy = Force <*> Length
+Energy = Force' <*> Length
 
 Work : Quantity
 Work = Energy
@@ -181,7 +180,7 @@ KinematicViscosity : Quantity
 KinematicViscosity = Area </> Time
 
 MomentOfForce : Quantity
-MomentOfForce = Force <*> Length
+MomentOfForce = Force' <*> Length
 
 Moment : Quantity
 Moment = MomentOfForce
@@ -190,7 +189,7 @@ Torque : Quantity
 Torque = MomentOfForce
 
 SurfaceTension : Quantity
-SurfaceTension = Force </> Length
+SurfaceTension = Force' </> Length
 
 AngularVelocity : Quantity
 AngularVelocity = PlaneAngle </> Time

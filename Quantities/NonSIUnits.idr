@@ -227,9 +227,9 @@ ly = lightYear
 erg : Unit Energy
 erg = ten ^^ -7 <**> joule
 
-dyne : Unit Force
+dyne : Unit Force'
 dyne = ten ^^ -5 <**> newton
-dyn : Unit Force
+dyn : Unit Force'
 dyn = dyne
 
 poise : Unit DynamicViscosity
