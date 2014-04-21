@@ -5,7 +5,6 @@ import Quantities.Power
 %default total
 %access public
 
-
 private
 mergeWithBy : (k -> k -> Ordering) -> (v -> v -> v) ->
               List (k, v) -> List (k, v) -> List (k, v)
@@ -80,21 +79,15 @@ lift : (Group g, Power g) => (a -> g) -> FreeAbGrp a -> g
 lift f (MkFreeAbGrp xs) = concatMap (\(x, i) => ((f x) ^ i)) xs
 
 inject_lift_lem : (Group g, Power g) => (f : a -> g) -> (x : a) -> lift f (inject x) = f x
-inject_lift_lem f x = believe_me (refl {lift f (inject x)})
+inject_lift_lem f x = really_believe_me (refl {lift f (inject x)})
 
 lift_power_lem : (Group g, Power g, Ord a) => (f : a -> g) -> (x : FreeAbGrp a) ->
                  (i : Integer) -> lift f (x ^ i) = lift f x ^ i
-lift_power_lem f x i = believe_me (refl {lift f (x ^ i)})
+lift_power_lem f x i = really_believe_me (refl {lift f (x ^ i)})
 
 lift_mult_lem : (Ord a, Group g, Power g) => (f : a -> g) -> (x : FreeAbGrp a) ->
                 (y : FreeAbGrp a) -> lift f (x <+> y) = lift f x <+> lift f y
-lift_mult_lem f x y = believe_me (refl {lift f (x <+> y)})
+lift_mult_lem f x y = really_believe_me (refl {lift f (x <+> y)})
 
 freeabgrppower_correct : (Ord a) => (x : FreeAbGrp a) -> (i : Integer) -> freeAbGrpPower x i = (^) x i
-freeabgrppower_correct x i = believe_me (refl {freeAbGrpPower x i})
-
-{-
-instance VerifiedMonoid Quantity where
-  monoidNeutralIsNeutralL l = ?neutralL --proof { compute; trivial; }
-  monoidNeutralIsNeutralR r = ?neutralR --proof { compute; trivial; }
--}
+freeabgrppower_correct x i = really_believe_me (refl {freeAbGrpPower x i})
