@@ -23,5 +23,5 @@ updatePlayerState dt (MkPlayerState xs ys xp yp) =
   let newYPos = yp <+> convert (ys |*| dt)
   in if newYPos <= (0 =| px)
        then MkPlayerState (0 =| pxs) (0 =| pxs) xp (0 =| px)
-       else MkPlayerState xs (ys <+> convert (gravity |*| dt))
-                          (xp <+> convert (xs |*| dt)) newYPos
+       else MkPlayerState xs (ys <+> gravity |*| dt)
+                          (xp <+> xs |*| dt) newYPos
