@@ -310,7 +310,7 @@ gravity = -800 =| (pxs <//> second)
 -- Update player position and speed after a given duration
 updatePlayerState : F second -> PlayerState -> PlayerState
 updatePlayerState dt (MkPlayerState xs ys xp yp) =
-  let newYPos = yp <+> convert (ys |*| dt)
+  let newYPos = yp <+> ys |*| dt
   in if newYPos <= (0 =| px)
        then MkPlayerState (0 =| pxs) (0 =| pxs) xp (0 =| px)
        else MkPlayerState xs (ys <+> gravity |*| dt)
