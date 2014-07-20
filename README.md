@@ -1,4 +1,4 @@
-# Quantities
+# Quantities [![Build Status](https://travis-ci.org/timjb/quantities.svg?branch=master)](https://travis-ci.org/timjb/quantities)
 
 Quantities is a library for type-safe physical computations and unit conversions in Idris.
 
