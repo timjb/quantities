@@ -1,0 +1,7 @@
+language: haskell
+
+install:
+  - cabal install idris
+
+script:
+  - idris --install quantities.ipkg
