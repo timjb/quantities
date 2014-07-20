@@ -1,2 +1,4 @@
 *.ibc
 .DS_Store
+.cabal-sandbox
+cabal.sandbox.config
