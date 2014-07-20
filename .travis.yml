@@ -5,3 +5,4 @@ install:
 
 script:
   - idris --install quantities.ipkg
+  - idris --check examples/Documentation.idr examples/Game.idr
