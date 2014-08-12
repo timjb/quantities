@@ -25,7 +25,7 @@ $ idris -p quantities yourprogram.idr
 
 Quantities are physical properties that you can measure. They include length, speed, pressure, electric resistance, etc. We can multiply and devide quantities to form new quantities:
 
-```haskell
+```idris
 Area : Quantity
 Area = Length <*> Length
 
@@ -46,7 +46,7 @@ Above we defined the quantities `Area`, `Speed`, `Volume` and `Frequency` in ter
 
 Of course, we can't derive all quantities from existing quantities, but have to start with some base quantities. The SI system of units defines `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `AmountOfSubstance` and `LuminousIntensity` as base quantities. We can declare them like this:
 
-```haskell
+```idris
 Length : Dimension
 Length = MkDimension "Length"
 
@@ -64,7 +64,7 @@ The `Quantity` data type is now defined as the [free abelian group](http://en.wi
 
 A unit represents a specific amount of a quantity. For example, we have
 
-```haskell
+```idris
 centimetre : Unit Length
 second : Unit Time
 ampere : Unit ElectricCurrent
@@ -73,7 +73,7 @@ newton : Unit Force
 
 Notice that units are indexed by the quantity they represent. Like with quantities, we can multiply and devide units to derive new units. But there is a catch: when we multiply two units, the resulting unit represents the product of their respective quantities. For example, when we multiply the unit centimetre with itself, we get a unit for area, since `Area = Length <*> Length`. Therefore, we have the functions
 
-```haskell
+```idris
 (<**>) : {q : Quantity} -> {r : Quantity} -> Unit q -> Unit r -> Unit (q <*> r)
 (<//>) : {q : Quantity} -> {r : Quantity} -> Unit q -> Unit r -> Unit (q </> r)
 (^^)   : {q : Quantity} -> Unit r -> (i : Integer) -> Unit (q ^ i)
@@ -81,7 +81,7 @@ Notice that units are indexed by the quantity they represent. Like with quantiti
 
 For example:
 
-```haskell
+```idris
 squareCentimetre : Unit Area
 squareCentimetre = centimetre <*> centimetre -- = centimetre ^^ 2
 
@@ -100,7 +100,7 @@ newton = (metre <**> kilogram) <//> (second ^^ 2)
 
 We have to start somewhere by defining some base units:
 
-```haskell
+```idris
 metre : ElemUnit Length
 metre = MkElemUnit "m" 1
 
@@ -119,7 +119,7 @@ These are called elementary units. The number at the end of `MkElemUnit` is the 
 
 Elementary units are not just a way to bootstrap the system of units; they can also be used to define other units, with some syntax sugar:
 
-```haskell
+```idris
 mile : ElemUnit Length
 mile = < one "mile" equals 1609.344 metre >
 
@@ -136,7 +136,7 @@ Units are defined as the free abelian group over elementary units, with the addi
 
 Elementary units are implicitly converted to units by the function
 
-```haskell
+```idris
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 ```
 
@@ -145,21 +145,21 @@ elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 
 Measurements are values tagged with a unit.
 
-```haskell
+```idris
 data Measurement : {q : Quantity} -> Unit q -> Type -> Type where
   (=|) : a -> (u : Unit q) -> Measurement u a
 ```
 
 Since `Measurement` is a bit long, there is a shorthand form: `u :| a` is the same as `Measurement u a`. For measurements with float values there is an even shorter alias:
 
-```haskell
+```idris
 F : Unit q -> Type
 F u = Measurement u Float
 ```
 
 For example:
 
-```haskell
+```idris
 distanceToMoon : F metre
 distanceToMoon = 384400000.0 =| metre
 ```
@@ -169,7 +169,7 @@ distanceToMoon = 384400000.0 =| metre
 
 Sometimes, a conversion isn't necessary. For example, the unit `newton` is definitionally equal to `(metre <**> kilogram) <//> (second ^^ 2)`, so you won't have to convert between these. But generally, you will need a conversion function.
 
-```haskell
+```idris
 distanceToMoonInMiles : F miles
 distanceToMoonInMiles = convertTo miles distanceToMoon
 
@@ -184,7 +184,7 @@ myAgeInDogYears = (19 =| year) `as` dogYear
 
 Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
 
-```haskell
+```idris
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
 convert   : {from : Unit q} -> {to : Unit q} -> F from -> F to
 as        : {from : Unit q} -> F from -> (to : Unit q) -> F to
@@ -195,7 +195,7 @@ as        : {from : Unit q} -> F from -> (to : Unit q) -> F to
 
 Let's say I've lifted a 5 kg weight from ground to a height of 2 metre in 0.8 seconds. What's the avarage power of this action?
 
-```haskell
+```idris
 weight : F kilogram
 weight = 2 =| kilogram
 
@@ -215,7 +215,7 @@ averagePower = convert $ (weight |*| height |*| g_0) |/| duration
 
 This example shows how to multiply measurements using the functions
 
-```haskell
+```idris
 (|*|) : Num a => {u : Unit q} -> {v : Unit r} -> u :| a -> v :| a -> (u <**> v) :| a
 (|/|) : {u : Unit q} -> {v : Unit r} -> F u -> F v -> F (u <//> v)
 (|^|) : {u : Unit q} -> F u -> (i : Integer) -> F (u ^^ i)
@@ -223,7 +223,7 @@ This example shows how to multiply measurements using the functions
 
 We can even use these functions to multiply measurements with scalar values:
 
-```haskell
+```idris
 energyConversionEfficiency : Float
 energyConversionEfficiency = 0.88
 
@@ -236,14 +236,14 @@ usedEnergy = convert $ energyConversionEfficiency |*| batteryCapacity
 
 We can add and subtract measurements, too, but only if they have the same unit:
 
-```haskell
+```idris
 (<+>) : Num a => Measurement u a -> Measurement u a -> Measurement u a
 (<->) : Num a => Measurement u a -> Measurement u a -> Measurement u a
 ```
 
 For example:
 
-```haskell
+```idris
 eatChocolateCake : F puppy -> F puppy
 eatChocolateCake x = x <+> (2 =| puppy)
 ```
@@ -272,7 +272,7 @@ Other quantities and units:
 
 All standard [SI prefixes](http://en.wikipedia.org/wiki/Metric_prefix) are supported. For example:
 
-```haskell
+```idris
 import Quantities.SIPrefixes
 
 microscopeResolution : F (nano metre)
@@ -287,7 +287,7 @@ performance = 3.1 =| (mega watt)
 
 A simple example that demonstrates how one could use quantities to implement simple movement with gravity in a game.
 
-```haskell
+```idris
 import Quantities
 import Quantities.SIBaseUnits
 import Quantities.Screen
