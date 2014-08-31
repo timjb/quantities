@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: Prelude.Algebra</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Algebra<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Algebra</h1><dl class="decls"><dt id="Prelude.Algebra.VerifiedSemigroup"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedSemigroup">VerifiedSemigroup</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.semigroupOpIsAssociative"><span class="name function" title="Prelude.Algebra.semigroupOpIsAssociative">semigroupOpIsAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedSemigroup" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedSemigroup">VerifiedSemigroup</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+(<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedRingWithUnity"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedRingWithUnity">VerifiedRingWithUnity</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.ringWithUnityIsUnityL"><span class="name function" title="Prelude.Algebra.ringWithUnityIsUnityL">ringWithUnityIsUnityL</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedRingWithUnity" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedRingWithUnity">VerifiedRingWithUnity</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<a class="function" title="Prelude.Algebra.unity" href="Prelude.Algebra.html#Prelude.Algebra.unity">unity</a> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span></span></dt><dd></dd><dt id="Prelude.Algebra.ringWithUnityIsUnityR"><span class="name function" title="Prelude.Algebra.ringWithUnityIsUnityR">ringWithUnityIsUnityR</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedRingWithUnity" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedRingWithUnity">VerifiedRingWithUnity</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.unity" href="Prelude.Algebra.html#Prelude.Algebra.unity">unity</a> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">r</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedRing"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedRing">VerifiedRing</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.ringOpIsAssociative"><span class="name function" title="Prelude.Algebra.ringOpIsAssociative">ringOpIsAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedRing" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedRing">VerifiedRing</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+(<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.Algebra.ringOpIsDistributiveL"><span class="name function" title="Prelude.Algebra.ringOpIsDistributiveL">ringOpIsDistributiveL</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedRing" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedRing">VerifiedRing</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+(<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+(<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span>)</span></dt><dd></dd><dt id="Prelude.Algebra.ringOpIsDistributiveR"><span class="name function" title="Prelude.Algebra.ringOpIsDistributiveR">ringOpIsDistributiveR</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedRing" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedRing">VerifiedRing</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+(<span class="boundvar" title="">c</span> <a class="function" title="Prelude.Algebra.&lt;*&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;*&gt;">&lt;*&gt;</a>
+<span class="boundvar" title="">r</span>)</span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedMonoid"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedMonoid">VerifiedMonoid</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.monoidNeutralIsNeutralL"><span class="name function" title="Prelude.Algebra.monoidNeutralIsNeutralL">monoidNeutralIsNeutralL</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedMonoid" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedMonoid">VerifiedMonoid</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<a class="function" title="Prelude.Algebra.neutral" href="Prelude.Algebra.html#Prelude.Algebra.neutral">neutral</a> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span></span></dt><dd></dd><dt id="Prelude.Algebra.monoidNeutralIsNeutralR"><span class="name function" title="Prelude.Algebra.monoidNeutralIsNeutralR">monoidNeutralIsNeutralR</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedMonoid" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedMonoid">VerifiedMonoid</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.neutral" href="Prelude.Algebra.html#Prelude.Algebra.neutral">neutral</a> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">r</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedMeetSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedMeetSemilattice">VerifiedMeetSemilattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.meetSemilatticeMeetIsAssociative"><span class="name function" title="Prelude.Algebra.meetSemilatticeMeetIsAssociative">meetSemilatticeMeetIsAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedMeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedMeetSemilattice">VerifiedMeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">l</span>
+(<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">c</span>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> (<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">c</span>)
+<span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.Algebra.meetSemilatticeMeetIsCommutative"><span class="name function" title="Prelude.Algebra.meetSemilatticeMeetIsCommutative">meetSemilatticeMeetIsCommutative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedMeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedMeetSemilattice">VerifiedMeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">r</span>
+<span class="boundvar" title="">l</span></span></dt><dd></dd><dt id="Prelude.Algebra.meetSemilatticeMeetIsIdempotent"><span class="name function" title="Prelude.Algebra.meetSemilatticeMeetIsIdempotent">meetSemilatticeMeetIsIdempotent</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedMeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedMeetSemilattice">VerifiedMeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">e</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">e</span>
+<span class="boundvar" title="">e</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">e</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedLattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedLattice">VerifiedLattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.latticeMeetAbsorbsJoin"><span class="name function" title="Prelude.Algebra.latticeMeetAbsorbsJoin">latticeMeetAbsorbsJoin</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedLattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedLattice">VerifiedLattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">l</span>
+(<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span></span></dt><dd></dd><dt id="Prelude.Algebra.latticeJoinAbsorbsMeet"><span class="name function" title="Prelude.Algebra.latticeJoinAbsorbsMeet">latticeJoinAbsorbsMeet</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedLattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedLattice">VerifiedLattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">l</span>
+(<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">l</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedJoinSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedJoinSemilattice">VerifiedJoinSemilattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.joinSemilatticeJoinIsAssociative"><span class="name function" title="Prelude.Algebra.joinSemilatticeJoinIsAssociative">joinSemilatticeJoinIsAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedJoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedJoinSemilattice">VerifiedJoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">c</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">l</span>
+(<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">c</span>
+<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> (<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">c</span>)
+<span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.Algebra.joinSemilatticeJoinIsCommutative"><span class="name function" title="Prelude.Algebra.joinSemilatticeJoinIsCommutative">joinSemilatticeJoinIsCommutative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedJoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedJoinSemilattice">VerifiedJoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">l</span>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">r</span>
+<span class="boundvar" title="">l</span></span></dt><dd></dd><dt id="Prelude.Algebra.joinSemilatticeJoinIsIdempotent"><span class="name function" title="Prelude.Algebra.joinSemilatticeJoinIsIdempotent">joinSemilatticeJoinIsIdempotent</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedJoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedJoinSemilattice">VerifiedJoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">e</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">e</span>
+<span class="boundvar" title="">e</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">e</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedGroup"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedGroup">VerifiedGroup</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.groupInverseIsInverseL"><span class="name function" title="Prelude.Algebra.groupInverseIsInverseL">groupInverseIsInverseL</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedGroup" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedGroup">VerifiedGroup</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<a class="function" title="Prelude.Algebra.inverse" href="Prelude.Algebra.html#Prelude.Algebra.inverse">inverse</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.neutral" href="Prelude.Algebra.html#Prelude.Algebra.neutral">neutral</a></span></dt><dd></dd><dt id="Prelude.Algebra.groupInverseIsInverseR"><span class="name function" title="Prelude.Algebra.groupInverseIsInverseR">groupInverseIsInverseR</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedGroup" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedGroup">VerifiedGroup</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.inverse" href="Prelude.Algebra.html#Prelude.Algebra.inverse">inverse</a> <span class="boundvar" title="">r</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.Algebra.neutral" href="Prelude.Algebra.html#Prelude.Algebra.neutral">neutral</a></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedBoundedMeetSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedBoundedMeetSemilattice">VerifiedBoundedMeetSemilattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.boundedMeetSemilatticeTopIsTop"><span class="name function" title="Prelude.Algebra.boundedMeetSemilatticeTopIsTop">boundedMeetSemilatticeTopIsTop</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedBoundedMeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedBoundedMeetSemilattice">VerifiedBoundedMeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">e</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.meet" href="Prelude.Algebra.html#Prelude.Algebra.meet">meet</a> <span class="boundvar" title="">e</span>
+<a class="function" title="Prelude.Algebra.top" href="Prelude.Algebra.html#Prelude.Algebra.top">top</a> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">e</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedBoundedLattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedBoundedLattice">VerifiedBoundedLattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"></dl></dd><dt id="Prelude.Algebra.VerifiedBoundedJoinSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedBoundedJoinSemilattice">VerifiedBoundedJoinSemilattice</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.boundedJoinSemilatticeBottomIsBottom"><span class="name function" title="Prelude.Algebra.boundedJoinSemilatticeBottomIsBottom">boundedJoinSemilatticeBottomIsBottom</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedBoundedJoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedBoundedJoinSemilattice">VerifiedBoundedJoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">e</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Algebra.join" href="Prelude.Algebra.html#Prelude.Algebra.join">join</a> <span class="boundvar" title="">e</span>
+<a class="function" title="Prelude.Algebra.bottom" href="Prelude.Algebra.html#Prelude.Algebra.bottom">bottom</a> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">e</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.VerifiedAbelianGroup"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.VerifiedAbelianGroup">VerifiedAbelianGroup</span><span class="signature">&nbsp;</span></dt><dd><dl class="decls"><dt id="Prelude.Algebra.abelianGroupOpIsCommutative"><span class="name function" title="Prelude.Algebra.abelianGroupOpIsCommutative">abelianGroupOpIsCommutative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.VerifiedAbelianGroup" href="Prelude.Algebra.html#Prelude.Algebra.VerifiedAbelianGroup">VerifiedAbelianGroup</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">l</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">r</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="boundvar" title="">l</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">r</span> <a class="function" title="Prelude.Algebra.&lt;+&gt;" href="Prelude.Algebra.html#Prelude.Algebra.&lt;+&gt;">&lt;+&gt;</a>
+<span class="boundvar" title="">l</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.Semigroup"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.Semigroup">Semigroup</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a single binary operation that is associative. Must<br />
+satisfy the following laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+</ul>
+<dl class="decls"><dt id="Prelude.Algebra.&lt;+&gt;"><span class="name function" title="Prelude.Algebra.&lt;+&gt;">(&lt;+&gt;)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.Semigroup" href="Prelude.Algebra.html#Prelude.Algebra.Semigroup">Semigroup</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixl 6">Left associative, precedence 6</dd></dl></dd></dl></dd><dt id="Prelude.Algebra.RingWithUnity"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.RingWithUnity">RingWithUnity</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with two binary operations, one associative and commutative<br />
+supplied with a neutral element, and the other associative supplied with a<br />
+neutral element, with distributivity laws relating the two operations. Must<br />
+satisfy the following laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+<li>Commutativity of <code>&lt;+&gt;</code>:<br />
+forall a b, a &lt;+&gt; b == b &lt;+&gt; a</li>
+<li>Neutral for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; neutral == a<br />
+forall a, neutral &lt;+&gt; a == a</li>
+<li>Inverse for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; inverse a == neutral<br />
+forall a, inverse a &lt;+&gt; a == neutral</li>
+<li>Associativity of `&lt;<em>&gt;a:<br />
+forall a b c, a &lt;</em>&gt; (b &lt;<em>&gt; c) == (a &lt;</em>&gt; b) &lt;*&gt; c</li>
+<li>Neutral for <code>&lt;*&gt;</code>:<br />
+forall a, a &lt;<em>&gt; unity == a<br />
+forall a, unity &lt;</em>&gt; a == a</li>
+<li>Distributivity of <code>&lt;*&gt;</code> and <code>&lt;-&gt;</code>:<br />
+forall a b c, a &lt;<em>&gt; (b &lt;+&gt; c) == (a &lt;</em>&gt; b) &lt;+&gt; (a &lt;<em>&gt; c)<br />
+forall a b c, (a &lt;+&gt; b) &lt;</em>&gt; c == (a &lt;<em>&gt; c) &lt;+&gt; (b &lt;</em>&gt; c)</li>
+</ul>
+<dl class="decls"><dt id="Prelude.Algebra.unity"><span class="name function" title="Prelude.Algebra.unity">unity</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.RingWithUnity" href="Prelude.Algebra.html#Prelude.Algebra.RingWithUnity">RingWithUnity</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.Ring"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.Ring">Ring</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with two binary operations, one associative and commutative<br />
+supplied with a neutral element, and the other associative, with<br />
+distributivity laws relating the two operations. Must satisfy the following<br />
+laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+<li>Commutativity of <code>&lt;+&gt;</code>:<br />
+forall a b, a &lt;+&gt; b == b &lt;+&gt; a</li>
+<li>Neutral for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; neutral == a<br />
+forall a, neutral &lt;+&gt; a == a</li>
+<li>Inverse for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; inverse a == neutral<br />
+forall a, inverse a &lt;+&gt; a == neutral</li>
+<li>Associativity of <code>&lt;*&gt;</code>:<br />
+forall a b c, a &lt;<em>&gt; (b &lt;</em>&gt; c) == (a &lt;<em>&gt; b) &lt;</em>&gt; c</li>
+<li>Distributivity of <code>&lt;*&gt;</code> and <code>&lt;-&gt;</code>:<br />
+forall a b c, a &lt;<em>&gt; (b &lt;+&gt; c) == (a &lt;</em>&gt; b) &lt;+&gt; (a &lt;<em>&gt; c)<br />
+forall a b c, (a &lt;+&gt; b) &lt;</em>&gt; c == (a &lt;<em>&gt; c) &lt;+&gt; (b &lt;</em>&gt; c)</li>
+</ul>
+<dl class="decls"><dt id="Prelude.Algebra.&lt;*&gt;"><span class="name function" title="Prelude.Algebra.&lt;*&gt;">(&lt;*&gt;)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.Ring" href="Prelude.Algebra.html#Prelude.Algebra.Ring">Ring</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixl 6">Left associative, precedence 6</dd></dl></dd></dl></dd><dt id="Prelude.Algebra.Monoid"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.Monoid">Monoid</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a single binary operation that is associative, along with<br />
+a neutral element for that binary operation. Must satisfy the following<br />
+laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+<li>Neutral for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; neutral == a<br />
+forall a, neutral &lt;+&gt; a == a</li>
+</ul>
+<dl class="decls"><dt id="Prelude.Algebra.neutral"><span class="name function" title="Prelude.Algebra.neutral">neutral</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.Monoid" href="Prelude.Algebra.html#Prelude.Algebra.Monoid">Monoid</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.MeetSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.MeetSemilattice">MeetSemilattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a binary operation that is commutative, associative and<br />
+idempotent. Must satisfy the following laws:</p>
+<ul>
+<li>Associativity of meet:<br />
+forall a b c, meet a (meet b c) == meet (meet a b) c</li>
+<li>Commutativity of meet:<br />
+forall a b, meet a b == meet b a</li>
+<li>Idempotency of meet:<br />
+forall a, meet a a == a</li>
+</ul>
+<p>Meet semilattices capture the notion of sets with a &quot;greatest lower bound&quot;.</p>
+<dl class="decls"><dt id="Prelude.Algebra.meet"><span class="name function" title="Prelude.Algebra.meet">meet</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.MeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.MeetSemilattice">MeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.Lattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.Lattice">Lattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with two binary operations that are both commutative,<br />
+associative and idempotent, along with absorbtion laws for relating the two<br />
+binary operations. Must satisfy the following:</p>
+<ul>
+<li>Associativity of meet and join:<br />
+forall a b c, meet a (meet b c) == meet (meet a b) c<br />
+forall a b c, join a (join b c) == join (join a b) c</li>
+<li>Commutativity of meet and join:<br />
+forall a b, meet a b == meet b a<br />
+forall a b, join a b == join b a</li>
+<li>Idempotency of meet and join:<br />
+forall a, meet a a == a<br />
+forall a, join a a == a</li>
+<li>Absorbtion laws for meet and join:<br />
+forall a b, meet a (join a b) == a<br />
+forall a b, join a (meet a b) == a</li>
+</ul>
+<dl class="decls"></dl></dd><dt id="Prelude.Algebra.JoinSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.JoinSemilattice">JoinSemilattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a binary operation that is commutative, associative and<br />
+idempotent. Must satisfy the following laws:</p>
+<ul>
+<li>Associativity of join:<br />
+forall a b c, join a (join b c) == join (join a b) c</li>
+<li>Commutativity of join:<br />
+forall a b, join a b == join b a</li>
+<li>Idempotency of join:<br />
+forall a, join a a == a</li>
+</ul>
+<p>Join semilattices capture the notion of sets with a &quot;least upper bound&quot;.</p>
+<dl class="decls"><dt id="Prelude.Algebra.join"><span class="name function" title="Prelude.Algebra.join">join</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.JoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.JoinSemilattice">JoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.Group"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.Group">Group</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a single binary operation that is associative, along with<br />
+a neutral element for that binary operation and inverses for all elements.<br />
+Must satisfy the following laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+<li>Neutral for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; neutral == a<br />
+forall a, neutral &lt;+&gt; a == a</li>
+<li>Inverse for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; inverse a == neutral<br />
+forall a, inverse a &lt;+&gt; a == neutral</li>
+</ul>
+<dl class="decls"><dt id="Prelude.Algebra.inverse"><span class="name function" title="Prelude.Algebra.inverse">inverse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.Group" href="Prelude.Algebra.html#Prelude.Algebra.Group">Group</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.BoundedMeetSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.BoundedMeetSemilattice">BoundedMeetSemilattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a binary operation that is commutative, associative and<br />
+idempotent and supplied with a unitary element. Must satisfy the following<br />
+laws:</p>
+<ul>
+<li>Associativity of meet:<br />
+forall a b c, meet a (meet b c) == meet (meet a b) c</li>
+<li>Commutativity of meet:<br />
+forall a b, meet a b == meet b a</li>
+<li>Idempotency of meet:<br />
+forall a, meet a a == a</li>
+<li>Top (Unitary Element):<br />
+forall a, meet a top == a</li>
+</ul>
+<p>Meet semilattices capture the notion of sets with a &quot;greatest lower bound&quot;<br />
+equipped with a &quot;top&quot; element.</p>
+<dl class="decls"><dt id="Prelude.Algebra.top"><span class="name function" title="Prelude.Algebra.top">top</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.BoundedMeetSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.BoundedMeetSemilattice">BoundedMeetSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.BoundedLattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.BoundedLattice">BoundedLattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with two binary operations that are both commutative,<br />
+associative and idempotent and supplied with neutral elements, along with<br />
+absorbtion laws for relating the two binary operations. Must satisfy the<br />
+following:</p>
+<ul>
+<li>Associativity of meet and join:<br />
+forall a b c, meet a (meet b c) == meet (meet a b) c<br />
+forall a b c, join a (join b c) == join (join a b) c</li>
+<li>Commutativity of meet and join:<br />
+forall a b, meet a b == meet b a<br />
+forall a b, join a b == join b a</li>
+<li>Idempotency of meet and join:<br />
+forall a, meet a a == a<br />
+forall a, join a a == a</li>
+<li>Absorbtion laws for meet and join:<br />
+forall a b, meet a (join a b) == a<br />
+forall a b, join a (meet a b) == a</li>
+<li>Neutral for meet and join:<br />
+forall a, meet a top == top<br />
+forall a, join a bottom == bottom</li>
+</ul>
+<dl class="decls"></dl></dd><dt id="Prelude.Algebra.BoundedJoinSemilattice"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.BoundedJoinSemilattice">BoundedJoinSemilattice</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a binary operation that is commutative, associative and<br />
+idempotent and supplied with a unitary element. Must satisfy the following<br />
+laws:</p>
+<ul>
+<li>Associativity of join:<br />
+forall a b c, join a (join b c) == join (join a b) c</li>
+<li>Commutativity of join:<br />
+forall a b, join a b == join b a</li>
+<li>Idempotency of join:<br />
+forall a, join a a == a</li>
+<li>Bottom (Unitary Element):<br />
+forall a, join a bottom == a</li>
+</ul>
+<p>Join semilattices capture the notion of sets with a &quot;least upper bound&quot;<br />
+equipped with a &quot;bottom&quot; element.</p>
+<dl class="decls"><dt id="Prelude.Algebra.bottom"><span class="name function" title="Prelude.Algebra.bottom">bottom</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.BoundedJoinSemilattice" href="Prelude.Algebra.html#Prelude.Algebra.BoundedJoinSemilattice">BoundedJoinSemilattice</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Algebra.AbelianGroup"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Algebra.AbelianGroup">AbelianGroup</span><span class="signature">&nbsp;</span></dt><dd><p>Sets equipped with a single binary operation that is associative and<br />
+commutative, along with a neutral element for that binary operation and<br />
+inverses for all elements. Must satisfy the following laws:</p>
+<ul>
+<li>Associativity of <code>&lt;+&gt;</code>:<br />
+forall a b c, a &lt;+&gt; (b &lt;+&gt; c) == (a &lt;+&gt; b) &lt;+&gt; c</li>
+<li>Commutativity of <code>&lt;+&gt;</code>:<br />
+forall a b, a &lt;+&gt; b == b &lt;+&gt; a</li>
+<li>Neutral for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; neutral == a<br />
+forall a, neutral &lt;+&gt; a == a</li>
+<li>Inverse for <code>&lt;+&gt;</code>:<br />
+forall a, a &lt;+&gt; inverse a == neutral<br />
+forall a, inverse a &lt;+&gt; a == neutral</li>
+</ul>
+<dl class="decls"></dl></dd><dt id="Prelude.Algebra.&lt;-&gt;"><span class="name function" title="Prelude.Algebra.&lt;-&gt;">(&lt;-&gt;)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Algebra.Group" href="Prelude.Algebra.html#Prelude.Algebra.Group">Group</a> <span class="implicit boundvar" title="">a</span> =>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixl 6">Left associative, precedence 6</dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

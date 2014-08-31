@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: Prelude.Stream</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Stream<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Stream</h1><dl class="decls"><dt id="Prelude.Stream.zipWith"><span class="name function" title="Prelude.Stream.zipWith">zipWith</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">c</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">c</span></span></dt><dd><p>Combine two streams element-wise using a function</p>
+</dd><dt id="Prelude.Stream.zip"><span class="name function" title="Prelude.Stream.zip">zip</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="type" title="">(</span><span class="implicit boundvar" title="">a</span><span class="type" title="">,</span>
+<span class="implicit boundvar" title="">b</span><span class="type" title="">)</span></span></dt><dd><p>Create a stream of pairs from two streams</p>
+</dd><dt id="Prelude.Stream.unzip"><span class="name function" title="Prelude.Stream.unzip">unzip</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="type" title="">(</span><span class="implicit boundvar" title="">a</span><span class="type" title="">,</span>
+<span class="implicit boundvar" title="">b</span><span class="type" title="">)</span> ->
+<span class="type" title="">(</span><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span><span class="type" title="">,</span>
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">b</span><span class="type" title="">)</span></span></dt><dd><p>Create a pair of streams from a stream of pairs</p>
+</dd><dt id="Prelude.Stream.take"><span class="name function" title="Prelude.Stream.take">take</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="how many elements to take">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+(<span class="documented boundvar" title="the stream">xs</span> : <a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Vect.Vect" href="Prelude.Vect.html#Prelude.Vect.Vect">Vect</a> <span class="documented boundvar" title="how many elements to take">n</span>
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Take precisely n elements from the stream</p>
+<dl><dt>n</dt><dd><p>how many elements to take</p>
+</dd><dt>xs</dt><dd><p>the stream</p>
+</dd></dl></dd><dt id="Prelude.Stream.tail"><span class="name function" title="Prelude.Stream.tail">tail</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>All but the first element</p>
+</dd><dt id="Prelude.Stream.scanr"><span class="name function" title="Prelude.Stream.scanr">scanr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the combining function">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<a class="function" title="Inf" href="[builtins].html#Inf">Inf</a> <span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+(<span class="documented boundvar" title="the Stream to fold up">xs</span> : <a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">b</span></span></dt><dd><p>Produce a Stream of (corecursive) right folds of tails of the given Stream</p>
+<dl><dt>f</dt><dd><p>the combining function</p>
+</dd><dt>xs</dt><dd><p>the Stream to fold up</p>
+</dd></dl></dd><dt id="Prelude.Stream.scanl"><span class="name function" title="Prelude.Stream.scanl">scanl</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the combining function">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the initial value">acc</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the Stream to process">xs</span> : <a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">b</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Produce a Stream of left folds of prefixes of the given Stream</p>
+<dl><dt>f</dt><dd><p>the combining function</p>
+</dd><dt>acc</dt><dd><p>the initial value</p>
+</dd><dt>xs</dt><dd><p>the Stream to process</p>
+</dd></dl></dd><dt id="Prelude.Stream.repeat"><span class="name function" title="Prelude.Stream.repeat">repeat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>An infinite stream of repetitions of the same thing</p>
+</dd><dt id="Prelude.Stream.iterate"><span class="name function" title="Prelude.Stream.iterate">iterate</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the function to iterate">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the initial value that will be the head of the stream">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Generate an infinite stream by repeatedly applying a function</p>
+<dl><dt>f</dt><dd><p>the function to iterate</p>
+</dd><dt>x</dt><dd><p>the initial value that will be the head of the stream</p>
+</dd></dl></dd><dt id="Prelude.Stream.index"><span class="name function" title="Prelude.Stream.index">index</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Get the nth element of a stream</p>
+</dd><dt id="Prelude.Stream.head"><span class="name function" title="Prelude.Stream.head">head</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>The first element of an infinite stream</p>
+</dd><dt id="Prelude.Stream.foldr"><span class="name function" title="Prelude.Stream.foldr">foldr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the combining function">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<a class="function" title="Inf" href="[builtins].html#Inf">Inf</a> <span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+(<span class="documented boundvar" title="the Stream to fold up">xs</span> : <a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Fold a Stream corecursively. Since there is no Nil, no initial value is used.</p>
+<dl><dt>f</dt><dd><p>the combining function</p>
+</dd><dt>xs</dt><dd><p>the Stream to fold up</p>
+</dd></dl></dd><dt id="Prelude.Stream.drop"><span class="name function" title="Prelude.Stream.drop">drop</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="how many elements to drop">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Drop the first n elements from the stream</p>
+<dl><dt>n</dt><dd><p>how many elements to drop</p>
+</dd></dl></dd><dt id="Prelude.Stream.diag"><span class="name function" title="Prelude.Stream.diag">diag</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> (<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Return the diagonal elements of a stream of streams</p>
+</dd><dt id="Prelude.Stream.cycle"><span class="name function" title="Prelude.Stream.cycle">cycle</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the sequence to repeat">xs</span> : <a class="type" title="Prelude.Vect.Vect" href="Prelude.Vect.html#Prelude.Vect.Vect">Vect</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="implicit boundvar" title="">n</span>)
+<span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Produce a Stream repeating a sequence</p>
+<dl><dt>xs</dt><dd><p>the sequence to repeat</p>
+</dd></dl></dd><dt id="Prelude.Stream.Stream"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Stream.Stream">Stream</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>An infinite stream</p>
+<dl class="decls"><dt id="Prelude.Stream.::"><span class="name constructor" title="Prelude.Stream.::">(::)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Lazy&#39;" href="[builtins].html#Lazy&#39;">Lazy&#39;</a> <a class="constructor" title="LazyCodata" href="[builtins].html#LazyCodata">LazyCodata</a>
+(<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixr 7">Left associative, precedence 7</dd></dl></dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

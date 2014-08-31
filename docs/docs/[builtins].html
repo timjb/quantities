@@ -1,0 +1,908 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: [builtins]</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: [builtins]<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>[builtins]</h1><dl class="decls"><dt id="~=~"><span class="name function" title="~=~">(~=~)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infix 5">Non-associative, precedence 5</dd></dl></dd><dt id="unsafePerformPrimIO"><span class="name " title="unsafePerformPrimIO">unsafePerformPrimIO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="unsafePerformIO"><span class="name function" title="unsafePerformIO">unsafePerformIO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="trans"><span class="name function" title="trans">trans</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">b</span>) ->
+(<span class="implicit boundvar" title="">b</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">c</span>) ->
+<span class="implicit boundvar" title="">a</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">c</span></span></dt><dd><p>Transitivity of propositional equality</p>
+</dd><dt id="trace_malloc"><span class="name function" title="trace_malloc">trace_malloc</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="sym"><span class="name function" title="sym">sym</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">r</span>) ->
+<span class="implicit boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">l</span></span></dt><dd><p>Symmetry of propositional equality</p>
+</dd><dt id="run__provider"><span class="name function" title="run__provider">run__provider</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="run__IO"><span class="name function" title="run__IO">run__IO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="type" title="">()</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="type" title="">()</span></span></dt><dd></dd><dt id="replace"><span class="name function" title="replace">replace</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">y</span>) ->
+<span class="implicit boundvar" title="">P</span> <span class="implicit boundvar" title="">x</span> ->
+<span class="implicit boundvar" title="">P</span> <span class="implicit boundvar" title="">y</span></span></dt><dd><p>Perform substitution in a term according to some equality.</p>
+<p>This is used by the <code>rewrite</code> tactic and term.</p>
+</dd><dt id="registerPtr"><span class="name function" title="registerPtr">registerPtr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="ManagedPtr">ManagedPtr</span></span></dt><dd></dd><dt id="really_believe_me"><span class="name function" title="really_believe_me">really_believe_me</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Subvert the type checker. This function <em>will</em> reduce in the type checker.<br />
+Use it with extreme care - it can result in segfaults or worse!</p>
+</dd><dt id="prim_lenString"><span class="name function" title="prim_lenString">prim_lenString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim_io_return"><span class="name function" title="prim_io_return">prim_io_return</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="prim_io_bind"><span class="name function" title="prim_io_bind">prim_io_bind</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span> ->
+(<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">b</span>) ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">b</span></span></dt><dd></dd><dt id="prim_fread"><span class="name function" title="prim_fread">prim_fread</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span> ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim_fork"><span class="name function" title="prim_fork">prim_fork</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="type" title="">()</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__zextInt_BigInt"><span class="name function" title="prim__zextInt_BigInt">prim__zextInt_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextInt_B64"><span class="name function" title="prim__zextInt_B64">prim__zextInt_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__zextInt_B32"><span class="name function" title="prim__zextInt_B32">prim__zextInt_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__zextInt_B16"><span class="name function" title="prim__zextInt_B16">prim__zextInt_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__zextChar_BigInt"><span class="name function" title="prim__zextChar_BigInt">prim__zextChar_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextB8_Int"><span class="name function" title="prim__zextB8_Int">prim__zextB8_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__zextB8_BigInt"><span class="name function" title="prim__zextB8_BigInt">prim__zextB8_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextB8_B64"><span class="name function" title="prim__zextB8_B64">prim__zextB8_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__zextB8_B32"><span class="name function" title="prim__zextB8_B32">prim__zextB8_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__zextB8_B16"><span class="name function" title="prim__zextB8_B16">prim__zextB8_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__zextB64_BigInt"><span class="name function" title="prim__zextB64_BigInt">prim__zextB64_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextB32_Int"><span class="name function" title="prim__zextB32_Int">prim__zextB32_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__zextB32_BigInt"><span class="name function" title="prim__zextB32_BigInt">prim__zextB32_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextB32_B64"><span class="name function" title="prim__zextB32_B64">prim__zextB32_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__zextB16_Int"><span class="name function" title="prim__zextB16_Int">prim__zextB16_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__zextB16_BigInt"><span class="name function" title="prim__zextB16_BigInt">prim__zextB16_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__zextB16_B64"><span class="name function" title="prim__zextB16_B64">prim__zextB16_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__zextB16_B32"><span class="name function" title="prim__zextB16_B32">prim__zextB16_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__xorInt"><span class="name function" title="prim__xorInt">prim__xorInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__xorChar"><span class="name function" title="prim__xorChar">prim__xorChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__xorBigInt"><span class="name function" title="prim__xorBigInt">prim__xorBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__xorB8x16"><span class="name function" title="prim__xorB8x16">prim__xorB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__xorB8"><span class="name function" title="prim__xorB8">prim__xorB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__xorB64x2"><span class="name function" title="prim__xorB64x2">prim__xorB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__xorB64"><span class="name function" title="prim__xorB64">prim__xorB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__xorB32x4"><span class="name function" title="prim__xorB32x4">prim__xorB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__xorB32"><span class="name function" title="prim__xorB32">prim__xorB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__xorB16x8"><span class="name function" title="prim__xorB16x8">prim__xorB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__xorB16"><span class="name function" title="prim__xorB16">prim__xorB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__vm"><span class="name function" title="prim__vm">prim__vm</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__uremInt"><span class="name function" title="prim__uremInt">prim__uremInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__uremChar"><span class="name function" title="prim__uremChar">prim__uremChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__uremBigInt"><span class="name function" title="prim__uremBigInt">prim__uremBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__uremB8x16"><span class="name function" title="prim__uremB8x16">prim__uremB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__uremB8"><span class="name function" title="prim__uremB8">prim__uremB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__uremB64x2"><span class="name function" title="prim__uremB64x2">prim__uremB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__uremB64"><span class="name function" title="prim__uremB64">prim__uremB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__uremB32x4"><span class="name function" title="prim__uremB32x4">prim__uremB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__uremB32"><span class="name function" title="prim__uremB32">prim__uremB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__uremB16x8"><span class="name function" title="prim__uremB16x8">prim__uremB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__uremB16"><span class="name function" title="prim__uremB16">prim__uremB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__updateB8x16"><span class="name function" title="prim__updateB8x16">prim__updateB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__updateB64x2"><span class="name function" title="prim__updateB64x2">prim__updateB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__updateB32x4"><span class="name function" title="prim__updateB32x4">prim__updateB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__updateB16x8"><span class="name function" title="prim__updateB16x8">prim__updateB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__udivInt"><span class="name function" title="prim__udivInt">prim__udivInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__udivChar"><span class="name function" title="prim__udivChar">prim__udivChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__udivBigInt"><span class="name function" title="prim__udivBigInt">prim__udivBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__udivB8x16"><span class="name function" title="prim__udivB8x16">prim__udivB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__udivB8"><span class="name function" title="prim__udivB8">prim__udivB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__udivB64x2"><span class="name function" title="prim__udivB64x2">prim__udivB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__udivB64"><span class="name function" title="prim__udivB64">prim__udivB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__udivB32x4"><span class="name function" title="prim__udivB32x4">prim__udivB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__udivB32"><span class="name function" title="prim__udivB32">prim__udivB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__udivB16x8"><span class="name function" title="prim__udivB16x8">prim__udivB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__udivB16"><span class="name function" title="prim__udivB16">prim__udivB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__truncInt_B8"><span class="name function" title="prim__truncInt_B8">prim__truncInt_B8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__truncInt_B64"><span class="name function" title="prim__truncInt_B64">prim__truncInt_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__truncInt_B32"><span class="name function" title="prim__truncInt_B32">prim__truncInt_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__truncInt_B16"><span class="name function" title="prim__truncInt_B16">prim__truncInt_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__truncBigInt_Int"><span class="name function" title="prim__truncBigInt_Int">prim__truncBigInt_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__truncBigInt_Char"><span class="name function" title="prim__truncBigInt_Char">prim__truncBigInt_Char</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__truncBigInt_B8"><span class="name function" title="prim__truncBigInt_B8">prim__truncBigInt_B8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__truncBigInt_B64"><span class="name function" title="prim__truncBigInt_B64">prim__truncBigInt_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__truncBigInt_B32"><span class="name function" title="prim__truncBigInt_B32">prim__truncBigInt_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__truncBigInt_B16"><span class="name function" title="prim__truncBigInt_B16">prim__truncBigInt_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__truncB64_Int"><span class="name function" title="prim__truncB64_Int">prim__truncB64_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__truncB64_B8"><span class="name function" title="prim__truncB64_B8">prim__truncB64_B8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__truncB64_B32"><span class="name function" title="prim__truncB64_B32">prim__truncB64_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__truncB64_B16"><span class="name function" title="prim__truncB64_B16">prim__truncB64_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__truncB32_Int"><span class="name function" title="prim__truncB32_Int">prim__truncB32_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__truncB32_B8"><span class="name function" title="prim__truncB32_B8">prim__truncB32_B8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__truncB32_B16"><span class="name function" title="prim__truncB32_B16">prim__truncB32_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__truncB16_Int"><span class="name function" title="prim__truncB16_Int">prim__truncB16_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__truncB16_B8"><span class="name function" title="prim__truncB16_B8">prim__truncB16_B8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__toStrInt"><span class="name function" title="prim__toStrInt">prim__toStrInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrChar"><span class="name function" title="prim__toStrChar">prim__toStrChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrBigInt"><span class="name function" title="prim__toStrBigInt">prim__toStrBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrB8"><span class="name function" title="prim__toStrB8">prim__toStrB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrB64"><span class="name function" title="prim__toStrB64">prim__toStrB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrB32"><span class="name function" title="prim__toStrB32">prim__toStrB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toStrB16"><span class="name function" title="prim__toStrB16">prim__toStrB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__toFloatInt"><span class="name function" title="prim__toFloatInt">prim__toFloatInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatChar"><span class="name function" title="prim__toFloatChar">prim__toFloatChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatBigInt"><span class="name function" title="prim__toFloatBigInt">prim__toFloatBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatB8"><span class="name function" title="prim__toFloatB8">prim__toFloatB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatB64"><span class="name function" title="prim__toFloatB64">prim__toFloatB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatB32"><span class="name function" title="prim__toFloatB32">prim__toFloatB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__toFloatB16"><span class="name function" title="prim__toFloatB16">prim__toFloatB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__systemInfo"><span class="name function" title="prim__systemInfo">prim__systemInfo</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__syntactic_eq"><span class="name function" title="prim__syntactic_eq">prim__syntactic_eq</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">y</span> : <span class="boundvar" title="">b</span>) ->
+<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> (<span class="boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">y</span>)</span></dt><dd></dd><dt id="prim__subInt"><span class="name function" title="prim__subInt">prim__subInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__subFloat"><span class="name function" title="prim__subFloat">prim__subFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__subChar"><span class="name function" title="prim__subChar">prim__subChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__subBigInt"><span class="name function" title="prim__subBigInt">prim__subBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__subB8x16"><span class="name function" title="prim__subB8x16">prim__subB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__subB8"><span class="name function" title="prim__subB8">prim__subB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__subB64x2"><span class="name function" title="prim__subB64x2">prim__subB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__subB64"><span class="name function" title="prim__subB64">prim__subB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__subB32x4"><span class="name function" title="prim__subB32x4">prim__subB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__subB32"><span class="name function" title="prim__subB32">prim__subB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__subB16x8"><span class="name function" title="prim__subB16x8">prim__subB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__subB16"><span class="name function" title="prim__subB16">prim__subB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__strToFloat"><span class="name function" title="prim__strToFloat">prim__strToFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__strTail"><span class="name function" title="prim__strTail">prim__strTail</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__strRev"><span class="name function" title="prim__strRev">prim__strRev</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__strIndex"><span class="name function" title="prim__strIndex">prim__strIndex</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__strHead"><span class="name function" title="prim__strHead">prim__strHead</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__strCons"><span class="name function" title="prim__strCons">prim__strCons</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__stdout"><span class="name function" title="prim__stdout">prim__stdout</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__stdin"><span class="name function" title="prim__stdin">prim__stdin</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__stderr"><span class="name function" title="prim__stderr">prim__stderr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__sremInt"><span class="name function" title="prim__sremInt">prim__sremInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sremChar"><span class="name function" title="prim__sremChar">prim__sremChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__sremBigInt"><span class="name function" title="prim__sremBigInt">prim__sremBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sremB8x16"><span class="name function" title="prim__sremB8x16">prim__sremB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__sremB8"><span class="name function" title="prim__sremB8">prim__sremB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__sremB64x2"><span class="name function" title="prim__sremB64x2">prim__sremB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__sremB64"><span class="name function" title="prim__sremB64">prim__sremB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sremB32x4"><span class="name function" title="prim__sremB32x4">prim__sremB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__sremB32"><span class="name function" title="prim__sremB32">prim__sremB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__sremB16x8"><span class="name function" title="prim__sremB16x8">prim__sremB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__sremB16"><span class="name function" title="prim__sremB16">prim__sremB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__slteInt"><span class="name function" title="prim__slteInt">prim__slteInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteFloat"><span class="name function" title="prim__slteFloat">prim__slteFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteChar"><span class="name function" title="prim__slteChar">prim__slteChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteBigInt"><span class="name function" title="prim__slteBigInt">prim__slteBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteB8x16"><span class="name function" title="prim__slteB8x16">prim__slteB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__slteB8"><span class="name function" title="prim__slteB8">prim__slteB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteB64x2"><span class="name function" title="prim__slteB64x2">prim__slteB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__slteB64"><span class="name function" title="prim__slteB64">prim__slteB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteB32x4"><span class="name function" title="prim__slteB32x4">prim__slteB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__slteB32"><span class="name function" title="prim__slteB32">prim__slteB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__slteB16x8"><span class="name function" title="prim__slteB16x8">prim__slteB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__slteB16"><span class="name function" title="prim__slteB16">prim__slteB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltInt"><span class="name function" title="prim__sltInt">prim__sltInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltFloat"><span class="name function" title="prim__sltFloat">prim__sltFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltChar"><span class="name function" title="prim__sltChar">prim__sltChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltBigInt"><span class="name function" title="prim__sltBigInt">prim__sltBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltB8x16"><span class="name function" title="prim__sltB8x16">prim__sltB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__sltB8"><span class="name function" title="prim__sltB8">prim__sltB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltB64x2"><span class="name function" title="prim__sltB64x2">prim__sltB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__sltB64"><span class="name function" title="prim__sltB64">prim__sltB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltB32x4"><span class="name function" title="prim__sltB32x4">prim__sltB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__sltB32"><span class="name function" title="prim__sltB32">prim__sltB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sltB16x8"><span class="name function" title="prim__sltB16x8">prim__sltB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__sltB16"><span class="name function" title="prim__sltB16">prim__sltB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__shlInt"><span class="name function" title="prim__shlInt">prim__shlInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__shlChar"><span class="name function" title="prim__shlChar">prim__shlChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__shlBigInt"><span class="name function" title="prim__shlBigInt">prim__shlBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__shlB8x16"><span class="name function" title="prim__shlB8x16">prim__shlB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__shlB8"><span class="name function" title="prim__shlB8">prim__shlB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__shlB64x2"><span class="name function" title="prim__shlB64x2">prim__shlB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__shlB64"><span class="name function" title="prim__shlB64">prim__shlB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__shlB32x4"><span class="name function" title="prim__shlB32x4">prim__shlB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__shlB32"><span class="name function" title="prim__shlB32">prim__shlB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__shlB16x8"><span class="name function" title="prim__shlB16x8">prim__shlB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__shlB16"><span class="name function" title="prim__shlB16">prim__shlB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__sgteInt"><span class="name function" title="prim__sgteInt">prim__sgteInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteFloat"><span class="name function" title="prim__sgteFloat">prim__sgteFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteChar"><span class="name function" title="prim__sgteChar">prim__sgteChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteBigInt"><span class="name function" title="prim__sgteBigInt">prim__sgteBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteB8x16"><span class="name function" title="prim__sgteB8x16">prim__sgteB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__sgteB8"><span class="name function" title="prim__sgteB8">prim__sgteB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteB64x2"><span class="name function" title="prim__sgteB64x2">prim__sgteB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__sgteB64"><span class="name function" title="prim__sgteB64">prim__sgteB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteB32x4"><span class="name function" title="prim__sgteB32x4">prim__sgteB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__sgteB32"><span class="name function" title="prim__sgteB32">prim__sgteB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgteB16x8"><span class="name function" title="prim__sgteB16x8">prim__sgteB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__sgteB16"><span class="name function" title="prim__sgteB16">prim__sgteB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtInt"><span class="name function" title="prim__sgtInt">prim__sgtInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtFloat"><span class="name function" title="prim__sgtFloat">prim__sgtFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtChar"><span class="name function" title="prim__sgtChar">prim__sgtChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtBigInt"><span class="name function" title="prim__sgtBigInt">prim__sgtBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtB8x16"><span class="name function" title="prim__sgtB8x16">prim__sgtB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__sgtB8"><span class="name function" title="prim__sgtB8">prim__sgtB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtB64x2"><span class="name function" title="prim__sgtB64x2">prim__sgtB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__sgtB64"><span class="name function" title="prim__sgtB64">prim__sgtB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtB32x4"><span class="name function" title="prim__sgtB32x4">prim__sgtB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__sgtB32"><span class="name function" title="prim__sgtB32">prim__sgtB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sgtB16x8"><span class="name function" title="prim__sgtB16x8">prim__sgtB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__sgtB16"><span class="name function" title="prim__sgtB16">prim__sgtB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sextInt_BigInt"><span class="name function" title="prim__sextInt_BigInt">prim__sextInt_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextInt_B64"><span class="name function" title="prim__sextInt_B64">prim__sextInt_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sextInt_B32"><span class="name function" title="prim__sextInt_B32">prim__sextInt_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__sextInt_B16"><span class="name function" title="prim__sextInt_B16">prim__sextInt_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__sextChar_BigInt"><span class="name function" title="prim__sextChar_BigInt">prim__sextChar_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextB8_Int"><span class="name function" title="prim__sextB8_Int">prim__sextB8_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sextB8_BigInt"><span class="name function" title="prim__sextB8_BigInt">prim__sextB8_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextB8_B64"><span class="name function" title="prim__sextB8_B64">prim__sextB8_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sextB8_B32"><span class="name function" title="prim__sextB8_B32">prim__sextB8_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__sextB8_B16"><span class="name function" title="prim__sextB8_B16">prim__sextB8_B16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__sextB64_BigInt"><span class="name function" title="prim__sextB64_BigInt">prim__sextB64_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextB32_Int"><span class="name function" title="prim__sextB32_Int">prim__sextB32_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sextB32_BigInt"><span class="name function" title="prim__sextB32_BigInt">prim__sextB32_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextB32_B64"><span class="name function" title="prim__sextB32_B64">prim__sextB32_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sextB16_Int"><span class="name function" title="prim__sextB16_Int">prim__sextB16_Int</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sextB16_BigInt"><span class="name function" title="prim__sextB16_BigInt">prim__sextB16_BigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sextB16_B64"><span class="name function" title="prim__sextB16_B64">prim__sextB16_B64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sextB16_B32"><span class="name function" title="prim__sextB16_B32">prim__sextB16_B32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__sdivInt"><span class="name function" title="prim__sdivInt">prim__sdivInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__sdivChar"><span class="name function" title="prim__sdivChar">prim__sdivChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__sdivBigInt"><span class="name function" title="prim__sdivBigInt">prim__sdivBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__sdivB8x16"><span class="name function" title="prim__sdivB8x16">prim__sdivB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__sdivB8"><span class="name function" title="prim__sdivB8">prim__sdivB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__sdivB64x2"><span class="name function" title="prim__sdivB64x2">prim__sdivB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__sdivB64"><span class="name function" title="prim__sdivB64">prim__sdivB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__sdivB32x4"><span class="name function" title="prim__sdivB32x4">prim__sdivB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__sdivB32"><span class="name function" title="prim__sdivB32">prim__sdivB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__sdivB16x8"><span class="name function" title="prim__sdivB16x8">prim__sdivB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__sdivB16"><span class="name function" title="prim__sdivB16">prim__sdivB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__registerPtr"><span class="name function" title="prim__registerPtr">prim__registerPtr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="ManagedPtr">ManagedPtr</span></span></dt><dd></dd><dt id="prim__readString"><span class="name function" title="prim__readString">prim__readString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__peekB8Native"><span class="name function" title="prim__peekB8Native">prim__peekB8Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__peekB8LE"><span class="name function" title="prim__peekB8LE">prim__peekB8LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__peekB8BE"><span class="name function" title="prim__peekB8BE">prim__peekB8BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__peekB64Native"><span class="name function" title="prim__peekB64Native">prim__peekB64Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__peekB64LE"><span class="name function" title="prim__peekB64LE">prim__peekB64LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__peekB64BE"><span class="name function" title="prim__peekB64BE">prim__peekB64BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__peekB32Native"><span class="name function" title="prim__peekB32Native">prim__peekB32Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__peekB32LE"><span class="name function" title="prim__peekB32LE">prim__peekB32LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__peekB32BE"><span class="name function" title="prim__peekB32BE">prim__peekB32BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__peekB16Native"><span class="name function" title="prim__peekB16Native">prim__peekB16Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__peekB16LE"><span class="name function" title="prim__peekB16LE">prim__peekB16LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__peekB16BE"><span class="name function" title="prim__peekB16BE">prim__peekB16BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__orInt"><span class="name function" title="prim__orInt">prim__orInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__orChar"><span class="name function" title="prim__orChar">prim__orChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__orBigInt"><span class="name function" title="prim__orBigInt">prim__orBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__orB8x16"><span class="name function" title="prim__orB8x16">prim__orB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__orB8"><span class="name function" title="prim__orB8">prim__orB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__orB64x2"><span class="name function" title="prim__orB64x2">prim__orB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__orB64"><span class="name function" title="prim__orB64">prim__orB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__orB32x4"><span class="name function" title="prim__orB32x4">prim__orB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__orB32"><span class="name function" title="prim__orB32">prim__orB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__orB16x8"><span class="name function" title="prim__orB16x8">prim__orB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__orB16"><span class="name function" title="prim__orB16">prim__orB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__null"><span class="name function" title="prim__null">prim__null</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="prim__mulInt"><span class="name function" title="prim__mulInt">prim__mulInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__mulFloat"><span class="name function" title="prim__mulFloat">prim__mulFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__mulChar"><span class="name function" title="prim__mulChar">prim__mulChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__mulBigInt"><span class="name function" title="prim__mulBigInt">prim__mulBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__mulB8x16"><span class="name function" title="prim__mulB8x16">prim__mulB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__mulB8"><span class="name function" title="prim__mulB8">prim__mulB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__mulB64x2"><span class="name function" title="prim__mulB64x2">prim__mulB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__mulB64"><span class="name function" title="prim__mulB64">prim__mulB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__mulB32x4"><span class="name function" title="prim__mulB32x4">prim__mulB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__mulB32"><span class="name function" title="prim__mulB32">prim__mulB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__mulB16x8"><span class="name function" title="prim__mulB16x8">prim__mulB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__mulB16"><span class="name function" title="prim__mulB16">prim__mulB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__mkB8x16"><span class="name function" title="prim__mkB8x16">prim__mkB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__mkB64x2"><span class="name function" title="prim__mkB64x2">prim__mkB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__mkB32x4"><span class="name function" title="prim__mkB32x4">prim__mkB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__mkB16x8"><span class="name function" title="prim__mkB16x8">prim__mkB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__lteChar"><span class="name function" title="prim__lteChar">prim__lteChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lteBigInt"><span class="name function" title="prim__lteBigInt">prim__lteBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lteB8x16"><span class="name function" title="prim__lteB8x16">prim__lteB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__lteB8"><span class="name function" title="prim__lteB8">prim__lteB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lteB64x2"><span class="name function" title="prim__lteB64x2">prim__lteB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__lteB64"><span class="name function" title="prim__lteB64">prim__lteB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lteB32x4"><span class="name function" title="prim__lteB32x4">prim__lteB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__lteB32"><span class="name function" title="prim__lteB32">prim__lteB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lteB16x8"><span class="name function" title="prim__lteB16x8">prim__lteB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__lteB16"><span class="name function" title="prim__lteB16">prim__lteB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltString"><span class="name function" title="prim__ltString">prim__ltString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltChar"><span class="name function" title="prim__ltChar">prim__ltChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltBigInt"><span class="name function" title="prim__ltBigInt">prim__ltBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltB8x16"><span class="name function" title="prim__ltB8x16">prim__ltB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__ltB8"><span class="name function" title="prim__ltB8">prim__ltB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltB64x2"><span class="name function" title="prim__ltB64x2">prim__ltB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__ltB64"><span class="name function" title="prim__ltB64">prim__ltB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltB32x4"><span class="name function" title="prim__ltB32x4">prim__ltB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__ltB32"><span class="name function" title="prim__ltB32">prim__ltB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ltB16x8"><span class="name function" title="prim__ltB16x8">prim__ltB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__ltB16"><span class="name function" title="prim__ltB16">prim__ltB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lshrInt"><span class="name function" title="prim__lshrInt">prim__lshrInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__lshrChar"><span class="name function" title="prim__lshrChar">prim__lshrChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__lshrBigInt"><span class="name function" title="prim__lshrBigInt">prim__lshrBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__lshrB8x16"><span class="name function" title="prim__lshrB8x16">prim__lshrB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__lshrB8"><span class="name function" title="prim__lshrB8">prim__lshrB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__lshrB64x2"><span class="name function" title="prim__lshrB64x2">prim__lshrB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__lshrB64"><span class="name function" title="prim__lshrB64">prim__lshrB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__lshrB32x4"><span class="name function" title="prim__lshrB32x4">prim__lshrB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__lshrB32"><span class="name function" title="prim__lshrB32">prim__lshrB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__lshrB16x8"><span class="name function" title="prim__lshrB16x8">prim__lshrB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__lshrB16"><span class="name function" title="prim__lshrB16">prim__lshrB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__intToChar"><span class="name function" title="prim__intToChar">prim__intToChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__indexB8x16"><span class="name function" title="prim__indexB8x16">prim__indexB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__indexB64x2"><span class="name function" title="prim__indexB64x2">prim__indexB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__indexB32x4"><span class="name function" title="prim__indexB32x4">prim__indexB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__indexB16x8"><span class="name function" title="prim__indexB16x8">prim__indexB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__gteChar"><span class="name function" title="prim__gteChar">prim__gteChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gteBigInt"><span class="name function" title="prim__gteBigInt">prim__gteBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gteB8x16"><span class="name function" title="prim__gteB8x16">prim__gteB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__gteB8"><span class="name function" title="prim__gteB8">prim__gteB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gteB64x2"><span class="name function" title="prim__gteB64x2">prim__gteB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__gteB64"><span class="name function" title="prim__gteB64">prim__gteB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gteB32x4"><span class="name function" title="prim__gteB32x4">prim__gteB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__gteB32"><span class="name function" title="prim__gteB32">prim__gteB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gteB16x8"><span class="name function" title="prim__gteB16x8">prim__gteB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__gteB16"><span class="name function" title="prim__gteB16">prim__gteB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtChar"><span class="name function" title="prim__gtChar">prim__gtChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtBigInt"><span class="name function" title="prim__gtBigInt">prim__gtBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtB8x16"><span class="name function" title="prim__gtB8x16">prim__gtB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__gtB8"><span class="name function" title="prim__gtB8">prim__gtB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtB64x2"><span class="name function" title="prim__gtB64x2">prim__gtB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__gtB64"><span class="name function" title="prim__gtB64">prim__gtB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtB32x4"><span class="name function" title="prim__gtB32x4">prim__gtB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__gtB32"><span class="name function" title="prim__gtB32">prim__gtB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__gtB16x8"><span class="name function" title="prim__gtB16x8">prim__gtB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__gtB16"><span class="name function" title="prim__gtB16">prim__gtB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__fromStrInt"><span class="name function" title="prim__fromStrInt">prim__fromStrInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__fromStrChar"><span class="name function" title="prim__fromStrChar">prim__fromStrChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__fromStrBigInt"><span class="name function" title="prim__fromStrBigInt">prim__fromStrBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__fromStrB8"><span class="name function" title="prim__fromStrB8">prim__fromStrB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__fromStrB64"><span class="name function" title="prim__fromStrB64">prim__fromStrB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__fromStrB32"><span class="name function" title="prim__fromStrB32">prim__fromStrB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__fromStrB16"><span class="name function" title="prim__fromStrB16">prim__fromStrB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__fromFloatInt"><span class="name function" title="prim__fromFloatInt">prim__fromFloatInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__fromFloatChar"><span class="name function" title="prim__fromFloatChar">prim__fromFloatChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__fromFloatBigInt"><span class="name function" title="prim__fromFloatBigInt">prim__fromFloatBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__fromFloatB8"><span class="name function" title="prim__fromFloatB8">prim__fromFloatB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__fromFloatB64"><span class="name function" title="prim__fromFloatB64">prim__fromFloatB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__fromFloatB32"><span class="name function" title="prim__fromFloatB32">prim__fromFloatB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__fromFloatB16"><span class="name function" title="prim__fromFloatB16">prim__fromFloatB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__floatToStr"><span class="name function" title="prim__floatToStr">prim__floatToStr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__floatTan"><span class="name function" title="prim__floatTan">prim__floatTan</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatSqrt"><span class="name function" title="prim__floatSqrt">prim__floatSqrt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatSin"><span class="name function" title="prim__floatSin">prim__floatSin</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatLog"><span class="name function" title="prim__floatLog">prim__floatLog</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatFloor"><span class="name function" title="prim__floatFloor">prim__floatFloor</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatExp"><span class="name function" title="prim__floatExp">prim__floatExp</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatCos"><span class="name function" title="prim__floatCos">prim__floatCos</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatCeil"><span class="name function" title="prim__floatCeil">prim__floatCeil</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatATan"><span class="name function" title="prim__floatATan">prim__floatATan</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatASin"><span class="name function" title="prim__floatASin">prim__floatASin</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__floatACos"><span class="name function" title="prim__floatACos">prim__floatACos</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__eqString"><span class="name function" title="prim__eqString">prim__eqString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqInt"><span class="name function" title="prim__eqInt">prim__eqInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqFloat"><span class="name function" title="prim__eqFloat">prim__eqFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqChar"><span class="name function" title="prim__eqChar">prim__eqChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqBigInt"><span class="name function" title="prim__eqBigInt">prim__eqBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqB8x16"><span class="name function" title="prim__eqB8x16">prim__eqB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__eqB8"><span class="name function" title="prim__eqB8">prim__eqB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqB64x2"><span class="name function" title="prim__eqB64x2">prim__eqB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__eqB64"><span class="name function" title="prim__eqB64">prim__eqB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqB32x4"><span class="name function" title="prim__eqB32x4">prim__eqB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__eqB32"><span class="name function" title="prim__eqB32">prim__eqB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__eqB16x8"><span class="name function" title="prim__eqB16x8">prim__eqB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__eqB16"><span class="name function" title="prim__eqB16">prim__eqB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__divFloat"><span class="name function" title="prim__divFloat">prim__divFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__concat"><span class="name function" title="prim__concat">prim__concat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="prim__complInt"><span class="name function" title="prim__complInt">prim__complInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__complChar"><span class="name function" title="prim__complChar">prim__complChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__complBigInt"><span class="name function" title="prim__complBigInt">prim__complBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__complB8x16"><span class="name function" title="prim__complB8x16">prim__complB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__complB8"><span class="name function" title="prim__complB8">prim__complB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__complB64x2"><span class="name function" title="prim__complB64x2">prim__complB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__complB64"><span class="name function" title="prim__complB64">prim__complB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__complB32x4"><span class="name function" title="prim__complB32x4">prim__complB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__complB32"><span class="name function" title="prim__complB32">prim__complB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__complB16x8"><span class="name function" title="prim__complB16x8">prim__complB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__complB16"><span class="name function" title="prim__complB16">prim__complB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__charToInt"><span class="name function" title="prim__charToInt">prim__charToInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__bitcastB8x16_B64x2"><span class="name function" title="prim__bitcastB8x16_B64x2">prim__bitcastB8x16_B64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__bitcastB8x16_B32x4"><span class="name function" title="prim__bitcastB8x16_B32x4">prim__bitcastB8x16_B32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__bitcastB8x16_B16x8"><span class="name function" title="prim__bitcastB8x16_B16x8">prim__bitcastB8x16_B16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__bitcastB64x2_B8x16"><span class="name function" title="prim__bitcastB64x2_B8x16">prim__bitcastB64x2_B8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__bitcastB64x2_B32x4"><span class="name function" title="prim__bitcastB64x2_B32x4">prim__bitcastB64x2_B32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__bitcastB64x2_B16x8"><span class="name function" title="prim__bitcastB64x2_B16x8">prim__bitcastB64x2_B16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__bitcastB32x4_B8x16"><span class="name function" title="prim__bitcastB32x4_B8x16">prim__bitcastB32x4_B8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__bitcastB32x4_B64x2"><span class="name function" title="prim__bitcastB32x4_B64x2">prim__bitcastB32x4_B64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__bitcastB32x4_B16x8"><span class="name function" title="prim__bitcastB32x4_B16x8">prim__bitcastB32x4_B16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__bitcastB16x8_B8x16"><span class="name function" title="prim__bitcastB16x8_B8x16">prim__bitcastB16x8_B8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__bitcastB16x8_B64x2"><span class="name function" title="prim__bitcastB16x8_B64x2">prim__bitcastB16x8_B64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__bitcastB16x8_B32x4"><span class="name function" title="prim__bitcastB16x8_B32x4">prim__bitcastB16x8_B32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__believe_me"><span class="name function" title="prim__believe_me">prim__believe_me</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
+<span class="boundvar" title="">b</span></span></dt><dd></dd><dt id="prim__ashrInt"><span class="name function" title="prim__ashrInt">prim__ashrInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__ashrChar"><span class="name function" title="prim__ashrChar">prim__ashrChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__ashrBigInt"><span class="name function" title="prim__ashrBigInt">prim__ashrBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__ashrB8x16"><span class="name function" title="prim__ashrB8x16">prim__ashrB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__ashrB8"><span class="name function" title="prim__ashrB8">prim__ashrB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__ashrB64x2"><span class="name function" title="prim__ashrB64x2">prim__ashrB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__ashrB64"><span class="name function" title="prim__ashrB64">prim__ashrB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__ashrB32x4"><span class="name function" title="prim__ashrB32x4">prim__ashrB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__ashrB32"><span class="name function" title="prim__ashrB32">prim__ashrB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__ashrB16x8"><span class="name function" title="prim__ashrB16x8">prim__ashrB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__ashrB16"><span class="name function" title="prim__ashrB16">prim__ashrB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__appendBuffer"><span class="name function" title="prim__appendBuffer">prim__appendBuffer</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB8Native"><span class="name function" title="prim__appendB8Native">prim__appendB8Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB8LE"><span class="name function" title="prim__appendB8LE">prim__appendB8LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB8BE"><span class="name function" title="prim__appendB8BE">prim__appendB8BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB64Native"><span class="name function" title="prim__appendB64Native">prim__appendB64Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB64LE"><span class="name function" title="prim__appendB64LE">prim__appendB64LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB64BE"><span class="name function" title="prim__appendB64BE">prim__appendB64BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB32Native"><span class="name function" title="prim__appendB32Native">prim__appendB32Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB32LE"><span class="name function" title="prim__appendB32LE">prim__appendB32LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB32BE"><span class="name function" title="prim__appendB32BE">prim__appendB32BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB16Native"><span class="name function" title="prim__appendB16Native">prim__appendB16Native</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB16LE"><span class="name function" title="prim__appendB16LE">prim__appendB16LE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__appendB16BE"><span class="name function" title="prim__appendB16BE">prim__appendB16BE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__andInt"><span class="name function" title="prim__andInt">prim__andInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__andChar"><span class="name function" title="prim__andChar">prim__andChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__andBigInt"><span class="name function" title="prim__andBigInt">prim__andBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__andB8x16"><span class="name function" title="prim__andB8x16">prim__andB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__andB8"><span class="name function" title="prim__andB8">prim__andB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__andB64x2"><span class="name function" title="prim__andB64x2">prim__andB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__andB64"><span class="name function" title="prim__andB64">prim__andB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__andB32x4"><span class="name function" title="prim__andB32x4">prim__andB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__andB32"><span class="name function" title="prim__andB32">prim__andB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__andB16x8"><span class="name function" title="prim__andB16x8">prim__andB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__andB16"><span class="name function" title="prim__andB16">prim__andB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="prim__allocate"><span class="name function" title="prim__allocate">prim__allocate</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="prim__UnsafeBuffer">prim__UnsafeBuffer</span></span></dt><dd></dd><dt id="prim__addInt"><span class="name function" title="prim__addInt">prim__addInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span> ->
+<span class="type" title="Int">Int</span></span></dt><dd></dd><dt id="prim__addFloat"><span class="name function" title="prim__addFloat">prim__addFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span> ->
+<span class="type" title="Float">Float</span></span></dt><dd></dd><dt id="prim__addChar"><span class="name function" title="prim__addChar">prim__addChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span> ->
+<span class="type" title="Char">Char</span></span></dt><dd></dd><dt id="prim__addBigInt"><span class="name function" title="prim__addBigInt">prim__addBigInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd></dd><dt id="prim__addB8x16"><span class="name function" title="prim__addB8x16">prim__addB8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span> ->
+<span class="type" title="Bits8x16">Bits8x16</span></span></dt><dd></dd><dt id="prim__addB8"><span class="name function" title="prim__addB8">prim__addB8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span> ->
+<span class="type" title="Bits8">Bits8</span></span></dt><dd></dd><dt id="prim__addB64x2"><span class="name function" title="prim__addB64x2">prim__addB64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span> ->
+<span class="type" title="Bits64x2">Bits64x2</span></span></dt><dd></dd><dt id="prim__addB64"><span class="name function" title="prim__addB64">prim__addB64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span> ->
+<span class="type" title="Bits64">Bits64</span></span></dt><dd></dd><dt id="prim__addB32x4"><span class="name function" title="prim__addB32x4">prim__addB32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span> ->
+<span class="type" title="Bits32x4">Bits32x4</span></span></dt><dd></dd><dt id="prim__addB32"><span class="name function" title="prim__addB32">prim__addB32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span> ->
+<span class="type" title="Bits32">Bits32</span></span></dt><dd></dd><dt id="prim__addB16x8"><span class="name function" title="prim__addB16x8">prim__addB16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span> ->
+<span class="type" title="Bits16x8">Bits16x8</span></span></dt><dd></dd><dt id="prim__addB16"><span class="name function" title="prim__addB16">prim__addB16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span> ->
+<span class="type" title="Bits16">Bits16</span></span></dt><dd></dd><dt id="par"><span class="name function" title="par">par</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="function" title="Lazy" href="[builtins].html#Lazy">Lazy</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="mkLazyForeignPrim"><span class="name " title="mkLazyForeignPrim">mkLazyForeignPrim</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Foreign" href="[builtins].html#Foreign">Foreign</a> <span class="implicit boundvar" title="">x</span> ->
+<span class="implicit boundvar" title="">x</span></span></dt><dd></dd><dt id="mkForeignPrim"><span class="name " title="mkForeignPrim">mkForeignPrim</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Foreign" href="[builtins].html#Foreign">Foreign</a> <span class="implicit boundvar" title="">x</span> ->
+<span class="implicit boundvar" title="">x</span></span></dt><dd></dd><dt id="malloc"><span class="name function" title="malloc">malloc</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Int">Int</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="liftPrimIO"><span class="name function" title="liftPrimIO">liftPrimIO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<a class="type" title="World" href="[builtins].html#World">World</a> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="io_return"><span class="name function" title="io_return">io_return</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="io_bind"><span class="name function" title="io_bind">io_bind</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span> ->
+(<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">b</span>) ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">b</span></span></dt><dd></dd><dt id="interpFTy"><span class="name function" title="interpFTy">interpFTy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Interpret an FFI type as the type of the Idris function that it will become</p>
+</dd><dt id="fork"><span class="name function" title="fork">fork</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="type" title="">()</span> ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="type" title="Ptr">Ptr</span></span></dt><dd></dd><dt id="forceGC"><span class="name function" title="forceGC">forceGC</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="type" title="">()</span></span></dt><dd></dd><dt id="believe_me"><span class="name function" title="believe_me">believe_me</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Subvert the type checker. This function is abstract, so it will not reduce in<br />
+the type checker. Use it with care - it can result in segfaults or worse!</p>
+</dd><dt id="assert_total"><span class="name function" title="assert_total">assert_total</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Assert to the totality checker than the given expression will always<br />
+terminate.</p>
+</dd><dt id="assert_smaller"><span class="name function" title="assert_smaller">assert_smaller</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the larger value (typically a pattern argument)">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the smaller value (typically an argument to a recursive call)">y</span> : <span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Assert to the totality checker than y is always structurally smaller than<br />
+x (which is typically a pattern argument)</p>
+<dl><dt>x</dt><dd><p>the larger value (typically a pattern argument)</p>
+</dd><dt>y</dt><dd><p>the smaller value (typically an argument to a recursive call)</p>
+</dd></dl></dd><dt id="__Elim"><span class="word">class&nbsp;</span><span class="name type" title="__Elim">__Elim</span><span class="signature">&nbsp;</span></dt><dd><p>Type class for eliminators</p>
+<dl class="decls"><dt id="__elimTy"><span class="name function" title="__elimTy">__elimTy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="__Elim" href="[builtins].html#__Elim">(__Elim)</a>
+<span class="implicit boundvar" title="">scrutineeType</span> =>
+<span class="type" title="Type">Type</span></span></dt><dd></dd><dt id="elim"><span class="name function" title="elim">elim</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="__Elim" href="[builtins].html#__Elim">(__Elim)</a>
+<span class="implicit boundvar" title="">scrutineeType</span> =>
+<a class="function" title="__elimTy" href="[builtins].html#__elimTy">(__elimTy)</a></span></dt><dd></dd></dl></dd><dt id="WorldRes"><span class="name function" title="WorldRes">WorldRes</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd></dd><dt id="World"><span class="word">data&nbsp;</span><span class="name type" title="World">World</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>A token representing the world, for use in <code>IO</code></p>
+<dl class="decls"><dt id="TheWorld"><span class="name constructor" title="TheWorld">TheWorld</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="World" href="[builtins].html#World">World</a></span></dt><dd></dd></dl></dd><dt id="Symbol_"><span class="word">data&nbsp;</span><span class="name type" title="Symbol_">Symbol_</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>For 'symbol syntax. 'foo becomes Symbol_ &quot;foo&quot;</p>
+<dl class="decls"></dl></dd><dt id="Sigma"><span class="word">data&nbsp;</span><span class="name type" title="Sigma">Sigma</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the witness">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="the type of the proof">P</span> : <span class="documented boundvar" title="the type of the witness">a</span> ->
+<span class="type" title="Type">Type</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Dependent pairs, in their internal representation</p>
+<dl><dt>a</dt><dd><p>the type of the witness</p>
+</dd><dt>P</dt><dd><p>the type of the proof</p>
+</dd></dl><dl class="decls"><dt id="Sg_intro"><span class="name constructor" title="Sg_intro">Sg_intro</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+(<span class="boundvar" title="">pf</span> : <span class="implicit boundvar" title="">P</span> <span class="boundvar" title="">x</span>) ->
+<a class="type" title="Sigma" href="[builtins].html#Sigma">Sigma</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">P</span></span></dt><dd></dd></dl></dd><dt id="PrimIO"><span class="word">data&nbsp;</span><span class="name type" title="PrimIO">PrimIO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Idris's primitive IO, for building abstractions on top of</p>
+<dl class="decls"><dt id="prim__IO"><span class="name constructor" title="prim__IO">prim__IO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="LazyType"><span class="word">data&nbsp;</span><span class="name type" title="LazyType">LazyType</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>There are two types of laziness: that arising from lazy functions, and that<br />
+arising from codata. They differ in their totality condition.</p>
+<dl class="decls"><dt id="LazyCodata"><span class="name constructor" title="LazyCodata">LazyCodata</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="LazyType" href="[builtins].html#LazyType">LazyType</a></span></dt><dd></dd><dt id="LazyEval"><span class="name constructor" title="LazyEval">LazyEval</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="LazyType" href="[builtins].html#LazyType">LazyType</a></span></dt><dd></dd></dl></dd><dt id="Lazy&#39;"><span class="word">data&nbsp;</span><span class="name type" title="Lazy&#39;">Lazy&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="LazyType" href="[builtins].html#LazyType">LazyType</a> ->
+<span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>The underlying implementation of Lazy and Inf.</p>
+<dl class="decls"><dt id="Delay"><span class="name constructor" title="Delay">Delay</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="a computation that will produce a value">val</span> : <span class="implicit documented boundvar" title="the type of the eventual value">a</span>) ->
+<a class="type" title="Lazy&#39;" href="[builtins].html#Lazy&#39;">Lazy&#39;</a> <span class="implicit documented boundvar" title="whether this is laziness from codata or normal lazy evaluation">t</span>
+<span class="implicit documented boundvar" title="the type of the eventual value">a</span></span></dt><dd><p>A delayed computation.</p>
+<p>Delay is inserted automatically by the elaborator where necessary.</p>
+<p>Note that compiled code gives <code>Delay</code> special semantics.</p>
+<dl><dt>t</dt><dd><p>whether this is laziness from codata or normal lazy evaluation</p>
+</dd><dt>a</dt><dd><p>the type of the eventual value</p>
+</dd><dt>val</dt><dd><p>a computation that will produce a value</p>
+</dd></dl></dd></dl></dd><dt id="Lazy"><span class="name function" title="Lazy">Lazy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Lazily evaluated values. This has special evaluation semantics.</p>
+</dd><dt id="IntTy"><span class="word">data&nbsp;</span><span class="name type" title="IntTy">IntTy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>Descriptions of the various sorts of Ints that Idris supports</p>
+<dl class="decls"><dt id="ITChar"><span class="name constructor" title="ITChar">ITChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="ITNative"><span class="name constructor" title="ITNative">ITNative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT8"><span class="name constructor" title="IT8">IT8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT16"><span class="name constructor" title="IT16">IT16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT32"><span class="name constructor" title="IT32">IT32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT64"><span class="name constructor" title="IT64">IT64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT8x16"><span class="name constructor" title="IT8x16">IT8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT16x8"><span class="name constructor" title="IT16x8">IT16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT32x4"><span class="name constructor" title="IT32x4">IT32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd><dt id="IT64x2"><span class="name constructor" title="IT64x2">IT64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a></span></dt><dd></dd></dl></dd><dt id="Inf"><span class="name function" title="Inf">Inf</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Recursive parameters to codata. Inserted automatically by the elaborator<br />
+on a &quot;codata&quot; definition but is necessary by hand if mixing inductive and<br />
+coinductive parameters.</p>
+</dd><dt id="IO"><span class="word">data&nbsp;</span><span class="name type" title="IO">IO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><dl class="decls"><dt id="MkIO"><span class="name constructor" title="MkIO">MkIO</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<a class="type" title="World" href="[builtins].html#World">World</a> ->
+<a class="type" title="PrimIO" href="[builtins].html#PrimIO">PrimIO</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="IO" href="[builtins].html#IO">IO</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd></dl></dd><dt id="ForeignTy"><span class="name function" title="ForeignTy">ForeignTy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the argument types">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="FTy" href="[builtins].html#FTy">FTy</a>) ->
+(<span class="documented boundvar" title="the return type">t</span> : <a class="type" title="FTy" href="[builtins].html#FTy">FTy</a>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Type signatures for foreign functions</p>
+<dl><dt>xs</dt><dd><p>the argument types</p>
+</dd><dt>t</dt><dd><p>the return type</p>
+</dd></dl></dd><dt id="Foreign"><span class="word">data&nbsp;</span><span class="name type" title="Foreign">Foreign</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><dl class="decls"><dt id="FFun"><span class="name constructor" title="FFun">FFun</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="String">String</span> ->
+(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="FTy" href="[builtins].html#FTy">FTy</a>) ->
+(<span class="boundvar" title="">t</span> : <a class="type" title="FTy" href="[builtins].html#FTy">FTy</a>) ->
+<a class="type" title="Foreign" href="[builtins].html#Foreign">Foreign</a> (<a class="function" title="ForeignTy" href="[builtins].html#ForeignTy">ForeignTy</a> <span class="boundvar" title="">xs</span>
+<span class="boundvar" title="">t</span>)</span></dt><dd></dd></dl></dd><dt id="Force"><span class="name function" title="Force">Force</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Lazy&#39;" href="[builtins].html#Lazy&#39;">Lazy&#39;</a> <span class="implicit boundvar" title="">t</span>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Compute a value from a delayed computation.</p>
+<p>Inserted by the elaborator where necessary.</p>
+</dd><dt id="FalseElim"><span class="name " title="FalseElim">FalseElim</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="">_|_</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>The eliminator for the empty type.</p>
+</dd><dt id="FTy"><span class="word">data&nbsp;</span><span class="name type" title="FTy">FTy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>Types available for foreign function calls</p>
+<dl class="decls"><dt id="FIntT"><span class="name constructor" title="FIntT">FIntT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="IntTy" href="[builtins].html#IntTy">IntTy</a> ->
+<a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FFunction"><span class="name constructor" title="FFunction">FFunction</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a> ->
+<a class="type" title="FTy" href="[builtins].html#FTy">FTy</a> ->
+<a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FFloat"><span class="name constructor" title="FFloat">FFloat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FString"><span class="name constructor" title="FString">FString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FPtr"><span class="name constructor" title="FPtr">FPtr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FManagedPtr"><span class="name constructor" title="FManagedPtr">FManagedPtr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FAny"><span class="name constructor" title="FAny">FAny</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FUnit"><span class="name constructor" title="FUnit">FUnit</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd></dl></dd><dt id="FShort"><span class="name function" title="FShort">FShort</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FLong"><span class="name function" title="FLong">FLong</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FInt"><span class="name function" title="FInt">FInt</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FChar"><span class="name function" title="FChar">FChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FByte"><span class="name function" title="FByte">FByte</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits8x16"><span class="name function" title="FBits8x16">FBits8x16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits8"><span class="name function" title="FBits8">FBits8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits64x2"><span class="name function" title="FBits64x2">FBits64x2</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits64"><span class="name function" title="FBits64">FBits64</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits32x4"><span class="name function" title="FBits32x4">FBits32x4</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits32"><span class="name function" title="FBits32">FBits32</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits16x8"><span class="name function" title="FBits16x8">FBits16x8</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="FBits16"><span class="name function" title="FBits16">FBits16</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="FTy" href="[builtins].html#FTy">FTy</a></span></dt><dd></dd><dt id="="><span class="word">data&nbsp;</span><span class="name type" title="=">(=)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <span class="implicit documented boundvar" title="the type of the left side of the equality">A</span>) ->
+(<span class="boundvar" title="">y</span> : <span class="implicit documented boundvar" title="the type of the right side of the equality">B</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>The propositional equality type. A proof that <code>x</code> = <code>y</code>.</p>
+<p>To use such a proof, pattern-match on it, and the two equal things will then need to be the <em>same</em> pattern.</p>
+<p><strong>Note</strong>: Idris's equality type is <em>heterogeneous</em>, which means that it is possible to state equalities between values of potentially different types. This is sometimes referred to in the literature as &quot;John Major&quot; equality.</p>
+<p>Thus, if Idris can't infer the type of one side of the equality, then you may need to annotate it. See the function <code>the</code>.</p>
+<dl><dt>A</dt><dd><p>the type of the left side of the equality</p>
+</dd><dt>B</dt><dd><p>the type of the right side of the equality</p>
+</dd></dl><dl class="decls"><dt id="refl"><span class="name constructor" title="refl">refl</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit documented boundvar" title="the element shown to be equal to itself.">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit documented boundvar" title="the element shown to be equal to itself.">x</span></span></dt><dd><p>A proof that <code>x</code> in fact equals <code>x</code>. To construct this, you must have already shown that both sides are in fact equal.</p>
+<dl><dt>A</dt><dd><p>the type at which the equality is proven</p>
+</dd><dt>x</dt><dd><p>the element shown to be equal to itself.</p>
+</dd></dl></dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

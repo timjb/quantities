@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: Prelude.Basics</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Basics<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Basics</h1><dl class="decls"><dt id="Prelude.Basics.the"><span class="name function" title="Prelude.Basics.the">the</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type to assign">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="the element to get the type">x</span> : <span class="documented boundvar" title="the type to assign">a</span>) ->
+<span class="documented boundvar" title="the type to assign">a</span></span></dt><dd><p>Manually assign a type to an expression.</p>
+<dl><dt>a</dt><dd><p>the type to assign</p>
+</dd><dt>x</dt><dd><p>the element to get the type</p>
+</dd></dl></dd><dt id="Prelude.Basics.snd"><span class="name function" title="Prelude.Basics.snd">snd</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="">(</span><span class="implicit boundvar" title="">a</span><span class="type" title="">,</span>
+<span class="implicit boundvar" title="">b</span><span class="type" title="">)</span> ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Return the second element of a pair.</p>
+</dd><dt id="Prelude.Basics.id"><span class="name function" title="Prelude.Basics.id">id</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Identity function.</p>
+</dd><dt id="Prelude.Basics.fst"><span class="name function" title="Prelude.Basics.fst">fst</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="">(</span><span class="implicit boundvar" title="">s</span><span class="type" title="">,</span>
+<span class="implicit boundvar" title="">t</span><span class="type" title="">)</span> ->
+<span class="implicit boundvar" title="">s</span></span></dt><dd><p>Return the first element of a pair.</p>
+</dd><dt id="Prelude.Basics.flip"><span class="name function" title="Prelude.Basics.flip">flip</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the function to flip">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">c</span>) ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">c</span></span></dt><dd><p>Takes in the first two arguments in reverse order.</p>
+<dl><dt>f</dt><dd><p>the function to flip</p>
+</dd></dl></dd><dt id="Prelude.Basics.const"><span class="name function" title="Prelude.Basics.const">const</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Constant function. Ignores its second argument.</p>
+</dd><dt id="Prelude.Basics.cong"><span class="name function" title="Prelude.Basics.cong">cong</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">f</span> <span class="implicit boundvar" title="">a</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">f</span> <span class="implicit boundvar" title="">b</span></span></dt><dd><p>Equality is a congruence.</p>
+</dd><dt id="Prelude.Basics.apply"><span class="name function" title="Prelude.Basics.apply">apply</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Function application.</p>
+</dd><dt id="Prelude.Basics.Not"><span class="name function" title="Prelude.Basics.Not">Not</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd></dd><dt id="Prelude.Basics.Dec"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Basics.Dec">Dec</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Decidability. A decidable property either holds or is a contradiction.</p>
+<dl class="decls"><dt id="Prelude.Basics.Yes"><span class="name constructor" title="Prelude.Basics.Yes">Yes</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the proof">prf</span> : <span class="implicit boundvar" title="">A</span>) ->
+<a class="type" title="Prelude.Basics.Dec" href="Prelude.Basics.html#Prelude.Basics.Dec">Dec</a> <span class="implicit boundvar" title="">A</span></span></dt><dd><p>The case where the property holds</p>
+<dl><dt>prf</dt><dd><p>the proof</p>
+</dd></dl></dd><dt id="Prelude.Basics.No"><span class="name constructor" title="Prelude.Basics.No">No</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="a demonstration that A would be a contradiction">contra</span> : <span class="implicit boundvar" title="">A</span> ->
+<span class="type" title="">_|_</span>) ->
+<a class="type" title="Prelude.Basics.Dec" href="Prelude.Basics.html#Prelude.Basics.Dec">Dec</a> <span class="implicit boundvar" title="">A</span></span></dt><dd><p>The case where the property holding would be a contradiction</p>
+<dl><dt>contra</dt><dd><p>a demonstration that A would be a contradiction</p>
+</dd></dl></dd></dl></dd><dt id="Prelude.Basics.."><span class="name function" title="Prelude.Basics..">(.)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">c</span>) ->
+(<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">c</span></span></dt><dd><p>Function composition</p>
+<dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixl 9">Left associative, precedence 9</dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

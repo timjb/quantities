@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: Prelude.Either</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Either<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Either</h1><dl class="decls"><dt id="Prelude.Either.rights"><span class="name function" title="Prelude.Either.rights">rights</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span>) ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span></span></dt><dd><p>Keep the payloads of all Right constructors in a list of Eithers</p>
+</dd><dt id="Prelude.Either.rightInjective"><span class="name function" title="Prelude.Either.rightInjective">rightInjective</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<a class="constructor" title="Prelude.Either.Right" href="Prelude.Either.html#Prelude.Either.Right">Right</a> <span class="implicit boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="constructor" title="Prelude.Either.Right" href="Prelude.Either.html#Prelude.Either.Right">Right</a> <span class="implicit boundvar" title="">y</span>) ->
+<span class="implicit boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">y</span></span></dt><dd><p>Right is injective</p>
+</dd><dt id="Prelude.Either.partitionEithers"><span class="name function" title="Prelude.Either.partitionEithers">partitionEithers</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="type" title="">(</span><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span><span class="type" title="">,</span>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span><span class="type" title="">)</span></span></dt><dd><p>Split a list of Eithers into a list of the left elements and a list of the right elements</p>
+</dd><dt id="Prelude.Either.maybeToEither"><span class="name function" title="Prelude.Either.maybeToEither">maybeToEither</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">def</span> : <a class="function" title="Lazy" href="[builtins].html#Lazy">Lazy</a> <span class="implicit documented boundvar" title="the default value">e</span>) ->
+<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit documented boundvar" title="the default value">e</span>
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Convert a Maybe to an Either by using a default value in case of Nothing</p>
+<dl><dt>e</dt><dd><p>the default value</p>
+</dd></dl></dd><dt id="Prelude.Either.lefts"><span class="name function" title="Prelude.Either.lefts">lefts</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span>) ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Keep the payloads of all Left constructors in a list of Eithers</p>
+</dd><dt id="Prelude.Either.leftInjective"><span class="name function" title="Prelude.Either.leftInjective">leftInjective</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<a class="constructor" title="Prelude.Either.Left" href="Prelude.Either.html#Prelude.Either.Left">Left</a> <span class="implicit boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="constructor" title="Prelude.Either.Left" href="Prelude.Either.html#Prelude.Either.Left">Left</a> <span class="implicit boundvar" title="">y</span>) ->
+<span class="implicit boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="implicit boundvar" title="">y</span></span></dt><dd><p>Left is injective</p>
+</dd><dt id="Prelude.Either.isRight"><span class="name function" title="Prelude.Either.isRight">isRight</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>True if the argument is Right, False otherwise</p>
+</dd><dt id="Prelude.Either.isLeft"><span class="name function" title="Prelude.Either.isLeft">isLeft</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>True if the argument is Left, False otherwise</p>
+</dd><dt id="Prelude.Either.fromEither"><span class="name function" title="Prelude.Either.fromEither">fromEither</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span></span></dt><dd><p>Remove a &quot;useless&quot; Either by collapsing the case distinction</p>
+</dd><dt id="Prelude.Either.either"><span class="name function" title="Prelude.Either.either">either</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the action to take on Left">f</span> : <a class="function" title="Lazy" href="[builtins].html#Lazy">Lazy</a> (<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">c</span>)) ->
+(<span class="documented boundvar" title="the action to take on Right">g</span> : <a class="function" title="Lazy" href="[builtins].html#Lazy">Lazy</a> (<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">c</span>)) ->
+(<span class="documented boundvar" title="the sum to analyze">e</span> : <a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">c</span></span></dt><dd><p>Simply-typed eliminator for Either</p>
+<dl><dt>f</dt><dd><p>the action to take on Left</p>
+</dd><dt>g</dt><dd><p>the action to take on Right</p>
+</dd><dt>e</dt><dd><p>the sum to analyze</p>
+</dd></dl></dd><dt id="Prelude.Either.choose"><span class="name function" title="Prelude.Either.choose">choose</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">b</span> : <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
+<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> (<a class="type" title="Prelude.Bool.so" href="Prelude.Bool.html#Prelude.Bool.so">so</a> <span class="boundvar" title="">b</span>)
+(<a class="type" title="Prelude.Bool.so" href="Prelude.Bool.html#Prelude.Bool.so">so</a> (<a class="function" title="Prelude.Bool.not" href="Prelude.Bool.html#Prelude.Bool.not">not</a> <span class="boundvar" title="">b</span>))</span></dt><dd><p>Perform a case analysis on a Boolean, providing clients with a <code>so</code> proof</p>
+</dd><dt id="Prelude.Either.Either"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Either.Either">Either</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>A sum type</p>
+<dl class="decls"><dt id="Prelude.Either.Left"><span class="name constructor" title="Prelude.Either.Left">Left</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>One possibility of the sum, conventionally used to represent errors</p>
+</dd><dt id="Prelude.Either.Right"><span class="name constructor" title="Prelude.Either.Right">Right</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.Either.Either" href="Prelude.Either.html#Prelude.Either.Either">Either</a> <span class="implicit boundvar" title="">a</span>
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>The other possibility, conventionally used to represent success</p>
+</dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>
