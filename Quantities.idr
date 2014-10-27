@@ -237,10 +237,10 @@ instance Num a => Semigroup (Measurement {q} u a) where
 instance Num a => Monoid (Measurement {q} u a) where
   neutral = fromInteger 0 =| u
 
-instance Num a => Group (Measurement {q} u a) where
+instance (Neg a, Num a) => Group (Measurement {q} u a) where
   inverse (x =| _) = (-x) =| u
 
-instance Num a => AbelianGroup (Measurement {q} u a) where
+instance (Neg a, Num a) => AbelianGroup (Measurement {q} u a) where
 
 ||| Pretty-print a measurement (using only ASCII characters)
 showMeasurement : Show a => {q : Quantity} -> {u : Unit q} ->
