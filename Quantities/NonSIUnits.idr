@@ -1,9 +1,12 @@
 module Quantities.NonSIUnits
 
 import Quantities
+import Quantities.SIBaseQuantities
+import Quantities.SIDerivedQuantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits
 import Quantities.SIDerivedUnits
+import Data.Floats
 
 %default total
 %access public

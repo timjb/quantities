@@ -1,7 +1,9 @@
 module Quantities.Screen
 
 import Quantities
+import Quantities.SIBaseQuantities
 import Quantities.ImperialUnits
+import Quantities.SIBaseUnits
 
 ScreenLength : Dimension
 ScreenLength = MkDimension "ScreenLength"

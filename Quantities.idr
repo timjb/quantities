@@ -1,6 +1,7 @@
 module Quantities
 
-import Quantities.FreeAbelianGroup
+import public Quantities.FreeAbelianGroup
+import public Quantities.Power
 import Data.Floats
 
 %default total

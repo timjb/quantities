@@ -19,7 +19,7 @@ To use it in your program, run Idris with
 $ idris -p quantities yourprogram.idr
 ```
 
-Compatibility: Requires Idris >= 0.9.15.1.
+Compatibility: Requires Idris >= 0.9.16.
 
 ## Documentation
 
@@ -180,8 +180,7 @@ dogYear : ElemUnit Time
 dogYear = < one "dy" equals 52 day >
 
 myAgeInDogYears : F dogYear
-myAgeInDogYears = (19 =| year) `as` dogYear
--- = 133.46 dy
+myAgeInDogYears = (20 =| year) `as` dogYear
 ```
 
 Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
@@ -195,7 +194,7 @@ as        : {from : Unit q} -> F from -> (to : Unit q) -> F to
 
 ### Calculations with measurements
 
-Let's say I've lifted a 5 kg weight from ground to a height of 2 metre in 0.8 seconds. What's the avarage power of this action?
+Let's say I've lifted a 5 kg weight from ground to a height of 2 metre in 0.8 seconds. What's the average power of this action?
 
 ```idris
 weight : F kilogram
