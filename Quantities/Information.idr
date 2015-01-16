@@ -1,6 +1,6 @@
 module Quantities.Information
 
-import Quantities
+import Quantities.Core
 
 Information : Dimension
 Information = MkDimension "Information"

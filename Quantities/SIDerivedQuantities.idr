@@ -1,6 +1,6 @@
 module Quantities.SIDerivedQuantities
 
-import Quantities
+import Quantities.Core
 import Quantities.SIBaseQuantities
 
 %default total

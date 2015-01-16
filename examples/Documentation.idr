@@ -1,7 +1,6 @@
 module Documentation
 
 import Quantities
-import Quantities.SIDerivedUnits
 import Quantities.NonSIUnits
 import Quantities.ImperialUnits
 

@@ -1,6 +1,6 @@
 module Quantities.SIBaseQuantities
 
-import Quantities
+import Quantities.Core
 
 %default total
 %access public

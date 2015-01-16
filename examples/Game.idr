@@ -1,5 +1,4 @@
 import Quantities
-import Quantities.SIBaseUnits
 import Quantities.Screen
 
 ScreenSpeed : Quantity

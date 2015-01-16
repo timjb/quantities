@@ -1,6 +1,7 @@
 package quantities
 
 modules = Quantities,
+          Quantities.Core,
           Quantities.FreeAbelianGroup,
           Quantities.ImperialUnits,
           Quantities.Information,

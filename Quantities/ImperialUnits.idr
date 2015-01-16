@@ -1,6 +1,6 @@
 module Quantities.ImperialUnits
 
-import Quantities
+import Quantities.Core
 import Quantities.SIBaseQuantities
 import Quantities.SIPrefixes
 import Quantities.SIBaseUnits

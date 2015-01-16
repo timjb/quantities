@@ -1,6 +1,6 @@
 module Quantities.Units
 
-import Quantities
+import Quantities.Core
 import Quantities.SIBaseQuantities
 import Quantities.SIDerivedQuantities
 import Quantities.SIBaseUnits

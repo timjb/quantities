@@ -1,6 +1,6 @@
 module Quantities.SIPrefixes
 
-import Quantities
+import Quantities.Core
 
 %default total
 %access public

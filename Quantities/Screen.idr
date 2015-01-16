@@ -1,6 +1,6 @@
 module Quantities.Screen
 
-import Quantities
+import Quantities.Core
 import Quantities.SIBaseQuantities
 import Quantities.ImperialUnits
 import Quantities.SIBaseUnits

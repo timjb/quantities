@@ -261,6 +261,8 @@ From the [International System of Units (SI)](http://en.wikipedia.org/wiki/Inter
 * [`Quantities.SIBaseUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr): The base units corresponding to the base quantities: `meter`, `kilogram`, `second`, `ampere`, `kelvin`, `candela` and `mole`
 * [`Quantities.SIDerivedUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr): Various units derived from the seven base units, e.g. `joule`, `pascal`, `ohm`, `hertz`
 
+These four modules are reexported by the main module [`Quantities`](https://github.com/timjb/quantities/blob/master/Quantities.idr).
+
 Other quantities and units:
 
 * [`Quantities.ImperialUnits`](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr): Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
@@ -274,7 +276,7 @@ Other quantities and units:
 All standard [SI prefixes](http://en.wikipedia.org/wiki/Metric_prefix) are supported. For example:
 
 ```idris
-import Quantities.SIPrefixes
+import Quantities
 
 microscopeResolution : F (nano metre)
 microscopeResolution = 180 =| (nano metre)
@@ -290,7 +292,6 @@ A simple example that demonstrates how one could use quantities to implement sim
 
 ```idris
 import Quantities
-import Quantities.SIBaseUnits
 import Quantities.Screen
 
 ScreenSpeed : Quantity
