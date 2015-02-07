@@ -1,6 +1,9 @@
 <!DOCTYPE HTML>
 <html><head><title>IdrisDoc: Prelude.Nat</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Nat<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Nat</h1><dl class="decls"><dt id="Prelude.Nat.toIntegerNat"><span class="name function" title="Prelude.Nat.toIntegerNat">toIntegerNat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
 <span class="type" title="Integer">Integer</span></span></dt><dd><p>Convert a Nat to an Integer</p>
+</dd><dt id="Prelude.Nat.toIntNat"><span class="name function" title="Prelude.Nat.toIntNat">toIntNat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
+<span class="type" title="Int">Int</span></span></dt><dd><p>Tail recursive cast Nat to Int<br />
+Note that this can overflow</p>
 </dd><dt id="Prelude.Nat.succNotLTEzero"><span class="name function" title="Prelude.Nat.succNotLTEzero">succNotLTEzero</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="function" title="Prelude.Basics.Not" href="Prelude.Basics.html#Prelude.Basics.Not">Not</a> (<a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="implicit boundvar" title="">m</span>)
 <span class="data" title="0">0</span>)</span></dt><dd><p>A successor is never less than or equal zero</p>
 </dd><dt id="Prelude.Nat.succInjective"><span class="name function" title="Prelude.Nat.succInjective">succInjective</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
@@ -309,8 +312,8 @@
 (<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span>) ->
 <a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="boundvar" title="">right</span>
 (<a class="function" title="Prelude.Nat.mult" href="Prelude.Nat.html#Prelude.Nat.mult">mult</a> <span class="boundvar" title="">left</span>
 (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">right</span>))) <a class="type" title="=" href="[builtins].html#=">=</a>
@@ -322,8 +325,8 @@
 <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multPowerPowerPlusStepCase"><span class="name function" title="Prelude.Nat.multPowerPowerPlusStepCase">multPowerPowerPlusStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">base</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multPowerPowerPlusStepCase"><span class="name function" title="Prelude.Nat.multPowerPowerPlusStepCase">multPowerPowerPlusStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">base</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">exp</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">exp&#39;</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.Nat.power" href="Prelude.Nat.html#Prelude.Nat.power">power</a> <span class="boundvar" title="">base</span>
@@ -379,17 +382,17 @@
 <a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <span class="boundvar" title="">right</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverPlusRightStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverPlusRightStepCase">multDistributesOverPlusRightStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverPlusRightStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverPlusRightStepCase">multDistributesOverPlusRightStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">right</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-<span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span>) ->
 <a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="boundvar" title="">centre</span>
 <span class="boundvar" title="">right</span>)
 (<a class="function" title="Prelude.Nat.mult" href="Prelude.Nat.html#Prelude.Nat.mult">mult</a> <span class="boundvar" title="">left</span>
@@ -404,21 +407,21 @@
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">right</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-<span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverPlusLeftStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverPlusLeftStepCase">multDistributesOverPlusLeftStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverPlusLeftStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverPlusLeftStepCase">multDistributesOverPlusLeftStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">inductiveHypothesis</span> : (<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>) <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span>) ->
 <a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="boundvar" title="">right</span>
 (<a class="function" title="Prelude.Nat.mult" href="Prelude.Nat.html#Prelude.Nat.mult">mult</a> (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="boundvar" title="">left</span>
 <span class="boundvar" title="">centre</span>)
@@ -430,13 +433,13 @@
 <span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverPlusLeft"><span class="name function" title="Prelude.Nat.multDistributesOverPlusLeft">multDistributesOverPlusLeft</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>) <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverMinusRightBody"><span class="name function" title="Prelude.Nat.multDistributesOverMinusRightBody">multDistributesOverMinusRightBody</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
+<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverMinusRightBody"><span class="name function" title="Prelude.Nat.multDistributesOverMinusRightBody">multDistributesOverMinusRightBody</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <a class="function" title="Prelude.Nat.mult" href="Prelude.Nat.html#Prelude.Nat.mult">mult</a> <span class="boundvar" title="">left</span>
@@ -449,21 +452,21 @@
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
+<span class="boundvar" title="">right</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-<span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverMinusLeftStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverMinusLeftStepCase">multDistributesOverMinusLeftStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverMinusLeftStepCase"><span class="name function" title="Prelude.Nat.multDistributesOverMinusLeftStepCase">multDistributesOverMinusLeftStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">inductiveHypothesis</span> : (<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
+<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>) <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
+<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span>) ->
 <a class="function" title="Prelude.Nat.mult" href="Prelude.Nat.html#Prelude.Nat.mult">mult</a> (<a class="function" title="Prelude.Nat.minus" href="Prelude.Nat.html#Prelude.Nat.minus">minus</a> <span class="boundvar" title="">left</span>
 <span class="boundvar" title="">centre</span>)
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
@@ -483,13 +486,13 @@
 <span class="data" title="0">0</span></span></dt><dd></dd><dt id="Prelude.Nat.multDistributesOverMinusLeft"><span class="name function" title="Prelude.Nat.multDistributesOverMinusLeft">multDistributesOverMinusLeft</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">centre</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
+<span class="boundvar" title="">centre</span>) <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>) <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
-(<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
-<span class="boundvar" title="">right</span>)</span></dt><dd></dd><dt id="Prelude.Nat.multCommutativeStepCase"><span class="name function" title="Prelude.Nat.multCommutativeStepCase">multCommutativeStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span> <a class="function" title="Prelude.Classes.-" href="Prelude.Classes.html#Prelude.Classes.-">-</a>
+<span class="boundvar" title="">centre</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
+<span class="boundvar" title="">right</span></span></dt><dd></dd><dt id="Prelude.Nat.multCommutativeStepCase"><span class="name function" title="Prelude.Nat.multCommutativeStepCase">multCommutativeStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">left</span> <a class="function" title="Prelude.Classes.*" href="Prelude.Classes.html#Prelude.Classes.*">*</a>
 <span class="boundvar" title="">right</span> <a class="type" title="=" href="[builtins].html#=">=</a>
@@ -689,10 +692,7 @@
 <span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.Nat.maximum"><span class="name function" title="Prelude.Nat.maximum">maximum</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
 <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
 <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Find the greatest of two natural numbers</p>
-</dd><dt id="Prelude.Nat.lteSuccZeroFalse"><span class="name function" title="Prelude.Nat.lteSuccZeroFalse">lteSuccZeroFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-<a class="function" title="Prelude.Nat.lte" href="Prelude.Nat.html#Prelude.Nat.lte">lte</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">n</span>)
-<span class="data" title="0">0</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a></span></dt><dd></dd><dt id="Prelude.Nat.lteNTrue"><span class="name function" title="Prelude.Nat.lteNTrue">lteNTrue</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+</dd><dt id="Prelude.Nat.lteNTrue"><span class="name function" title="Prelude.Nat.lteNTrue">lteNTrue</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <a class="function" title="Prelude.Nat.lte" href="Prelude.Nat.html#Prelude.Nat.lte">lte</a> <span class="boundvar" title="">n</span>
 <span class="boundvar" title="">n</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a></span></dt><dd></dd><dt id="Prelude.Nat.lte"><span class="name function" title="Prelude.Nat.lte">lte</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
@@ -804,14 +804,17 @@
 <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Successor</p>
 </dd></dl></dd><dt id="Prelude.Nat.Multiplicative"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Nat.Multiplicative">Multiplicative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>A wrapper for Nat that specifies the semigroup and monad instances that use (+)</p>
 <dl class="decls"><dt id="Prelude.Nat.getMultiplicative"><span class="name constructor" title="Prelude.Nat.getMultiplicative">getMultiplicative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
-<a class="type" title="Prelude.Nat.Multiplicative" href="Prelude.Nat.html#Prelude.Nat.Multiplicative">Multiplicative</a></span></dt><dd></dd></dl></dd><dt id="Prelude.Nat.LTE"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Nat.LTE">LTE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the smaller number">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<a class="type" title="Prelude.Nat.Multiplicative" href="Prelude.Nat.html#Prelude.Nat.Multiplicative">Multiplicative</a></span></dt><dd></dd></dl></dd><dt id="Prelude.Nat.LTESuccZeroFalse"><span class="name function" title="Prelude.Nat.LTESuccZeroFalse">LTESuccZeroFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<a class="function" title="Prelude.Nat.lte" href="Prelude.Nat.html#Prelude.Nat.lte">lte</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">n</span>)
+<span class="data" title="0">0</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a></span></dt><dd></dd><dt id="Prelude.Nat.LTE"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Nat.LTE">LTE</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the smaller number">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="documented boundvar" title="the larger number">m</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <span class="type" title="Type">Type</span></span></dt><dd><p>Proofs that <code>n</code> is less than or equal to <code>m</code></p>
 <dl><dt>n</dt><dd><p>the smaller number</p>
 </dd><dt>m</dt><dd><p>the larger number</p>
-</dd></dl><dl class="decls"><dt id="Prelude.Nat.lteZero"><span class="name constructor" title="Prelude.Nat.lteZero">lteZero</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> <span class="data" title="0">0</span>
+</dd></dl><dl class="decls"><dt id="Prelude.Nat.LTEZero"><span class="name constructor" title="Prelude.Nat.LTEZero">LTEZero</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> <span class="data" title="0">0</span>
 <span class="implicit boundvar" title="">right</span></span></dt><dd><p>Zero is the smallest Nat</p>
-</dd><dt id="Prelude.Nat.lteSucc"><span class="name constructor" title="Prelude.Nat.lteSucc">lteSucc</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> <span class="implicit boundvar" title="">left</span>
+</dd><dt id="Prelude.Nat.LTESucc"><span class="name constructor" title="Prelude.Nat.LTESucc">LTESucc</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> <span class="implicit boundvar" title="">left</span>
 <span class="implicit boundvar" title="">right</span> ->
 <a class="type" title="Prelude.Nat.LTE" href="Prelude.Nat.html#Prelude.Nat.LTE">LTE</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="implicit boundvar" title="">left</span>)
 (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="implicit boundvar" title="">right</span>)</span></dt><dd><p>If n &lt;= m, then n + 1 &lt;= m + 1</p>
@@ -826,11 +829,11 @@
 <span class="type" title="Type">Type</span></span></dt><dd><p>Strict greater than</p>
 </dd><dt id="Prelude.Nat.CmpNat"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Nat.CmpNat">CmpNat</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
 <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
-<span class="type" title="Type">Type</span></span></dt><dd><dl class="decls"><dt id="Prelude.Nat.cmpLT"><span class="name constructor" title="Prelude.Nat.cmpLT">cmpLT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">y</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><dl class="decls"><dt id="Prelude.Nat.CmpLT"><span class="name constructor" title="Prelude.Nat.CmpLT">CmpLT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">y</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <a class="type" title="Prelude.Nat.CmpNat" href="Prelude.Nat.html#Prelude.Nat.CmpNat">CmpNat</a> <span class="implicit boundvar" title="">x</span>
 (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="implicit boundvar" title="">x</span>
-(<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">y</span>))</span></dt><dd></dd><dt id="Prelude.Nat.cmpEQ"><span class="name constructor" title="Prelude.Nat.cmpEQ">cmpEQ</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.CmpNat" href="Prelude.Nat.html#Prelude.Nat.CmpNat">CmpNat</a> <span class="implicit boundvar" title="">x</span>
-<span class="implicit boundvar" title="">x</span></span></dt><dd></dd><dt id="Prelude.Nat.cmpGT"><span class="name constructor" title="Prelude.Nat.cmpGT">cmpGT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+(<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">y</span>))</span></dt><dd></dd><dt id="Prelude.Nat.CmpEQ"><span class="name constructor" title="Prelude.Nat.CmpEQ">CmpEQ</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.CmpNat" href="Prelude.Nat.html#Prelude.Nat.CmpNat">CmpNat</a> <span class="implicit boundvar" title="">x</span>
+<span class="implicit boundvar" title="">x</span></span></dt><dd></dd><dt id="Prelude.Nat.CmpGT"><span class="name constructor" title="Prelude.Nat.CmpGT">CmpGT</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 <a class="type" title="Prelude.Nat.CmpNat" href="Prelude.Nat.html#Prelude.Nat.CmpNat">CmpNat</a> (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> <span class="implicit boundvar" title="">y</span>
 (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">x</span>))
 <span class="implicit boundvar" title="">y</span></span></dt><dd></dd></dl></dd><dt id="Prelude.Nat.Additive"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Nat.Additive">Additive</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>A wrapper for Nat that specifies the semigroup and monad instances that use (*)</p>
