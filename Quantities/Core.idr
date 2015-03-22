@@ -32,7 +32,6 @@ scalar = unit
 mkQuantity : List (Dimension, Integer) -> Quantity
 mkQuantity = mkFreeAbGrp
 
-infixl 6 <*>
 infixl 6 </>
 
 -- Synonyms (quantites are multiplied, not added!)

@@ -1,9 +1,39 @@
 module Quantities.Power
 
+--import Control.Algebra
+
 infixr 10 ^
 
 %default total
 %access public
+
+
+-- 'Group', '<->' and 'AbelianGroup' are copied from Control.Algebra from 'contrib'.
+-- I didn't just include Control.Algebra, because 'idris --install quantities.ipkg'
+-- didn't know where to find Control.Algebra. Specifying 'contrib' in libs in
+-- the IPKG file didn't help either.
+
+-- XXX: change?
+infixl 6 <->
+
+||| Sets equipped with a single binary operation that is associative, along with
+||| a neutral element for that binary operation and inverses for all elements.
+||| Must satisfy the following laws:
+||| + Associativity of `<+>`:
+|||     forall a b c, a <+> (b <+> c) == (a <+> b) <+> c
+||| + Neutral for `<+>`:
+|||     forall a,     a <+> neutral   == a
+|||     forall a,     neutral <+> a   == a
+||| + Inverse for `<+>`:
+|||     forall a,     a <+> inverse a == neutral
+|||     forall a,     inverse a <+> a == neutral
+class Monoid a => Group a where
+  inverse : a -> a
+
+(<->) : Group a => a -> a -> a
+(<->) left right = left <+> (inverse right)
+
+class Group a => AbelianGroup a where { }
 
 
 class Power a where
