@@ -7,11 +7,12 @@ ScreenSpeed = ScreenLength </> Time
 pxs : Unit ScreenSpeed
 pxs = pixel <//> second
 
-record PlayerState : Type where
-  MkPlayerState : (xSpeed : F pxs) ->
-                  (ySpeed : F pxs) ->
-                  (xPos   : F px) ->
-                  (yPos   : F px) -> PlayerState
+record PlayerState where
+  constructor MkPlayerState
+  xSpeed : F pxs
+  ySpeed : F pxs
+  xPos   : F px
+  yPos   : F px
 
 gravity : F (pxs <//> second)
 gravity = -800 =| (pxs <//> second)

@@ -8,8 +8,9 @@ import Data.Floats
 %access public
 
 ||| Elementary quantities
-record Dimension : Type where
-  MkDimension : (name : String) -> Dimension
+record Dimension where
+  constructor MkDimension
+  name : String
 
 instance Eq Dimension where
   (MkDimension a) == (MkDimension b) = a == b
@@ -49,11 +50,10 @@ dimensionToQuantity = inject
 
 
 ||| Elementary Unit
-record ElemUnit : Quantity -> Type where
-  MkElemUnit : {q : Quantity} ->
-               (name : String) ->
-               (conversionRate : Float) -> ElemUnit q
-
+record ElemUnit (q : Quantity) where
+  constructor MkElemUnit
+  name : String
+  conversionRate : Float
 
 -- ElemUnit with its quantity hidden
 ElemUnit' : Type
@@ -85,6 +85,9 @@ joinedQuantity = lift getWitness
 data Unit : Quantity -> Type where
   MkUnit : (exponent : Integer) -> (elemUnits' : FreeAbGrp ElemUnit') ->
            Unit (joinedQuantity elemUnits')
+
+rewriteUnit : r = q -> Unit q -> Unit r
+rewriteUnit eq unit = rewrite eq in unit
 
 base10Exponent : Unit q -> Integer
 base10Exponent (MkUnit e _) = e
@@ -119,8 +122,12 @@ unitLess = one
 
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
-elemUnitToUnit {q} u = rewrite (sym (inject_lift_lem getWitness (q ** u)))
-                       in MkUnit 0 (inject (q ** u))
+elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (q ** u)))
+  where eq = really_believe_me (Refl {x=q})
+  -- this should be:
+  -- eq = sym (inject_lift_lem Prelude.Pairs.Sigma.getWitness (q ** u))
+  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
+  -- unreadable type error :-(
 
 ||| Compute conversion factor from the given unit to the base unit of the
 ||| corresponding quantity.
@@ -190,8 +197,12 @@ showUnitUnicode (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
 infixr 10 ^^
 ||| Power unit
 (^^) : Unit q -> (i : Integer) -> Unit (q ^ i)
-(^^) (MkUnit e us) i = rewrite (sym (lift_power_lem getWitness us i))
-                       in MkUnit (i*e) (us ^ i)
+(^^) (MkUnit e us) i = rewriteUnit eq (MkUnit (i*e) (us ^ i))
+  where eq = really_believe_me (Refl {x=(lift Prelude.Pairs.Sigma.getWitness (us ^ i))})
+  -- this should be:
+  -- eq = sym (lift_power_lem Prelude.Pairs.Sigma.getWitness us i)
+  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
+  -- unreadable type error :-(
 
 ||| Inverse unit (e.g. the inverse of `second` is `one <//> second` a.k.a. `hertz`)
 unitInverse : Unit q -> Unit (inverse q)
@@ -202,8 +213,12 @@ infixl 6 <**>,<//>
 
 ||| Product unit
 (<**>) : Unit r -> Unit s -> Unit (r <*> s)
-(<**>) (MkUnit e rs) (MkUnit f ss) = rewrite (sym (lift_mult_lem getWitness rs ss))
-                                     in MkUnit (e+f) (rs <*> ss)
+(<**>) (MkUnit e rs) (MkUnit f ss) = rewriteUnit eq (MkUnit (e+f) (rs <*> ss))
+  where eq = really_believe_me (Refl {x=(lift Prelude.Pairs.Sigma.getWitness (rs <*> ss))})
+  -- this should be:
+  -- eq = sym (lift_mult_lem Prelude.Pairs.Sigma.getWitness rs ss)
+  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
+  -- unreadable type error :-(
 
 ||| Quotient unit
 (<//>) : Unit r -> Unit s -> Unit (r </> s)
