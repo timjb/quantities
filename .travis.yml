@@ -1,7 +1,23 @@
-language: haskell
+env:
+  - CABALVER=1.22 GHCVER=7.10.2
+
+before_install:
+  - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
+  - travis_retry sudo apt-get update
+  - travis_retry sudo apt-get install cabal-install-$CABALVER ghc-$GHCVER # see note about happy/alex
+  - export PATH=$HOME/.cabal/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
 
 install:
-  - cabal install idris
+  - cabal --version
+  - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
+  - travis_retry cabal update
+  - git clone https://github.com/idris-lang/Idris-dev.git
+  - cd Idris-dev
+  - cabal install --only-dependencies
+  - cabal configure
+  - cabal build
+  - travis_wait cabal install
+  - cd ..
 
 script:
   - idris --install quantities.ipkg
