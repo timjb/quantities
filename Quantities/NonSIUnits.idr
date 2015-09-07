@@ -52,7 +52,7 @@ t : ElemUnit Mass
 t = tonne
 
 degree : ElemUnit PlaneAngle
-degree = < one "deg" equals (pi / 180) rad >
+degree = < one "deg" equals (Data.Floats.pi / 180) rad >
 deg : ElemUnit PlaneAngle
 deg = degree
 
@@ -175,7 +175,7 @@ h_ : ElemUnit (Energy <*> Time)
 h_ = planckConstant
 
 reducedPlanckConstant : ElemUnit (Energy <*> Time)
-reducedPlanckConstant = < one "hBar" equals (1 / (2*pi)) (joule <**> second) >
+reducedPlanckConstant = < one "hBar" equals (1 / (2*Data.Floats.pi)) (joule <**> second) >
 hBar : ElemUnit (Energy <*> Time)
 hBar = reducedPlanckConstant
 
@@ -271,6 +271,6 @@ G : Unit MagneticFluxDensity
 G = gauss
 
 oersted : ElemUnit MagneticFieldStrength
-oersted = < one "oe" equals (250 / pi) (ampere <//> metre) >
+oersted = < one "oe" equals (250 / Data.Floats.pi) (ampere <//> metre) >
 oe : ElemUnit MagneticFieldStrength
 oe = oersted

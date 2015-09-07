@@ -306,7 +306,7 @@ infixl 10 |^|
 
 ||| Square root measurement
 sqrt : {q : Quantity} -> {u : Unit q} -> F (u ^^ 2) -> F u
-sqrt {q} {u} (x =| _) = (sqrt x) =| u
+sqrt {q} {u} (x =| _) = (Data.Floats.sqrt x) =| u
 
 ||| Round measurement to the next integer below
 floor : {q : Quantity} -> {u : Unit q} -> F u -> F u
@@ -337,7 +337,10 @@ toUnitLess x = x =| unitLess
 
 instance Num a => Num (Measurement unitLess a) where
   x + y = (getValue x + getValue y) =| unitLess
-  x - y = (getValue x - getValue y) =| unitLess
   x * y = (getValue x * getValue y) =| unitLess
-  abs x = abs (getValue x) =| unitLess
   fromInteger i = fromInteger i =| unitLess
+
+instance Neg a => Neg (Measurement unitLess a) where
+  negate x = negate (getValue x) =| unitLess
+  x - y = (getValue x - getValue y) =| unitLess
+  abs x = abs (getValue x) =| unitLess
