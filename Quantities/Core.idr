@@ -2,7 +2,6 @@ module Quantities.Core
 
 import public Quantities.FreeAbelianGroup
 import public Quantities.Power
-import Data.Floats
 
 %default total
 %access public
@@ -306,15 +305,15 @@ infixl 10 |^|
 
 ||| Square root measurement
 sqrt : {q : Quantity} -> {u : Unit q} -> F (u ^^ 2) -> F u
-sqrt {q} {u} (x =| _) = (Data.Floats.sqrt x) =| u
+sqrt {q} {u} (x =| _) = (sqrt x) =| u
 
 ||| Round measurement to the next integer below
 floor : {q : Quantity} -> {u : Unit q} -> F u -> F u
-floor = map Data.Floats.floor
+floor = map floor
 
 ||| Round measurement to the next integer above
 ceiling : {q : Quantity} -> {u : Unit q} -> F u -> F u
-ceiling = map Data.Floats.ceiling
+ceiling = map ceiling
 
 ||| Convert measurements to a given unit
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
