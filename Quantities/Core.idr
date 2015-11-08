@@ -25,8 +25,8 @@ Quantity : Type
 Quantity = FreeAbGrp Dimension
 
 ||| The trivial quantity
-scalar : Quantity
-scalar = unit
+Scalar : Quantity
+Scalar = unit
 
 ||| Create a new quantity.
 mkQuantity : List (Dimension, Integer) -> Quantity
@@ -100,24 +100,24 @@ instance Eq (Unit q) where
            getElemUnits' x  == getElemUnits' y
 
 ||| The trivial unit
-one : Unit Quantities.Core.scalar
-one = MkUnit 0 neutral
+One : Unit Scalar
+One = MkUnit 0 neutral
 
 ||| Multiples of ten
-ten : Unit Quantities.Core.scalar
-ten = MkUnit 1 neutral
+Ten : Unit Scalar
+Ten = MkUnit 1 neutral
 
 ||| One hundredth
-percent : Unit Quantities.Core.scalar
-percent = MkUnit (-2) neutral
+Percent : Unit Scalar
+Percent = MkUnit (-2) neutral
 
 ||| One thousandth
-promille : Unit Quantities.Core.scalar
-promille = MkUnit (-3) neutral
+Promille : Unit Scalar
+Promille = MkUnit (-3) neutral
 
 ||| The trivial unit (synonymous with `one`)
-unitLess : Unit Quantities.Core.scalar
-unitLess = one
+UnitLess : Unit Scalar
+UnitLess = One
 
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q

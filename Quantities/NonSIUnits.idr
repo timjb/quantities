@@ -13,263 +13,261 @@ import Quantities.SIDerivedUnits
 
 -- Based on http://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI
 
-minute : ElemUnit Time
-minute = < one "min" equals 60 second >
-min : ElemUnit Time
-min = minute
+Minute : ElemUnit Time
+Minute = < one "min" equals 60 Second >
+Min : ElemUnit Time
+Min = Minute
 
-hour : ElemUnit Time
-hour = < one "h" equals 60 minute >
-h : ElemUnit Time
-h = hour
+Hour : ElemUnit Time
+Hour = < one "h" equals 60 Minute >
+H : ElemUnit Time
+H = Hour
 
-day : ElemUnit Time
-day = < one "d" equals 24 hour >
-d : ElemUnit Time
-d = day
+Day : ElemUnit Time
+Day = < one "d" equals 24 Hour >
+D : ElemUnit Time
+D = Day
 
-week : ElemUnit Time
-week = < one "week" equals 7 day >
+Week : ElemUnit Time
+Week = < one "week" equals 7 Day >
 
 -- Julian year
-year : ElemUnit Time
-year = < one "a" equals 365.25 day >
-julianYear : ElemUnit Time
-julianYear = year
-a : ElemUnit Time
-a = year
+Year : ElemUnit Time
+Year = < one "a" equals 365.25 Day >
+JulianYear : ElemUnit Time
+JulianYear = Year
+A : ElemUnit Time
+A = Year
 
-century : Unit Time
-century = hecto year
+Century : Unit Time
+Century = hecto Year
 
-millenium : Unit Time
-millenium = kilo year
+Millenium : Unit Time
+Millenium = kilo Year
 
-tonne : ElemUnit Mass
-tonne = < one "t" equals 1000 kg >
-t : ElemUnit Mass
-t = tonne
+Tonne : ElemUnit Mass
+Tonne = < one "t" equals 1000 Kg >
+T : ElemUnit Mass
+T = Tonne
 
-degree : ElemUnit PlaneAngle
-degree = < one "deg" equals (pi / 180) rad >
-deg : ElemUnit PlaneAngle
-deg = degree
+Degree : ElemUnit PlaneAngle
+Degree = < one "deg" equals (pi / 180) Rad >
+Deg : ElemUnit PlaneAngle
+Deg = Degree
 
-arcmin : ElemUnit PlaneAngle
-arcmin = < one "arcmin" equals (1/60) degree >
+Arcmin : ElemUnit PlaneAngle
+Arcmin = < one "arcmin" equals (1/60) Degree >
 
-arcsec : ElemUnit PlaneAngle
-arcsec = < one "arcsec" equals (1/60) arcmin >
+Arcsec : ElemUnit PlaneAngle
+Arcsec = < one "arcsec" equals (1/60) Arcmin >
 
 -- Ångström (Å)
-angstrom : ElemUnit Length
-angstrom = < one "angstrom" equals 0.1 (nano metre) >
+Angstrom : ElemUnit Length
+Angstrom = < one "angstrom" equals 0.1 (nano Metre) >
 
-astronomicalUnit : ElemUnit Length
-astronomicalUnit = < one "au" equals 149597870700 metre >
-au : ElemUnit Length
-au = astronomicalUnit
+AstronomicalUnit : ElemUnit Length
+AstronomicalUnit = < one "au" equals 149597870700 Metre >
+Au : ElemUnit Length
+Au = AstronomicalUnit
 
-standardGravity : ElemUnit Acceleration
-standardGravity = < one "g_0" equals 9.80665 (metre <//> (second ^^ 2)) >
-g_0 : ElemUnit Acceleration
-g_0 = standardGravity
+StandardGravity : ElemUnit Acceleration
+StandardGravity = < one "g_0" equals 9.80665 (Metre <//> (Second ^^ 2)) >
+G_0 : ElemUnit Acceleration
+G_0 = StandardGravity
 
-rotationsPerMinute : Unit Frequency
-rotationsPerMinute = one <//> minute
-rpm : Unit Frequency
-rpm = rotationsPerMinute
+RotationsPerMinute : Unit Frequency
+RotationsPerMinute = One <//> Minute
+Rpm : Unit Frequency
+Rpm = RotationsPerMinute
 
 -- Use this only for relative temparature! Not suitable for conversions of
 -- absolute temperature!
 
-fahrenheit : ElemUnit Temperature
-fahrenheit = < one "dF" equals (5/9) K > -- °F
-dF : ElemUnit Temperature
-dF = fahrenheit
+Fahrenheit : ElemUnit Temperature
+Fahrenheit = < one "dF" equals (5/9) K > -- °F
+DF : ElemUnit Temperature
+DF = Fahrenheit
 
-are : ElemUnit Area
-are = < one "are" equals 100 (metre ^^ 2) >
+Are : ElemUnit Area
+Are = < one "are" equals 100 (Metre ^^ 2) >
 
-hectare : ElemUnit Area
-hectare = < one "ha" equals 1 ((hecto metre) ^^ 2) >
-ha : ElemUnit Area
-ha = hectare
+Hectare : ElemUnit Area
+Hectare = < one "ha" equals 1 ((hecto Metre) ^^ 2) >
+Ha : ElemUnit Area
+Ha = Hectare
 
-barn : ElemUnit Area
-barn = < one "b" equals 100 ((femto metre) ^^ 2) >
-b : ElemUnit Area
-b = barn
+Barn : ElemUnit Area
+Barn = < one "b" equals 100 ((femto Metre) ^^ 2) >
+B : ElemUnit Area
+B = Barn
 
-litre : ElemUnit Volume
-litre = < one "l" equals 1 (milli (m ^^ 3)) >
-liter : ElemUnit Volume
-liter = litre
-l : ElemUnit Volume
-l = litre
+Litre : ElemUnit Volume
+Litre = < one "l" equals 1 (milli (Metre ^^ 3)) >
+Liter : ElemUnit Volume
+Liter = Litre
+L : ElemUnit Volume
+L = Litre
 
-bar : ElemUnit Pressure
-bar = < one "bar" equals 100 (kilo pascal) >
+Bar : ElemUnit Pressure
+Bar = < one "bar" equals 100 (kilo Pascal) >
 
-millimetreOfMercury : ElemUnit Pressure
-millimetreOfMercury = < one "mmHg" equals 133.322 pascal >
-mmHg : ElemUnit Pressure
-mmHg = millimetreOfMercury
+MillimetreOfMercury : ElemUnit Pressure
+MillimetreOfMercury = < one "mmHg" equals 133.322 Pascal >
+MmHg : ElemUnit Pressure
+MmHg = MillimetreOfMercury
 
-calorie : ElemUnit Energy
-calorie = < one "cal" equals 4.18400 joule >
-thermochemicalCalorie : ElemUnit Energy
-thermochemicalCalorie = calorie
-cal : ElemUnit Energy
-cal = calorie
+Calorie : ElemUnit Energy
+Calorie = < one "cal" equals 4.18400 Joule >
+ThermochemicalCalorie : ElemUnit Energy
+ThermochemicalCalorie = Calorie
+Cal : ElemUnit Energy
+Cal = Calorie
 
 
 -- Non-SI units whose values in SI must be determined experimentally
 
-electronvolt : ElemUnit Energy
-electronvolt = < one "eV" equals 1.60217653 (ten ^^ -19 <**> joule) >
-eV : ElemUnit Energy
-eV = electronvolt
+Electronvolt : ElemUnit Energy
+Electronvolt = < one "eV" equals 1.60217653 (Ten ^^ -19 <**> Joule) >
+EV : ElemUnit Energy
+EV = Electronvolt
 
-dalton : ElemUnit Mass
-dalton = < one "Da" equals 1.66053886 (ten ^^ -27 <**> kilogram) >
+Dalton : ElemUnit Mass
+Dalton = < one "Da" equals 1.66053886 (Ten ^^ -27 <**> Kilogram) >
 Da : ElemUnit Mass
-Da = dalton
-unifiedAtomicMassUnit : ElemUnit Mass
-unifiedAtomicMassUnit = dalton
-u : ElemUnit Mass
-u = dalton
+Da = Dalton
+UnifiedAtomicMassUnit : ElemUnit Mass
+UnifiedAtomicMassUnit = Dalton
+U : ElemUnit Mass
+U = Dalton
 
 -- Atomic and natural units
 
-elementaryCharge : ElemUnit ElectricCharge
-elementaryCharge = < one "e" equals 1.60217653 (ten ^^ -19 <**> coulomb) >
-e : ElemUnit ElectricCharge
-e = elementaryCharge
+ElementaryCharge : ElemUnit ElectricCharge
+ElementaryCharge = < one "e" equals 1.60217653 (Ten ^^ -19 <**> Coulomb) >
+E : ElemUnit ElectricCharge
+E = ElementaryCharge
 
-massOfElectron : ElemUnit Mass
-massOfElectron = < one "m_e" equals 9.1093826 (ten ^^ -31 <**> kilogram) >
-electronMass : ElemUnit Mass
-electronMass = massOfElectron
-m_e : ElemUnit Mass
-m_e = massOfElectron
+MassOfElectron : ElemUnit Mass
+MassOfElectron = < one "m_e" equals 9.1093826 (Ten ^^ -31 <**> Kilogram) >
+ElectronMass : ElemUnit Mass
+ElectronMass = MassOfElectron
+M_e : ElemUnit Mass
+M_e = MassOfElectron
 
-bohrRadius : ElemUnit Length
-bohrRadius = < one "a_0" equals 0.5291772108 (ten ^^ -10 <**> metre) >
-bohr : ElemUnit Length
-bohr = bohrRadius
-a_0 : ElemUnit Length
-a_0 = bohrRadius
+BohrRadius : ElemUnit Length
+BohrRadius = < one "a_0" equals 0.5291772108 (Ten ^^ -10 <**> Metre) >
+Bohr : ElemUnit Length
+Bohr = BohrRadius
+A_0 : ElemUnit Length
+A_0 = BohrRadius
 
-hartreeEnergy : ElemUnit Energy
-hartreeEnergy = < one "E_h" equals 4.35974417 (ten ^^ -18 <**> joule) >
-hartree : ElemUnit Energy
-hartree = hartreeEnergy
+HartreeEnergy : ElemUnit Energy
+HartreeEnergy = < one "E_h" equals 4.35974417 (Ten ^^ -18 <**> Joule) >
+Hartree : ElemUnit Energy
+Hartree = HartreeEnergy
 E_h : ElemUnit Energy
-E_h = hartreeEnergy
+E_h = HartreeEnergy
 
-planckConstant : ElemUnit (Energy <*> Time)
-planckConstant = < one "h" equals 6.62606957 (joule <**> second) >
-h_ : ElemUnit (Energy <*> Time)
-h_ = planckConstant
+PlanckConstant : ElemUnit (Energy <*> Time)
+PlanckConstant = < one "h" equals 6.62606957 (Joule <**> Second) >
+H_ : ElemUnit (Energy <*> Time)
+H_ = PlanckConstant
 
-reducedPlanckConstant : ElemUnit (Energy <*> Time)
-reducedPlanckConstant = < one "hBar" equals (1 / (2*pi)) (joule <**> second) >
-hBar : ElemUnit (Energy <*> Time)
-hBar = reducedPlanckConstant
+ReducedPlanckConstant : ElemUnit (Energy <*> Time)
+ReducedPlanckConstant = < one "hBar" equals (1 / (2*pi)) (Joule <**> Second) >
+HBar : ElemUnit (Energy <*> Time)
+HBar = ReducedPlanckConstant
 
-atomicUnitOfTime : ElemUnit Time
-atomicUnitOfTime = < one "auOfTime" equals 1 (hBar <//> hartree) >
-auOfTime : ElemUnit Time
-auOfTime = atomicUnitOfTime
+AtomicUnitOfTime : ElemUnit Time
+AtomicUnitOfTime = < one "auOfTime" equals 1 (HBar <//> Hartree) >
+AuOfTime : ElemUnit Time
+AuOfTime = AtomicUnitOfTime
 
-speedOfLight : ElemUnit Speed
-speedOfLight = < one "c_0" equals 299792458 (metre <//> second) >
-c_0 : ElemUnit Speed
-c_0 = speedOfLight
+SpeedOfLight : ElemUnit Speed
+SpeedOfLight = < one "c_0" equals 299792458 (Metre <//> Second) >
+C_0 : ElemUnit Speed
+C_0 = SpeedOfLight
 
-naturalUnitOfTime : ElemUnit Time
-naturalUnitOfTime = < one "nuOfTime" equals 1 (hBar <//> (m_e <**> (c_0 ^^ 2))) >
-nuOfTime : ElemUnit Time
-nuOfTime = naturalUnitOfTime
+NaturalUnitOfTime : ElemUnit Time
+NaturalUnitOfTime = < one "nuOfTime" equals 1 (HBar <//> (M_e <**> (C_0 ^^ 2))) >
+NuOfTime : ElemUnit Time
+NuOfTime = NaturalUnitOfTime
 
-lightSecond : ElemUnit Length
-lightSecond = < one "ls" equals 1 (second <**> speedOfLight) >
-ls : ElemUnit Length
-ls = lightSecond
+LightSecond : ElemUnit Length
+LightSecond = < one "ls" equals 1 (Second <**> SpeedOfLight) >
+Ls : ElemUnit Length
+Ls = LightSecond
 
-lightMinute : ElemUnit Length
-lightMinute = < one "lmin" equals 1 (minute <**> speedOfLight) >
-lmin : ElemUnit Length
-lmin = lightMinute
+LightMinute : ElemUnit Length
+LightMinute = < one "lmin" equals 1 (Minute <**> SpeedOfLight) >
+Lmin : ElemUnit Length
+Lmin = LightMinute
 
-lightHour : ElemUnit Length
-lightHour = < one "lh" equals 1 (hour <**> speedOfLight) >
-lh : ElemUnit Length
-lh = lightHour
+LightHour : ElemUnit Length
+LightHour = < one "lh" equals 1 (Hour <**> SpeedOfLight) >
+Lh : ElemUnit Length
+Lh = LightHour
 
-lightDay : ElemUnit Length
-lightDay = < one "ld" equals 1 (day <**> speedOfLight) >
-ld : ElemUnit Length
-ld = lightDay
+LightDay : ElemUnit Length
+LightDay = < one "ld" equals 1 (Day <**> SpeedOfLight) >
+Ld : ElemUnit Length
+Ld = LightDay
 
-lightWeek : ElemUnit Length
-lightWeek = < one "ld" equals 1 (week <**> speedOfLight) >
-lw : ElemUnit Length
-lw = lightWeek
+LightWeek : ElemUnit Length
+LightWeek = < one "ld" equals 1 (Week <**> SpeedOfLight) >
+Lw : ElemUnit Length
+Lw = LightWeek
 
-lightYear : ElemUnit Length
-lightYear = < one "ly" equals 1 (year <**> speedOfLight) >
-ly : ElemUnit Length
-ly = lightYear
+LightYear : ElemUnit Length
+LightYear = < one "ly" equals 1 (Year <**> SpeedOfLight) >
+Ly : ElemUnit Length
+Ly = LightYear
 
 
 -- Non-SI units associated with the CGS and the CGS-Gaussian system of units
 
-erg : Unit Energy
-erg = ten ^^ -7 <**> joule
+Erg : Unit Energy
+Erg = Ten ^^ -7 <**> Joule
 
-dyne : Unit Force'
-dyne = ten ^^ -5 <**> newton
-dyn : Unit Force'
-dyn = dyne
+Dyne : Unit Force'
+Dyne = Ten ^^ -5 <**> Newton
+Dyn : Unit Force'
+Dyn = Dyne
 
-poise : Unit DynamicViscosity
-poise = dyne <**> second <//> (centimetre ^^ 2)
+Poise : Unit DynamicViscosity
+Poise = Dyne <**> Second <//> (Centimetre ^^ 2)
 P : Unit DynamicViscosity
-P = poise
+P = Poise
 
-stokes : Unit KinematicViscosity
-stokes = centimetre ^^ 2 <//> second
+Stokes : Unit KinematicViscosity
+Stokes = Centimetre ^^ 2 <//> Second
 St : Unit KinematicViscosity
-St = stokes
+St = Stokes
 
-stilb : Unit Luminance
-stilb = candela <//> (centimetre ^^ 2)
-sb : Unit Luminance
-sb = stilb
+Stilb : Unit Luminance
+Stilb = Candela <//> (Centimetre ^^ 2)
+Sb : Unit Luminance
+Sb = Stilb
 
-phot : Unit Illuminance
-phot = candela <**> steradian <//> (centimetre ^^ 2)
-ph : Unit Illuminance
-ph = phot
+Phot : Unit Illuminance
+Phot = Candela <**> Steradian <//> (Centimetre ^^ 2)
+Ph : Unit Illuminance
+Ph = Phot
 
-gal : Unit Acceleration
-gal = centimetre <//> (second ^^ 2)
 Gal : Unit Acceleration
-Gal = gal
+Gal = Centimetre <//> (Second ^^ 2)
 
-maxwell : Unit MagneticFlux
-maxwell = ten ^^ -8 <**> weber
+Maxwell : Unit MagneticFlux
+Maxwell = Ten ^^ -8 <**> Weber
 Mx : Unit MagneticFlux
-Mx = maxwell
+Mx = Maxwell
 
-gauss : Unit MagneticFluxDensity
-gauss = maxwell <//> (centimetre ^^ 2)
+Gauss : Unit MagneticFluxDensity
+Gauss = Maxwell <//> (Centimetre ^^ 2)
 G : Unit MagneticFluxDensity
-G = gauss
+G = Gauss
 
-oersted : ElemUnit MagneticFieldStrength
-oersted = < one "oe" equals (250 / pi) (ampere <//> metre) >
-oe : ElemUnit MagneticFieldStrength
-oe = oersted
+Oersted : ElemUnit MagneticFieldStrength
+Oersted = < one "oe" equals (250 / pi) (Ampere <//> Metre) >
+Oe : ElemUnit MagneticFieldStrength
+Oe = Oersted

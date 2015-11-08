@@ -8,10 +8,10 @@ import Quantities.SIBaseUnits
 ScreenLength : Dimension
 ScreenLength = MkDimension "ScreenLength"
 
-pixel : ElemUnit ScreenLength
-pixel = MkElemUnit "px" 1
-px : ElemUnit ScreenLength
-px = pixel
+Pixel : ElemUnit ScreenLength
+Pixel = MkElemUnit "px" 1
+Px : ElemUnit ScreenLength
+Px = Pixel
 
 ScreenArea : Quantity
 ScreenArea = ScreenLength ^ 2
@@ -21,14 +21,14 @@ ScreenEstate = ScreenArea
 ScreenResolution : Quantity
 ScreenResolution = ScreenLength </> Length
 
-pixelPerCentimetre : ElemUnit ScreenResolution
-pixelPerCentimetre = < one "ppcm" equals 1 (pixel <//> centimetre) >
-pixelPerCentimeter : ElemUnit ScreenResolution
-pixelPerCentimeter = pixelPerCentimetre
-ppcm : ElemUnit ScreenResolution
-ppcm = pixelPerCentimetre
+PixelPerCentimetre : ElemUnit ScreenResolution
+PixelPerCentimetre = < one "ppcm" equals 1 (Pixel <//> Centimetre) >
+PixelPerCentimeter : ElemUnit ScreenResolution
+PixelPerCentimeter = PixelPerCentimetre
+Ppcm : ElemUnit ScreenResolution
+Ppcm = PixelPerCentimetre
 
-pixelPerInch : ElemUnit ScreenResolution
-pixelPerInch = < one "ppi" equals 1 (pixel <//> inch) >
-ppi : ElemUnit ScreenResolution
-ppi = pixelPerInch
+PixelPerInch : ElemUnit ScreenResolution
+PixelPerInch = < one "ppi" equals 1 (Pixel <//> Inch) >
+Ppi : ElemUnit ScreenResolution
+Ppi = PixelPerInch

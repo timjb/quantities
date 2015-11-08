@@ -9,59 +9,59 @@ Happiness : Dimension
 Happiness = MkDimension "Happiness"
 
 cubicCentimetre : Unit Volume
-cubicCentimetre = centimetre ^^ 3
+cubicCentimetre = Centimetre ^^ 3
 
 -- the quantity of happiness that a one kilogram beagle puppy whose body temperature is 310 kelvins produces when held in skin contact for one second
-puppy : ElemUnit Happiness
-puppy = MkElemUnit "puppy" 1
+Puppy : ElemUnit Happiness
+Puppy = MkElemUnit "puppy" 1
 
 -- If you're like me …
-kitten : ElemUnit Happiness
-kitten = < one "kitten" equals 1.5 puppy >
+Kitten : ElemUnit Happiness
+Kitten = < one "Kitten" equals 1.5 Puppy >
 
-distanceToMoon : F metre
-distanceToMoon = 384400000.0 =| metre
+distanceToMoon : F Metre
+distanceToMoon = 384400000.0 =| Metre
 
-distanceToMoonInMiles : F mile
-distanceToMoonInMiles = convertTo mile distanceToMoon
+distanceToMoonInMiles : F Mile
+distanceToMoonInMiles = convertTo Mile distanceToMoon
 
 -- According to Wikipedia
-dogYear : ElemUnit Time
-dogYear = < one "dy" equals 52 day >
+DogYear : ElemUnit Time
+DogYear = < one "dy" equals 52 Day >
 
-myAgeInDogYears : F dogYear
-myAgeInDogYears = (19 =| year) `as` dogYear
+myAgeInDogYears : F DogYear
+myAgeInDogYears = (21 =| Year) `as` DogYear
 -- = 133.46 dy
 
-weight : F kilogram
-weight = 2 =| kilogram
+weight : F Kilogram
+weight = 2 =| Kilogram
 
-height : F metre
-height = 2 =| metre
+height : F Metre
+height = 2 =| Metre
 
-duration : F second
-duration = 0.8 =| second
+duration : F Second
+duration = 0.8 =| Second
 
-g_0 : F (metre <//> (second ^^ 2))
-g_0 = 9.80665 =| (metre <//> (second ^^ 2))
+g_0 : F (Metre <//> (Second ^^ 2))
+g_0 = 9.80665 =| (Metre <//> (Second ^^ 2))
 
-averagePower : F watt
+averagePower : F Watt
 averagePower = convert $ (weight |*| height |*| g_0) |/| duration
 
-energyConversionEfficiency : Float
-energyConversionEfficiency = 0.88
+energyConversionEfficiency : F One
+energyConversionEfficiency = 0.88 =| One
 
-batteryCapacity : F (watt <**> hour)
-batteryCapacity = 85000 =| (watt <**> hour)
+batteryCapacity : F (Watt <**> Hour)
+batteryCapacity = 85000 =| (Watt <**> Hour)
 
-usedEnergy : F (watt <**> hour)
+usedEnergy : F (Watt <**> Hour)
 usedEnergy = convert $ energyConversionEfficiency |*| batteryCapacity
 
-eatChocolateCake : F puppy -> F puppy
-eatChocolateCake x = x <+> (2 =| puppy)
+eatChocolateCake : F Puppy -> F Puppy
+eatChocolateCake x = x <+> (2 =| Puppy)
 
-microscopeResolution : F (nano metre)
-microscopeResolution = 180 =| (nano metre)
+microscopeResolution : F (nano Metre)
+microscopeResolution = 180 =| (nano Metre)
 
-performance : F (mega watt)
-performance = 3.1 =| (mega watt)
+performance : F (mega Watt)
+performance = 3.1 =| (mega Watt)

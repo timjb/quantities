@@ -59,19 +59,19 @@ Luminance : Quantity
 Luminance = LuminousIntensity </> Area
 
 RefractiveIndex : Quantity
-RefractiveIndex = scalar
+RefractiveIndex = Scalar
 
 RelativePermeability : Quantity
-RelativePermeability = scalar
+RelativePermeability = Scalar
 
 
 -- Coherent derived units in the SI with special names and symbols
 
 PlaneAngle : Quantity
-PlaneAngle = scalar
+PlaneAngle = Scalar
 
 SolidAngle : Quantity
-SolidAngle = scalar
+SolidAngle = Scalar
 
 Frequency : Quantity
 Frequency = Time ^ (-1)

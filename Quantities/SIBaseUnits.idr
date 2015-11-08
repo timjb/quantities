@@ -7,58 +7,58 @@ import Quantities.SIBaseQuantities
 %default total
 %access public
 
-metre : ElemUnit Length
-metre = MkElemUnit "m" 1
-meter : ElemUnit Length
-meter = metre
-m : ElemUnit Length
-m = meter
+Metre : ElemUnit Length
+Metre = MkElemUnit "m" 1
+Meter : ElemUnit Length
+Meter = Metre
+M : ElemUnit Length
+M = Meter
 
-centimetre : Unit Length
-centimetre = centi metre
-centimeter : Unit Length
-centimeter = centimetre
-cm : Unit Length
-cm = centimetre
+Centimetre : Unit Length
+Centimetre = centi Metre
+Centimeter : Unit Length
+Centimeter = Centimetre
+Cm : Unit Length
+Cm = Centimetre
 
-kilometre : Unit Length
-kilometre = kilo metre
-kilometer : Unit Length
-kilometer = kilometre
-km : Unit Length
-km = kilometre
+Kilometre : Unit Length
+Kilometre = kilo Metre
+Kilometer : Unit Length
+Kilometer = Kilometre
+Km : Unit Length
+Km = Kilometre
 
-gram : ElemUnit Mass
-gram = MkElemUnit "g" 0.001
-g : ElemUnit Mass
-g = gram
+Gram : ElemUnit Mass
+Gram = MkElemUnit "g" 0.001
+G : ElemUnit Mass
+G = Gram
 
-kilogram : Unit Mass
-kilogram = kilo gram
-kg : Unit Mass
-kg = kilogram
+Kilogram : Unit Mass
+Kilogram = kilo Gram
+Kg : Unit Mass
+Kg = Kilogram
 
-second : ElemUnit Time
-second = MkElemUnit "s" 1
-s : ElemUnit Time
-s = second
+Second : ElemUnit Time
+Second = MkElemUnit "s" 1
+S : ElemUnit Time
+S = Second
 
-ampere : ElemUnit ElectricCurrent
-ampere = MkElemUnit "A" 1
+Ampere : ElemUnit ElectricCurrent
+Ampere = MkElemUnit "A" 1
 A : ElemUnit ElectricCurrent
-A = ampere
+A = Ampere
 
-kelvin : ElemUnit Temperature
-kelvin = MkElemUnit "K" 1
+Kelvin : ElemUnit Temperature
+Kelvin = MkElemUnit "K" 1
 K : ElemUnit Temperature
-K = kelvin
+K = Kelvin
 
-mole : ElemUnit AmountOfSubstance
-mole = MkElemUnit "mol" 1
-mol : ElemUnit AmountOfSubstance
-mol = mole
+Mole : ElemUnit AmountOfSubstance
+Mole = MkElemUnit "mol" 1
+Mol : ElemUnit AmountOfSubstance
+Mol = Mole
 
-candela : ElemUnit LuminousIntensity
-candela = MkElemUnit "cd" 1
-cd : ElemUnit LuminousIntensity
-cd = candela
+Candela : ElemUnit LuminousIntensity
+Candela = MkElemUnit "cd" 1
+Cd : ElemUnit LuminousIntensity
+Cd = Candela

@@ -5,11 +5,11 @@ import Quantities.Core
 Information : Dimension
 Information = MkDimension "Information"
 
-bit : ElemUnit Information
-bit = MkElemUnit "bit" 1
+Bit : ElemUnit Information
+Bit = MkElemUnit "bit" 1
 
-byte : ElemUnit Information
-byte = < one "byte" equals 8 bit >
+Byte : ElemUnit Information
+Byte = < one "byte" equals 8 Bit >
 
 -- Binary prefixes for multiples of bits/bytes
 -- Based on http://en.wikipedia.org/wiki/Binary_prefix
@@ -21,42 +21,42 @@ twoToTheTen pre power (MkElemUnit name f) =
 
 kibi : ElemUnit q -> ElemUnit q
 kibi = twoToTheTen "kibi" 1
-Ki : ElemUnit q -> ElemUnit q
-Ki = kibi
+ki : ElemUnit q -> ElemUnit q
+ki = kibi
 
 mebi : ElemUnit q -> ElemUnit q
 mebi = twoToTheTen "mebi" 2
-Mi : ElemUnit q -> ElemUnit q
-Mi = mebi
+mi : ElemUnit q -> ElemUnit q
+mi = mebi
 
 gibi : ElemUnit q -> ElemUnit q
 gibi = twoToTheTen "gibi" 3
-Gi : ElemUnit q -> ElemUnit q
-Gi = gibi
+gi : ElemUnit q -> ElemUnit q
+gi = gibi
 
 tebi : ElemUnit q -> ElemUnit q
 tebi = twoToTheTen "tebi" 4
-Ti : ElemUnit q -> ElemUnit q
-Ti = tebi
+ti : ElemUnit q -> ElemUnit q
+ti = tebi
 
 pebi : ElemUnit q -> ElemUnit q
 pebi = twoToTheTen "pebi" 5
-Pi : ElemUnit q -> ElemUnit q
-Pi = pebi
+pi : ElemUnit q -> ElemUnit q
+pi = pebi
 
 exbi : ElemUnit q -> ElemUnit q
 exbi = twoToTheTen "exbi" 6
-Ei : ElemUnit q -> ElemUnit q
-Ei = exbi
+ei : ElemUnit q -> ElemUnit q
+ei = exbi
 
 zebi : ElemUnit q -> ElemUnit q
 zebi = twoToTheTen "zebi" 7
-Zi : ElemUnit q -> ElemUnit q
-Zi = zebi
+zi : ElemUnit q -> ElemUnit q
+zi = zebi
 
 yobi : ElemUnit q -> ElemUnit q
 yobi = twoToTheTen "yobi" 8
-Yi : ElemUnit q -> ElemUnit q
-Yi = yobi
+yi : ElemUnit q -> ElemUnit q
+yi = yobi
 
 -- Please Note: kibi byte /= kilo byte

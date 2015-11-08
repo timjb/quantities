@@ -8,111 +8,111 @@ import Quantities.SIBaseUnits
 %default total
 %access public
 
-radian : Unit PlaneAngle
-radian = one
-rad : Unit PlaneAngle
-rad = one
+Radian : Unit PlaneAngle
+Radian = One
+Rad : Unit PlaneAngle
+Rad = One
 
-steradian : Unit SolidAngle
-steradian = one
-sr : Unit SolidAngle
-sr = steradian
+Steradian : Unit SolidAngle
+Steradian = One
+Sr : Unit SolidAngle
+Sr = Steradian
 
-hertz : Unit Frequency
-hertz = second ^^ (-1)
+Hertz : Unit Frequency
+Hertz = Second ^^ (-1)
 Hz : Unit Frequency
-Hz = hertz
+Hz = Hertz
 
-newton : Unit Force'
-newton = ((meter <//> second) <//> second) <**> kilogram
+Newton : Unit Force'
+Newton = ((Metre <//> Second) <//> Second) <**> Kilogram
 N : Unit Force'
-N = newton
+N = Newton
 
-pascal : Unit Pressure
-pascal = newton <//> (meter ^^ 2)
+Pascal : Unit Pressure
+Pascal = Newton <//> (Metre ^^ 2)
 Pa : Unit Pressure
-Pa = pascal
+Pa = Pascal
 
-joule : Unit Energy
-joule = newton <**> meter
+Joule : Unit Energy
+Joule = Newton <**> Metre
 J : Unit Energy
-J = joule
+J = Joule
 
-watt : Unit Power
-watt = joule <//> second
+Watt : Unit Power
+Watt = Joule <//> Second
 W : Unit Power
-W = watt
+W = Watt
 
-coulomb : Unit ElectricCharge
-coulomb = second <**> ampere
+Coulomb : Unit ElectricCharge
+Coulomb = Second <**> Ampere
 C : Unit ElectricCharge
-C = coulomb
+C = Coulomb
 
-volt : Unit ElectricPotentialDifference
-volt = watt <//> ampere
+Volt : Unit ElectricPotentialDifference
+Volt = Watt <//> Ampere
 V : Unit ElectricPotentialDifference
-V = volt
+V = Volt
 
-farad : Unit Capacitance
-farad = coulomb <//> volt
+Farad : Unit Capacitance
+Farad = Coulomb <//> Volt
 F : Unit Capacitance
-F = farad
+F = Farad
 
-ohm : Unit ElectricResistance
-ohm = volt <//> ampere
+Ohm : Unit ElectricResistance
+Ohm = Volt <//> Ampere
 
-siemens : Unit ElectricConductance
-siemens = ampere <//> volt
+Siemens : Unit ElectricConductance
+Siemens = Ampere <//> Volt
 S : Unit ElectricConductance
-S = siemens
+S = Siemens
 
-weber : Unit MagneticFlux
-weber = second <**> volt
+Weber : Unit MagneticFlux
+Weber = Second <**> Volt
 Wb : Unit MagneticFlux
-Wb = weber
+Wb = Weber
 
-tesla : Unit MagneticFluxDensity
-tesla = weber <//> (meter ^^ 2)
+Tesla : Unit MagneticFluxDensity
+Tesla = Weber <//> (Metre ^^ 2)
 T : Unit MagneticFluxDensity
-T = tesla
+T = Tesla
 
-henry : Unit Inductance
-henry = weber <//> ampere
+Henry : Unit Inductance
+Henry = Weber <//> Ampere
 H : Unit Inductance
-H = henry
+H = Henry
 
 -- For relative temperature measurements
-celsius : Unit Temperature
-celsius = kelvin
-dC : Unit Temperature
-dC = celsius
+Celsius : Unit Temperature
+Celsius = Kelvin
+DC : Unit Temperature
+DC = Celsius
 
-lumen : Unit LuminousFlux
-lumen = candela <**> steradian
-lm : Unit LuminousFlux
-lm = lumen
+Lumen : Unit LuminousFlux
+Lumen = Candela <**> Steradian
+Lm : Unit LuminousFlux
+Lm = Lumen
 
-lux : Unit Illuminance
-lux = lumen <//> (meter ^^ 2)
-lx : Unit Illuminance
-lx = lux
+Lux : Unit Illuminance
+Lux = Lumen <//> (Metre ^^ 2)
+Lx : Unit Illuminance
+Lx = Lux
 
-becquerel : Unit ActivityReferredToARadionuclide
-becquerel = second ^^ (-1)
+Becquerel : Unit ActivityReferredToARadionuclide
+Becquerel = Second ^^ (-1)
 Bq : Unit ActivityReferredToARadionuclide
-Bq = becquerel
+Bq = Becquerel
 
-gray : Unit AbsorbedDose
-gray = joule <//> kilogram
+Gray : Unit AbsorbedDose
+Gray = Joule <//> Kilogram
 Gy : Unit AbsorbedDose
-Gy = gray
+Gy = Gray
 
-sievert : Unit DoseEquivalent
-sievert = joule <//> kilogram
+Sievert : Unit DoseEquivalent
+Sievert = Joule <//> Kilogram
 Sv : Unit DoseEquivalent
-Sv = sievert
+Sv = Sievert
 
-katal : Unit CatalyticActivity
-katal = mol <//> second
-kat : Unit CatalyticActivity
-kat = katal
+Katal : Unit CatalyticActivity
+Katal = Mol <//> Second
+Kat : Unit CatalyticActivity
+Kat = Katal

@@ -69,13 +69,13 @@ The `Quantity` data type is now defined as the [free abelian group](http://en.wi
 A unit represents a specific amount of a quantity. For example, we have
 
 ```idris
-centimetre : Unit Length
-second : Unit Time
-ampere : Unit ElectricCurrent
-newton : Unit Force
+Centimetre : Unit Length
+Second : Unit Time
+Ampere : Unit ElectricCurrent
+Newton : Unit Force
 ```
 
-Notice that units are indexed by the quantity they represent. Like with quantities, we can multiply and devide units to derive new units. But there is a catch: when we multiply two units, the resulting unit represents the product of their respective quantities. For example, when we multiply the unit centimetre with itself, we get a unit for area, since `Area = Length <*> Length`. Therefore, we have the functions
+Notice that units are indexed by the quantity they represent. Like with quantities, we can multiply and devide units to derive new units. But there is a catch: when we multiply two units, the resulting unit represents the product of their respective quantities. For example, when we multiply the unit `Centimetre` with itself, we get a unit for area, since `Area = Length <*> Length`. Therefore, we have the functions
 
 ```idris
 (<**>) : {q : Quantity} -> {r : Quantity} -> Unit q -> Unit r -> Unit (q <*> r)
@@ -86,17 +86,17 @@ Notice that units are indexed by the quantity they represent. Like with quantiti
 For example:
 
 ```idris
-squareCentimetre : Unit Area
-squareCentimetre = centimetre <*> centimetre -- = centimetre ^^ 2
+SquareCentimetre : Unit Area
+SquareCentimetre = Centimetre <*> Centimetre -- = Centimetre ^^ 2
 
-metrePerSecond : Unit Speed
-metrePerSecond = meter <//> second
+MetrePerSecond : Unit Speed
+MetrePerSecond = Meter <//> Second
 
-cubicCentimetre : Unit Volume
-cubicCentimetre = centimetre ^^ 3
+CubicCentimetre : Unit Volume
+CubicCentimetre = Centimetre ^^ 3
 
-newton : Unit ((Length <*> Mass) </> (Time ^ 2))
-newton = (metre <**> kilogram) <//> (second ^^ 2)
+Newton : Unit ((Length <*> Mass) </> (Time ^ 2))
+Newton = (Metre <**> Kilogram) <//> (Second ^^ 2)
 ```
 
 
@@ -105,35 +105,35 @@ newton = (metre <**> kilogram) <//> (second ^^ 2)
 We have to start somewhere by defining some base units:
 
 ```idris
-metre : ElemUnit Length
-metre = MkElemUnit "m" 1
+Metre : ElemUnit Length
+Metre = MkElemUnit "m" 1
 
-second : ElemUnit Time
-second = MkElemUnit "s" 1
+Second : ElemUnit Time
+Second = MkElemUnit "s" 1
 
-candela : ElemUnit LuminousIntensity
-candela = MkElemUnit "cd" 1
+Candela : ElemUnit LuminousIntensity
+Candela = MkElemUnit "cd" 1
 
 -- the quantity of happiness that a one kilogram beagle puppy whose body temperature is 310 kelvins produces when held in skin contact for one second
-puppy : ElemUnit Happiness
-puppy = MkElemUnit "puppy" 1
+Puppy : ElemUnit Happiness
+Puppy = MkElemUnit "puppy" 1
 ```
 
-These are called elementary units. The number at the end of `MkElemUnit` is the conversion rate to the base unit of the quantity. Since `metre`, `candela` and `puppy` are the base units themselves, the conversion rate for them is `1`. Which unit you consider as a base unit for a dimension isn't important as long as you stay consistent with your choices.
+These are called elementary units. The number at the end of `MkElemUnit` is the conversion rate to the base unit of the quantity. Since `Metre`, `Candela` and `Puppy` are the base units themselves, the conversion rate for them is `1`. Which unit you consider as a base unit for a dimension isn't important as long as you stay consistent with your choices.
 
 Elementary units are not just a way to bootstrap the system of units; they can also be used to define other units, with some syntax sugar:
 
 ```idris
-mile : ElemUnit Length
-mile = < one "mile" equals 1609.344 metre >
+Mile : ElemUnit Length
+Mile = < one "mile" equals 1609.344 Metre >
 
 -- Speed of light
-c_0 : ElemUnit Speed
-c_0 = < one "c_0" equals 299792458 (metre <//> second) >
+C_0 : ElemUnit Speed
+C_0 = < one "c_0" equals 299792458 (Metre <//> Second) >
 
 -- If you're like me ...
-kitten : ElemUnit Happiness
-kitten = < one "kitten" equals 1.5 puppy >
+Kitten : ElemUnit Happiness
+Kitten = < one "kitten" equals 1.5 Puppy >
 ```
 
 Units are defined as the free abelian group over elementary units, with the addition that we keep track of the quantities that are represented by the units.
@@ -164,28 +164,28 @@ F u = Measurement u Float
 For example:
 
 ```idris
-distanceToMoon : F metre
-distanceToMoon = 384400000.0 =| metre
+distanceToMoon : F Metre
+distanceToMoon = 384400000.0 =| Metre
 ```
 
 
 ### Converting between units
 
-Sometimes, a conversion isn't necessary. For example, the unit `newton` is definitionally equal to `(metre <**> kilogram) <//> (second ^^ 2)`, so you won't have to convert between these. But generally, you will need a conversion function.
+Sometimes, a conversion isn't necessary. For example, the unit `Newton` is definitionally equal to `(Metre <**> Kilogram) <//> (Second ^^ 2)`, so you won't have to convert between these. But generally, you will need a conversion function.
 
 ```idris
 distanceToMoonInMiles : F miles
-distanceToMoonInMiles = convertTo miles distanceToMoon
+distanceToMoonInMiles = convertTo Mile distanceToMoon
 
 -- According to Wikipedia
-dogYear : ElemUnit Time
-dogYear = < one "dy" equals 52 day >
+DogYear : ElemUnit Time
+DogYear = < one "dy" equals 52 Day >
 
-myAgeInDogYears : F dogYear
-myAgeInDogYears = (20 =| year) `as` dogYear
+myAgeInDogYears : F DogYear
+myAgeInDogYears = (21 =| Year) `as` DogYear
 ```
 
-Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo miles`. For reference, the conversion functions used above are
+Since the target unit in the first example is clear from the context, we could write `convert` instead of `convertTo Mile`. For reference, the conversion functions used above are
 
 ```idris
 convertTo : {from : Unit q} -> (to : Unit q) -> F from -> F to
@@ -199,21 +199,21 @@ as        : {from : Unit q} -> F from -> (to : Unit q) -> F to
 Let's say I've lifted a 5 kg weight from ground to a height of 2 metre in 0.8 seconds. What's the average power of this action?
 
 ```idris
-weight : F kilogram
-weight = 2 =| kilogram
+weight : F Kilogram
+weight = 2 =| Kilogram
 
-height : F metre
-height = 2 =| metre
+height : F Metre
+height = 2 =| Metre
 
-duration : F second
-duration = 0.8 =| second
+duration : F Second
+duration = 0.8 =| Second
 
-g_0 : F (metre <//> (second ^^ 2))
-g_0 = 9.80665 =| (metre <//> (second ^^ 2))
+g_0 : F (Metre <//> (Second ^^ 2))
+g_0 = 9.80665 =| (Metre <//> (Second ^^ 2))
 
-averagePower : F watt
+averagePower : F Watt
 averagePower = convert $ (weight |*| height |*| g_0) |/| duration
--- = 49.033 watt
+-- = 49.033 Watt
 ```
 
 This example shows how to multiply measurements using the functions
@@ -227,13 +227,13 @@ This example shows how to multiply measurements using the functions
 We can even use these functions to multiply measurements with scalar values:
 
 ```idris
-energyConversionEfficiency : Float
-energyConversionEfficiency = 0.88
+energyConversionEfficiency : F One
+energyConversionEfficiency = 0.88 =| One
 
-batteryCapacity : F (watt <**> hour)
-batteryCapacity = 85000 =| (watt <**> hour)
+batteryCapacity : F (Watt <**> Hour)
+batteryCapacity = 85000 =| (Watt <**> Hour)
 
-usedEnergy : F (watt <**> hour)
+usedEnergy : F (Watt <**> Hour)
 usedEnergy = convert $ energyConversionEfficiency |*| batteryCapacity
 ```
 
@@ -247,8 +247,8 @@ We can add and subtract measurements, too, but only if they have the same unit:
 For example:
 
 ```idris
-eatChocolateCake : F puppy -> F puppy
-eatChocolateCake x = x <+> (2 =| puppy)
+eatChocolateCake : F Puppy -> F Puppy
+eatChocolateCake x = x <+> (2 =| Puppy)
 ```
 
 
@@ -260,17 +260,17 @@ From the [International System of Units (SI)](http://en.wikipedia.org/wiki/Inter
 
 * [`Quantities.SIBaseQuantities`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseQuantities.idr): The seven SI base quantities `Length`, `Mass`, `Time`, `ElectricCurrent`, `Temperature`, `LuminousIntensity` and `AmountOfSubstance`
 * [`Quantities.SIDerivedQuantities`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedQuantities.idr): SI derived quantites, e.g. `Velocity`, `Acceleration`, `ElectricResistance`, `Energy`, etc.
-* [`Quantities.SIBaseUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr): The base units corresponding to the base quantities: `meter`, `kilogram`, `second`, `ampere`, `kelvin`, `candela` and `mole`
-* [`Quantities.SIDerivedUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr): Various units derived from the seven base units, e.g. `joule`, `pascal`, `ohm`, `hertz`
+* [`Quantities.SIBaseUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIBaseUnits.idr): The base units corresponding to the base quantities: `Meter`, `Kilogram`, `Second`, `Ampere`, `Kelvin`, `Candela` and `Mole`
+* [`Quantities.SIDerivedUnits`](https://github.com/timjb/quantities/blob/master/Quantities/SIDerivedUnits.idr): Various units derived from the seven base units, e.g. `Joule`, `Pascal`, `Ohm`, `Hertz`
 
 These four modules are reexported by the main module [`Quantities`](https://github.com/timjb/quantities/blob/master/Quantities.idr).
 
 Other quantities and units:
 
-* [`Quantities.ImperialUnits`](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr): Imperial units, e.g. `mile`, `inch`, `gallon`, `pound`
-* [`Quantities.NonSIUnits`](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr): Various common and uncommon units, e.g. `minute`, `electronvolt`, `calorie`, `tonne`, `lightYear`
-* [`Quantities.Information`](https://github.com/timjb/quantities/blob/master/Quantities/Information.idr): Contains the quantity `Information` and its units `bit` and `bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix), e.g. `mebi byte` for 1024^2 bytes.
-* [`Quantities.Screen`](https://github.com/timjb/quantities/blob/master/Quantities/Screen.idr): The quantity `ScreenLength` with the unit `pixel`. Useful for UI programming.
+* [`Quantities.ImperialUnits`](https://github.com/timjb/quantities/blob/master/Quantities/ImperialUnits.idr): Imperial units, e.g. `Mile`, `Inch`, `Gallon`, `Pound`
+* [`Quantities.NonSIUnits`](https://github.com/timjb/quantities/blob/master/Quantities/NonSIUnits.idr): Various common and uncommon units, e.g. `Minute`, `Electronvolt`, `Calorie`, `Tonne`, `LightYear`
+* [`Quantities.Information`](https://github.com/timjb/quantities/blob/master/Quantities/Information.idr): Contains the quantity `Information` and its units `Bit` and `Bytes` with their various [binary prefixes](http://en.wikipedia.org/wiki/Binary_prefix), e.g. `mebi Byte` for 1024^2 bytes.
+* [`Quantities.Screen`](https://github.com/timjb/quantities/blob/master/Quantities/Screen.idr): The quantity `ScreenLength` with the unit `Pixel`. Useful for UI programming.
 
 
 ### Metric Prefixes
@@ -280,11 +280,11 @@ All standard [SI prefixes](http://en.wikipedia.org/wiki/Metric_prefix) are suppo
 ```idris
 import Quantities
 
-microscopeResolution : F (nano metre)
-microscopeResolution = 180 =| (nano metre)
+microscopeResolution : F (nano Metre)
+microscopeResolution = 180 =| (nano Metre)
 
-performance : F (mega watt)
-performance = 3.1 =| (mega watt)
+performance : F (mega Watt)
+performance = 3.1 =| (mega Watt)
 ```
 
 
@@ -293,31 +293,33 @@ performance = 3.1 =| (mega watt)
 A simple example that demonstrates how one could use quantities to implement simple movement with gravity in a game.
 
 ```idris
+module Game
+
 import Quantities
 import Quantities.Screen
 
 ScreenSpeed : Quantity
 ScreenSpeed = ScreenLength </> Time
 
-pxs : Unit ScreenSpeed
-pxs = pixel <//> second
+Pxs : Unit ScreenSpeed
+Pxs = Pixel <//> Second
 
 record PlayerState where
   constructor MkPlayerState
-  xSpeed : F pxs
-  ySpeed : F pxs
-  xPos   : F px
-  yPos   : F px
+  xSpeed : F Pxs
+  ySpeed : F Pxs
+  xPos   : F Px
+  yPos   : F Px
 
-gravity : F (pxs <//> second)
-gravity = -800 =| (pxs <//> second)
+gravity : Quantities.Core.F (Pxs <//> Second)
+gravity = -800 =| (Pxs <//> Second)
 
 -- Update player position and speed after a given duration
-updatePlayerState : F second -> PlayerState -> PlayerState
+updatePlayerState : F Second -> PlayerState -> PlayerState
 updatePlayerState dt (MkPlayerState xs ys xp yp) =
   let newYPos = yp <+> ys |*| dt
-  in if newYPos <= (0 =| px)
-       then MkPlayerState (0 =| pxs) (0 =| pxs) xp (0 =| px)
+  in if newYPos <= (0 =| Px)
+       then MkPlayerState (0 =| Pxs) (0 =| Pxs) xp (0 =| Px)
        else MkPlayerState xs (ys <+> gravity |*| dt)
                           (xp <+> xs |*| dt) newYPos
 ```

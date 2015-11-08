@@ -16,191 +16,191 @@ import Quantities.NonSIUnits
 
 -- Length
 
-thou : ElemUnit Length
-thou = < one "th" equals 25.4 (micro metre) >
-th : ElemUnit Length
-th = thou
+Thou : ElemUnit Length
+Thou = < one "th" equals 25.4 (micro Metre) >
+Th : ElemUnit Length
+Th = Thou
 
-inch : ElemUnit Length
-inch = < one "in" equals 2.54 centimetre >
-in_ : ElemUnit Length
-in_ = inch
+Inch : ElemUnit Length
+Inch = < one "in" equals 2.54 Centimetre >
+In_ : ElemUnit Length
+In_ = Inch
 
-foot : ElemUnit Length
-foot = < one "ft" equals 12 inch >
-ft : ElemUnit Length
-ft = foot
+Foot : ElemUnit Length
+Foot = < one "ft" equals 12 Inch >
+Ft : ElemUnit Length
+Ft = Foot
 
-yard : ElemUnit Length
-yard = < one "yd" equals 3 foot >
-yd : ElemUnit Length
-yd = yard
+Yard : ElemUnit Length
+Yard = < one "yd" equals 3 Foot >
+Yd : ElemUnit Length
+Yd = Yard
 
-chain : ElemUnit Length
-chain = < one "ch" equals 22 yard >
-ch : ElemUnit Length
-ch = chain
+Chain : ElemUnit Length
+Chain = < one "ch" equals 22 Yard >
+Ch : ElemUnit Length
+Ch = Chain
 
-furlong : ElemUnit Length
-furlong = < one "fur" equals 10 chain >
-fur : ElemUnit Length
-fur = furlong
+Furlong : ElemUnit Length
+Furlong = < one "fur" equals 10 Chain >
+Fur : ElemUnit Length
+Fur = Furlong
 
-mile : ElemUnit Length
-mile = < one "mi" equals 1760 yard >
-mi : ElemUnit Length
-mi = mile
+Mile : ElemUnit Length
+Mile = < one "mi" equals 1760 Yard >
+Mi : ElemUnit Length
+Mi = Mile
 
-league : ElemUnit Length
-league = < one "lea" equals 3 mile >
-lea : ElemUnit Length
-lea = league
+League : ElemUnit Length
+League = < one "lea" equals 3 Mile >
+Lea : ElemUnit Length
+Lea = League
 
 -- Maritime units
 
-fathom : ElemUnit Length
-fathom = < one "ftm" equals 6.08 foot >
-ftm : ElemUnit Length
-ftm = fathom
+Fathom : ElemUnit Length
+Fathom = < one "ftm" equals 6.08 Foot >
+Ftm : ElemUnit Length
+Ftm = Fathom
 
-cable : ElemUnit Length
-cable = < one "cable" equals 608 foot >
+Cable : ElemUnit Length
+Cable = < one "cable" equals 608 Foot >
 
-nauticalMile : ElemUnit Length
-nauticalMile = < one "nmi" equals 1852 metre >
-nmi : ElemUnit Length
-nmi = nauticalMile
+NauticalMile : ElemUnit Length
+NauticalMile = < one "nmi" equals 1852 Metre >
+Nmi : ElemUnit Length
+Nmi = NauticalMile
 
 -- Gunter's survey units
 
-link : ElemUnit Length
-link = < one "link" equals (1/100) chain >
+Link : ElemUnit Length
+Link = < one "link" equals (1/100) Chain >
 
-rod : ElemUnit Length
-rod = < one "rod" equals (1/4) chain >
+Rod : ElemUnit Length
+Rod = < one "rod" equals (1/4) Chain >
 
 
 -- Speed
 
-knot : ElemUnit Speed
-knot = < one "kn" equals 1 (nauticalMile <//> hour) >
-kn : ElemUnit Speed
-kn = knot
+Knot : ElemUnit Speed
+Knot = < one "kn" equals 1 (NauticalMile <//> Hour) >
+Kn : ElemUnit Speed
+Kn = Knot
 
 
 -- Area
 
-perch : ElemUnit Area
-perch = < one "perch" equals 1 (rod ^^ 2) >
+Perch : ElemUnit Area
+Perch = < one "perch" equals 1 (Rod ^^ 2) >
 
-rood : ElemUnit Area
-rood = < one "rood" equals 1 (furlong <**> rod) >
+Rood : ElemUnit Area
+Rood = < one "rood" equals 1 (Furlong <**> Rod) >
 
-acre : ElemUnit Area
-acre = < one "acre" equals 1 (furlong <**> chain) >
+Acre : ElemUnit Area
+Acre = < one "acre" equals 1 (Furlong <**> Chain) >
 
 
 -- Volume
 
-fluidOunce : ElemUnit Volume
-fluidOunce = < one "floz" equals 28.4130625 (milli $ (deci metre) ^^ 3) >
-floz : ElemUnit Volume
-floz = fluidOunce
+FluidOunce : ElemUnit Volume
+FluidOunce = < one "floz" equals 28.4130625 (milli $ (deci Metre) ^^ 3) >
+Floz : ElemUnit Volume
+Floz = FluidOunce
 
-gill : ElemUnit Volume
-gill = < one "gi" equals 5 fluidOunce >
-gi : ElemUnit Volume
-gi = gill
+Gill : ElemUnit Volume
+Gill = < one "gi" equals 5 FluidOunce >
+Gi : ElemUnit Volume
+Gi = Gill
 
-pint : ElemUnit Volume
-pint = < one "pt" equals 20 fluidOunce >
-pt : ElemUnit Volume
-pt = pint
+Pint : ElemUnit Volume
+Pint = < one "pt" equals 20 FluidOunce >
+Pt : ElemUnit Volume
+Pt = Pint
 
-quart : ElemUnit Volume
-quart = < one "qt" equals 40 fluidOunce >
-qt : ElemUnit Volume
-qt = quart
+Quart : ElemUnit Volume
+Quart = < one "qt" equals 40 FluidOunce >
+Qt : ElemUnit Volume
+Qt = Quart
 
-gallon : ElemUnit Volume
-gallon = < one "gal" equals 160 fluidOunce >
-gal : ElemUnit Volume
-gal = gallon
+Gallon : ElemUnit Volume
+Gallon = < one "gal" equals 160 FluidOunce >
+Gal : ElemUnit Volume
+Gal = Gallon
 
 -- British apothecaries' volume measures
 
-minim : ElemUnit Volume
-minim = < one "min" equals 59.1938802083 (micro $ (deci metre) ^^ 3) >
-min : ElemUnit Volume
-min = minim
+Minim : ElemUnit Volume
+Minim = < one "min" equals 59.1938802083 (micro $ (deci Metre) ^^ 3) >
+Min : ElemUnit Volume
+Min = Minim
 
-fluidScruple : ElemUnit Volume
-fluidScruple = < one "fls" equals 20 minim >
-fls : ElemUnit Volume
-fls = fluidScruple
+FluidScruple : ElemUnit Volume
+FluidScruple = < one "fls" equals 20 Minim >
+Fls : ElemUnit Volume
+Fls = FluidScruple
 
-fluidDrachm : ElemUnit Volume
-fluidDrachm = < one "fldr" equals 3 fluidScruple >
-fldr : ElemUnit Volume
-fldr = fluidDrachm
+FluidDrachm : ElemUnit Volume
+FluidDrachm = < one "fldr" equals 3 FluidScruple >
+Fldr : ElemUnit Volume
+Fldr = FluidDrachm
 
 
 -- Mass
 
-pound : ElemUnit Mass
-pound = < one "lb" equals 453.59237 gram >
-lb : ElemUnit Mass
-lb = pound
+Pound : ElemUnit Mass
+Pound = < one "lb" equals 453.59237 Gram >
+Lb : ElemUnit Mass
+Lb = Pound
 
-grain : ElemUnit Mass
-grain = < one "gr" equals (1/7000) pound >
-gr : ElemUnit Mass
-gr = grain
+Grain : ElemUnit Mass
+Grain = < one "gr" equals (1/7000) Pound >
+Gr : ElemUnit Mass
+Gr = Grain
 
-drachm : ElemUnit Mass
-drachm = < one "dr" equals (1/256) pound >
-dr : ElemUnit Mass
-dr = drachm
+Drachm : ElemUnit Mass
+Drachm = < one "dr" equals (1/256) Pound >
+Dr : ElemUnit Mass
+Dr = Drachm
 
-ounce : ElemUnit Mass
-ounce = < one "oz" equals (1/16) pound >
-oz : ElemUnit Mass
-oz = ounce
+Ounce : ElemUnit Mass
+Ounce = < one "oz" equals (1/16) Pound >
+Oz : ElemUnit Mass
+Oz = Ounce
 
-stone : ElemUnit Mass
-stone = < one "st" equals 14 pound >
-st : ElemUnit Mass
-st = stone
+Stone : ElemUnit Mass
+Stone = < one "st" equals 14 Pound >
+St : ElemUnit Mass
+St = Stone
 
-quarter : ElemUnit Mass
-quarter = < one "qtr" equals 28 pound >
-qtr : ElemUnit Mass
-qtr = quarter
+Quarter : ElemUnit Mass
+Quarter = < one "qtr" equals 28 Pound >
+Qtr : ElemUnit Mass
+Qtr = Quarter
 
-hundredweight : ElemUnit Mass
-hundredweight = < one "cwt" equals 112 pound >
-cwt : ElemUnit Mass
-cwt = hundredweight
+Hundredweight : ElemUnit Mass
+Hundredweight = < one "cwt" equals 112 Pound >
+Cwt : ElemUnit Mass
+Cwt = Hundredweight
 
-ton : ElemUnit Mass
-ton = < one "ton" equals 2240 pound >
+Ton : ElemUnit Mass
+Ton = < one "ton" equals 2240 Pound >
 
 
 -- Energy
 
-footPound : ElemUnit Energy
-footPound = < one "ftlb" equals 1 (foot <**> pound <**> g_0) >
-ftlb : ElemUnit Energy
-ftlb = footPound
+FootPound : ElemUnit Energy
+FootPound = < one "ftlb" equals 1 (Foot <**> Pound <**> G_0) >
+Ftlb : ElemUnit Energy
+Ftlb = FootPound
 
 
 -- Power
 
-mechanicalHorsepower : ElemUnit Power
-mechanicalHorsepower = < one "hp" equals 550 (footPound <//> second) >
-imperialHorsepower : ElemUnit Power
-imperialHorsepower = mechanicalHorsepower
-horsepower : ElemUnit Power
-horsepower = mechanicalHorsepower
-hp : ElemUnit Power
-hp = mechanicalHorsepower
+MechanicalHorsepower : ElemUnit Power
+MechanicalHorsepower = < one "hp" equals 550 (FootPound <//> Second) >
+ImperialHorsepower : ElemUnit Power
+ImperialHorsepower = MechanicalHorsepower
+Horsepower : ElemUnit Power
+Horsepower = MechanicalHorsepower
+Hp : ElemUnit Power
+Hp = MechanicalHorsepower

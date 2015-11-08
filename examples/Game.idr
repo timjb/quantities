@@ -1,27 +1,29 @@
+module Game
+
 import Quantities
 import Quantities.Screen
 
 ScreenSpeed : Quantity
 ScreenSpeed = ScreenLength </> Time
 
-pxs : Unit ScreenSpeed
-pxs = pixel <//> second
+Pxs : Unit ScreenSpeed
+Pxs = Pixel <//> Second
 
 record PlayerState where
   constructor MkPlayerState
-  xSpeed : F pxs
-  ySpeed : F pxs
-  xPos   : F px
-  yPos   : F px
+  xSpeed : F Pxs
+  ySpeed : F Pxs
+  xPos   : F Px
+  yPos   : F Px
 
-gravity : F (pxs <//> second)
-gravity = -800 =| (pxs <//> second)
+gravity : Quantities.Core.F (Pxs <//> Second)
+gravity = -800 =| (Pxs <//> Second)
 
 -- Update player position and speed after a given duration
-updatePlayerState : F second -> PlayerState -> PlayerState
+updatePlayerState : F Second -> PlayerState -> PlayerState
 updatePlayerState dt (MkPlayerState xs ys xp yp) =
   let newYPos = yp <+> ys |*| dt
-  in if newYPos <= (0 =| px)
-       then MkPlayerState (0 =| pxs) (0 =| pxs) xp (0 =| px)
+  in if newYPos <= (0 =| Px)
+       then MkPlayerState (0 =| Pxs) (0 =| Pxs) xp (0 =| Px)
        else MkPlayerState xs (ys <+> gravity |*| dt)
                           (xp <+> xs |*| dt) newYPos
