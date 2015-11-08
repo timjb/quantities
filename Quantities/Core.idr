@@ -100,23 +100,23 @@ instance Eq (Unit q) where
            getElemUnits' x  == getElemUnits' y
 
 ||| The trivial unit
-one : Unit scalar
+one : Unit Quantities.Core.scalar
 one = MkUnit 0 neutral
 
 ||| Multiples of ten
-ten : Unit scalar
+ten : Unit Quantities.Core.scalar
 ten = MkUnit 1 neutral
 
 ||| One hundredth
-percent : Unit scalar
+percent : Unit Quantities.Core.scalar
 percent = MkUnit (-2) neutral
 
 ||| One thousandth
-promille : Unit scalar
+promille : Unit Quantities.Core.scalar
 promille = MkUnit (-3) neutral
 
 ||| The trivial unit (synonymous with `one`)
-unitLess : Unit scalar
+unitLess : Unit Quantities.Core.scalar
 unitLess = one
 
 implicit
