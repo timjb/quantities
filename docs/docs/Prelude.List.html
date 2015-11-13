@@ -1,109 +1,35 @@
 <!DOCTYPE HTML>
-<html><head><title>IdrisDoc: Prelude.List</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.List<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.List</h1><dl class="decls"><dt id="Prelude.List.zipWithTailProof"><span class="name function" title="Prelude.List.zipWithTailProof">zipWithTailProof</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">c</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span> ->
-<span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">y</span> : <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">ys</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">p</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">y</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">ys</span>)) ->
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">ys</span></span></dt><dd></dd><dt id="Prelude.List.zipWith3TailProof&#39;"><span class="name function" title="Prelude.List.zipWith3TailProof&#39;">zipWith3TailProof&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">c</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">d</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span> ->
-<span class="boundvar" title="">c</span> ->
-<span class="boundvar" title="">d</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">y</span> : <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">ys</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">z</span> : <span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">zs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">p</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">y</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">ys</span>)) ->
-(<span class="boundvar" title="">q</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">y</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">ys</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">z</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">zs</span>)) ->
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">ys</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">zs</span></span></dt><dd></dd><dt id="Prelude.List.zipWith3TailProof"><span class="name function" title="Prelude.List.zipWith3TailProof">zipWith3TailProof</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">c</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">d</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span> ->
-<span class="boundvar" title="">c</span> ->
-<span class="boundvar" title="">d</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">y</span> : <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">ys</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">z</span> : <span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">zs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">p</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">y</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">ys</span>)) ->
-(<span class="boundvar" title="">q</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">y</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">ys</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">z</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">zs</span>)) ->
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">ys</span></span></dt><dd></dd><dt id="Prelude.List.zipWith3"><span class="name function" title="Prelude.List.zipWith3">zipWith3</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the function to combine elements with">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<html><head><title>IdrisDoc: Prelude.List</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.List<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.List</h1><dl class="decls"><dt id="Prelude.List.zipWith3"><span class="name function" title="Prelude.List.zipWith3">zipWith3</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the function to combine elements with">f</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">b</span> ->
 <span class="implicit boundvar" title="">c</span> ->
 <span class="implicit boundvar" title="">d</span>) ->
 (<span class="documented boundvar" title="the first list">x</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="documented boundvar" title="the second list">y</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span>) ->
 (<span class="documented boundvar" title="the third list">z</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">c</span>) ->
-(<span class="documented boundvar" title="a proof that the lengths of the first two inputs are equal">ok</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the first list">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the second list">y</span>) ->
-(<span class="documented boundvar" title="a proof that the lengths of the second and third inputs are equal">ok&#39;</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the second list">y</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the third list">z</span>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">d</span></span></dt><dd><p>Combine three lists of the same length elementwise using some function.</p>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">d</span></span></dt><dd><p>Combine three lists elementwise using some function. If they are different<br />
+lengths, the result is truncated to the length of the shortest list.</p>
 <dl><dt>f</dt><dd><p>the function to combine elements with</p>
 </dd><dt>x</dt><dd><p>the first list</p>
 </dd><dt>y</dt><dd><p>the second list</p>
 </dd><dt>z</dt><dd><p>the third list</p>
-</dd><dt>ok</dt><dd><p>a proof that the lengths of the first two inputs are equal</p>
-</dd><dt>ok&#39;</dt><dd><p>a proof that the lengths of the second and third inputs are equal</p>
 </dd></dl></dd><dt id="Prelude.List.zipWith"><span class="name function" title="Prelude.List.zipWith">zipWith</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the function to combine elements with">f</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">b</span> ->
 <span class="implicit boundvar" title="">c</span>) ->
 (<span class="documented boundvar" title="the first list">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="documented boundvar" title="the second list">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span>) ->
-(<span class="documented boundvar" title="a proof that the lengths of the inputs are equal">ok</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the first list">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="documented boundvar" title="the second list">r</span>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">c</span></span></dt><dd><p>Combine two lists of the same length elementwise using some function.</p>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">c</span></span></dt><dd><p>Combine two lists elementwise using some function. If they are different<br />
+lengths, the result is truncated to the length of the shorter list.</p>
 <dl><dt>f</dt><dd><p>the function to combine elements with</p>
 </dd><dt>l</dt><dd><p>the first list</p>
 </dd><dt>r</dt><dd><p>the second list</p>
-</dd><dt>ok</dt><dd><p>a proof that the lengths of the inputs are equal</p>
 </dd></dl></dd><dt id="Prelude.List.zip3"><span class="name function" title="Prelude.List.zip3">zip3</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">y</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span>) ->
 (<span class="boundvar" title="">z</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">c</span>) ->
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">x</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">y</span>) ->
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">y</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">z</span>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><span class="implicit boundvar" title="">a</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
 <span class="implicit boundvar" title="">b</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
 <span class="implicit boundvar" title="">c</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">)</a></span></dt><dd><p>Combine three lists elementwise into tuples</p>
 </dd><dt id="Prelude.List.zip"><span class="name function" title="Prelude.List.zip">zip</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span>) ->
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">r</span>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><span class="implicit boundvar" title="">a</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
 <span class="implicit boundvar" title="">b</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">)</a></span></dt><dd><p>Combine two lists elementwise into pairs</p>
 </dd><dt id="Prelude.List.unzip3"><span class="name function" title="Prelude.List.unzip3">unzip3</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><span class="implicit boundvar" title="">a</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
@@ -121,10 +47,11 @@
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.union"><span class="name function" title="Prelude.List.union">union</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>The unionBy function returns the union of two lists by user-supplied equality predicate.</p>
+</dd><dt id="Prelude.List.union"><span class="name function" title="Prelude.List.union">union</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>The union function returns the list union of the two lists. For example,</p>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Compute the union of two lists according to their <code>Eq</code> instance.</p>
 <pre class="idris"><code>union ['d', 'o', 'g'] ['c', 'o', 'w']
 </code></pre>
 </dd><dt id="Prelude.List.transpose"><span class="name function" title="Prelude.List.transpose">transpose</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
@@ -160,8 +87,7 @@ first. For example,</p>
 <a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>)</span></dt><dd><p>Attempt to get the tail of a list.</p>
 <p>If the list is empty, return <code>Nothing</code>.</p>
 </dd><dt id="Prelude.List.tail"><span class="name function" title="Prelude.List.tail">tail</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-{<span class="keyword" title="">tacimp</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="function" title="Prelude.List.isCons" href="Prelude.List.html#Prelude.List.isCons">isCons</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>} ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="boundvar" title="">l</span>} ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Get the tail of a non-empty list.</p>
 <dl><dt>ok</dt><dd><p>proof that the list is non-empty</p>
 </dd></dl></dd><dt id="Prelude.List.splitOn"><span class="name function" title="Prelude.List.splitOn">splitOn</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
@@ -194,9 +120,18 @@ prefix of the list that satisfies a predicate and the rest of the list.</p>
 </code></pre>
 </dd><dt id="Prelude.List.sorted"><span class="name function" title="Prelude.List.sorted">sorted</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Ord" href="Prelude.Classes.html#Prelude.Classes.Ord">Ord</a> <span class="implicit boundvar" title="">a</span> =>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd></dd><dt id="Prelude.List.sort"><span class="name function" title="Prelude.List.sort">sort</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Ord" href="Prelude.Classes.html#Prelude.Classes.Ord">Ord</a> <span class="implicit boundvar" title="">a</span> =>
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>Check whether a list is sorted with respect to the default ordering for the type of its elements.</p>
+</dd><dt id="Prelude.List.sortBy"><span class="name function" title="Prelude.List.sortBy">sortBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="how to compare elements">cmp</span> : <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Classes.Ordering" href="Prelude.Classes.html#Prelude.Classes.Ordering">Ordering</a>) ->
+(<span class="documented boundvar" title="the list to sort">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Sort a list using some arbitrary comparison predicate.</p>
+<dl><dt>cmp</dt><dd><p>how to compare elements</p>
+</dd><dt>xs</dt><dd><p>the list to sort</p>
+</dd></dl></dd><dt id="Prelude.List.sort"><span class="name function" title="Prelude.List.sort">sort</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Ord" href="Prelude.Classes.html#Prelude.Classes.Ord">Ord</a> <span class="implicit boundvar" title="">a</span> =>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.reverse"><span class="name function" title="Prelude.List.reverse">reverse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Sort a list using the default ordering for the type of its elements.</p>
+</dd><dt id="Prelude.List.reverse"><span class="name function" title="Prelude.List.reverse">reverse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Return the elements of a list in reverse order.</p>
 </dd><dt id="Prelude.List.replicate"><span class="name function" title="Prelude.List.replicate">replicate</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="how many copies">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="documented boundvar" title="the element to replicate">x</span> : <span class="implicit boundvar" title="">a</span>) ->
@@ -230,26 +165,21 @@ special case of nubBy, which allows the programmer to supply their own<br />
 equality test.</p>
 <pre class="idris"><code>nub (the (List _) [1,2,1,3])
 </code></pre>
+</dd><dt id="Prelude.List.nonEmpty"><span class="name function" title="Prelude.List.nonEmpty">nonEmpty</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Basics.Dec" href="Prelude.Basics.html#Prelude.Basics.Dec">Dec</a> (<a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="boundvar" title="">xs</span>)</span></dt><dd><p>Decide whether a list is non-empty</p>
 </dd><dt id="Prelude.List.mergeBy"><span class="name function" title="Prelude.List.mergeBy">mergeBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Classes.Ordering" href="Prelude.Classes.html#Prelude.Classes.Ordering">Ordering</a>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.merge"><span class="name function" title="Prelude.List.merge">merge</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Ord" href="Prelude.Classes.html#Prelude.Classes.Ord">Ord</a> <span class="implicit boundvar" title="">a</span> =>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Merge two sorted lists using an arbitrary comparison<br />
+predicate. Note that the lists must have been sorted using this<br />
+predicate already.</p>
+</dd><dt id="Prelude.List.merge"><span class="name function" title="Prelude.List.merge">merge</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Ord" href="Prelude.Classes.html#Prelude.Classes.Ord">Ord</a> <span class="implicit boundvar" title="">a</span> =>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.mapPreservesLengthStepCase"><span class="name function" title="Prelude.List.mapPreservesLengthStepCase">mapPreservesLengthStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span>) ->
-<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> (<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">xs</span>)) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> (<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span>)</span></dt><dd></dd><dt id="Prelude.List.mapPreservesLength"><span class="name function" title="Prelude.List.mapPreservesLength">mapPreservesLength</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Merge two sorted lists using the default ordering for the type of their elements.</p>
+</dd><dt id="Prelude.List.mapPreservesLength"><span class="name function" title="Prelude.List.mapPreservesLength">mapPreservesLength</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">b</span>) ->
 (<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
@@ -260,29 +190,7 @@ equality test.</p>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">b</span></span></dt><dd><p>Apply a partial function to the elements of a list, keeping the ones at which<br />
 it is defined.</p>
-</dd><dt id="Prelude.List.mapFusionStepCase"><span class="name function" title="Prelude.List.mapFusionStepCase">mapFusionStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">c</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">b</span> ->
-<span class="boundvar" title="">c</span>) ->
-(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">g</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
-(<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">g</span>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> (<span class="boundvar" title="">f</span> <a class="function" title="Prelude.Basics.." href="Prelude.Basics.html#Prelude.Basics..">.</a>
-<span class="boundvar" title="">g</span>)
-<span class="boundvar" title="">xs</span>) ->
-<span class="boundvar" title="">f</span> (<span class="boundvar" title="">g</span> <span class="boundvar" title="">x</span>) <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">f</span>
-(<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">g</span>
-<span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<span class="boundvar" title="">f</span> (<span class="boundvar" title="">g</span> <span class="boundvar" title="">x</span>) <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> (<span class="boundvar" title="">f</span> <a class="function" title="Prelude.Basics.." href="Prelude.Basics.html#Prelude.Basics..">.</a>
-<span class="boundvar" title="">g</span>)
-<span class="boundvar" title="">xs</span></span></dt><dd></dd><dt id="Prelude.List.mapFusion"><span class="name function" title="Prelude.List.mapFusion">mapFusion</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">b</span> ->
+</dd><dt id="Prelude.List.mapFusion"><span class="name function" title="Prelude.List.mapFusion">mapFusion</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">b</span> ->
 <span class="implicit boundvar" title="">c</span>) ->
 (<span class="boundvar" title="">g</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">b</span>) ->
@@ -293,29 +201,7 @@ it is defined.</p>
 <a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> (<span class="boundvar" title="">f</span> <a class="function" title="Prelude.Basics.." href="Prelude.Basics.html#Prelude.Basics..">.</a>
 <span class="boundvar" title="">g</span>)
 <span class="boundvar" title="">l</span></span></dt><dd><p>Mapping two functions is the same as mapping their composition.</p>
-</dd><dt id="Prelude.List.mapDistributesOverAppendStepCase"><span class="name function" title="Prelude.List.mapDistributesOverAppendStepCase">mapDistributesOverAppendStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">b</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">f</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">b</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
-(<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<a class="function" title="Prelude.Functor.map" href="Prelude.Functor.html#Prelude.Functor.map">map</a> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">r</span>) ->
-<span class="boundvar" title="">f</span> <span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">f</span>
-(<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<span class="boundvar" title="">f</span> <span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="function" title="">Prelude.List.List instance of Prelude.Functor.Functor, method map</span> <span class="boundvar" title="">f</span>
-<span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.List.mapDistributesOverAppend"><span class="name function" title="Prelude.List.mapDistributesOverAppend">mapDistributesOverAppend</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">a</span> ->
+</dd><dt id="Prelude.List.mapDistributesOverAppend"><span class="name function" title="Prelude.List.mapDistributesOverAppend">mapDistributesOverAppend</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">b</span>) ->
 (<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
@@ -350,18 +236,7 @@ to appending them and then mapping the function.</p>
 <dl><dt>nil</dt><dd><p>what to return at the end of the list</p>
 </dd><dt>cons</dt><dd><p>what to do at each step of recursion</p>
 </dd><dt>xs</dt><dd><p>the list to recurse over</p>
-</dd></dl></dd><dt id="Prelude.List.lengthAppendStepCase"><span class="name function" title="Prelude.List.lengthAppendStepCase">lengthAppendStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">right</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span> <a class="function" title="Prelude.Classes.+" href="Prelude.Classes.html#Prelude.Classes.+">+</a>
-<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">right</span>) ->
-<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> (<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">right</span>)) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> (<a class="function" title="Prelude.Nat.plus" href="Prelude.Nat.html#Prelude.Nat.plus">plus</a> (<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span>)
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">right</span>))</span></dt><dd></dd><dt id="Prelude.List.lengthAppend"><span class="name function" title="Prelude.List.lengthAppend">lengthAppend</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+</dd></dl></dd><dt id="Prelude.List.lengthAppend"><span class="name function" title="Prelude.List.lengthAppend">lengthAppend</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">left</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">right</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">left</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
 <span class="boundvar" title="">right</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
@@ -375,8 +250,7 @@ of the input lists.</p>
 <a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Attempt to retrieve the last element of a non-empty list.</p>
 <p>If the list is empty, return <code>Nothing</code>.</p>
 </dd><dt id="Prelude.List.last"><span class="name function" title="Prelude.List.last">last</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-{<span class="keyword" title="">tacimp</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="function" title="Prelude.List.isCons" href="Prelude.List.html#Prelude.List.isCons">isCons</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>} ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="boundvar" title="">l</span>} ->
 <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Retrieve the last element of a non-empty list.</p>
 <dl><dt>ok</dt><dd><p>proof that the list is non-empty</p>
 </dd></dl></dd><dt id="Prelude.List.isSuffixOfBy"><span class="name function" title="Prelude.List.isSuffixOfBy">isSuffixOfBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
@@ -388,12 +262,16 @@ of the input lists.</p>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>The isSuffixOf function takes two lists and returns True iff the first list is a suffix of the second.</p>
-</dd><dt id="Prelude.List.isPrefixOfBy"><span class="name function" title="Prelude.List.isPrefixOfBy">isPrefixOfBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+</dd><dt id="Prelude.List.isPrefixOfBy"><span class="name function" title="Prelude.List.isPrefixOfBy">isPrefixOfBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the equality comparison">eq</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd></dd><dt id="Prelude.List.isPrefixOf"><span class="name function" title="Prelude.List.isPrefixOf">isPrefixOf</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="documented boundvar" title="the potential prefix">left</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the list that may have &lt;code&gt;left&lt;/code&gt; as its prefix">right</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>Check whether a list is a prefix of another according to a user-supplied equality test.</p>
+<dl><dt>eq</dt><dd><p>the equality comparison</p>
+</dd><dt>left</dt><dd><p>the potential prefix</p>
+</dd><dt>right</dt><dd><p>the list that may have <code>left</code> as its prefix</p>
+</dd></dl></dd><dt id="Prelude.List.isPrefixOf"><span class="name function" title="Prelude.List.isPrefixOf">isPrefixOf</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>The isPrefixOf function takes two lists and returns True iff the first list is a prefix of the second.</p>
@@ -414,9 +292,13 @@ of the input lists.</p>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Insert some separator between the elements of a list.</p>
 <pre class="idris"><code>with List (intersperse ',' ['a', 'b', 'c', 'd', 'e'])
 </code></pre>
-</dd><dt id="Prelude.List.intercalate"><span class="name function" title="Prelude.List.intercalate">intercalate</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.inits"><span class="name function" title="Prelude.List.inits">inits</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
+</dd><dt id="Prelude.List.intercalate"><span class="name function" title="Prelude.List.intercalate">intercalate</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the separator">sep</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+(<span class="documented boundvar" title="the lists between which the separator will be placed">xss</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>)) ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Given a separator list and some more lists, produce a new list by<br />
+placing the separator between each of the lists.</p>
+<dl><dt>sep</dt><dd><p>the separator</p>
+</dd><dt>xss</dt><dd><p>the lists between which the separator will be placed</p>
+</dd></dl></dd><dt id="Prelude.List.inits"><span class="name function" title="Prelude.List.inits">inits</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>)</span></dt><dd><p>The inits function returns all initial segments of the argument, shortest<br />
 first. For example,</p>
 <pre class="idris"><code>inits [1,2,3]
@@ -425,64 +307,36 @@ first. For example,</p>
 <a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> (<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>)</span></dt><dd><p>Attempt to Return all but the last element of a list.</p>
 <p>If the list is empty, return <code>Nothing</code>.</p>
 </dd><dt id="Prelude.List.init"><span class="name function" title="Prelude.List.init">init</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-{<span class="keyword" title="">tacimp</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="function" title="Prelude.List.isCons" href="Prelude.List.html#Prelude.List.isCons">isCons</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>} ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="boundvar" title="">l</span>} ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Return all but the last element of a non-empty list.</p>
 <dl><dt>ok</dt><dd><p>proof that the list is non-empty</p>
-</dd></dl></dd><dt id="Prelude.List.indexTailProof"><span class="name function" title="Prelude.List.indexTailProof">indexTailProof</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">p</span> : <a class="function" title="Prelude.Nat.lt" href="Prelude.Nat.html#Prelude.Nat.lt">lt</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="boundvar" title="">n</span>)
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> (<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span>)) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>) ->
-<a class="function" title="Prelude.Nat.lt" href="Prelude.Nat.html#Prelude.Nat.lt">lt</a> <span class="boundvar" title="">n</span>
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">xs</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a></span></dt><dd></dd><dt id="Prelude.List.index&#39;"><span class="name function" title="Prelude.List.index&#39;">index&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+</dd></dl></dd><dt id="Prelude.List.index&#39;"><span class="name function" title="Prelude.List.index&#39;">index&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
 (<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Attempt to find a particular element of a list.</p>
 <p>If the provided index is out of bounds, return Nothing.</p>
 </dd><dt id="Prelude.List.index"><span class="name function" title="Prelude.List.index">index</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">n</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
-(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-(<span class="documented boundvar" title="a proof that the index is within bounds">ok</span> : <a class="function" title="Prelude.Nat.lt" href="Prelude.Nat.html#Prelude.Nat.lt">lt</a> <span class="boundvar" title="">n</span>
-(<a class="function" title="Prelude.List.length" href="Prelude.List.html#Prelude.List.length">length</a> <span class="boundvar" title="">l</span>) <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>) ->
+(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.InBounds" href="Prelude.List.html#Prelude.List.InBounds">InBounds</a> <span class="boundvar" title="">n</span>
+<span class="boundvar" title="">xs</span>} ->
 <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Find a particular element of a list.</p>
 <dl><dt>ok</dt><dd><p>a proof that the index is within bounds</p>
-</dd></dl></dd><dt id="Prelude.List.head&#39;"><span class="name function" title="Prelude.List.head&#39;">head&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+</dd></dl></dd><dt id="Prelude.List.inBounds"><span class="name function" title="Prelude.List.inBounds">inBounds</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">k</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="type" title="Prelude.Basics.Dec" href="Prelude.Basics.html#Prelude.Basics.Dec">Dec</a> (<a class="type" title="Prelude.List.InBounds" href="Prelude.List.html#Prelude.List.InBounds">InBounds</a> <span class="boundvar" title="">k</span>
+<span class="boundvar" title="">xs</span>)</span></dt><dd><p>Decide whether <code>k</code> is a valid index into <code>xs</code></p>
+</dd><dt id="Prelude.List.head&#39;"><span class="name function" title="Prelude.List.head&#39;">head&#39;</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Attempt to get the first element of a list. If the list is empty, return<br />
 <code>Nothing</code>.</p>
 </dd><dt id="Prelude.List.head"><span class="name function" title="Prelude.List.head">head</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
-{<span class="keyword" title="">tacimp</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="function" title="Prelude.List.isCons" href="Prelude.List.html#Prelude.List.isCons">isCons</a> <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.True" href="Prelude.Bool.html#Prelude.Bool.True">True</a>} ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="boundvar" title="">l</span>} ->
 <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Get the first element of a non-empty list</p>
 <dl><dt>ok</dt><dd><p>proof that the list is non-empty</p>
-</dd></dl></dd><dt id="Prelude.List.hasAnyNilFalseBody"><span class="name function" title="Prelude.List.hasAnyNilFalseBody">hasAnyNilFalseBody</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">constrarg</span> : <a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="boundvar" title="">a</span>) ->
-<a class="function" title="Prelude.List.hasAnyBy" href="Prelude.List.html#Prelude.List.hasAnyBy">hasAnyBy</a> <a class="function" title="Prelude.Classes.==" href="Prelude.Classes.html#Prelude.Classes.==">(==)</a>
-<span class="data" title="[]">[]</span>
-<span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a></span></dt><dd></dd><dt id="Prelude.List.hasAnyNilFalse"><span class="name function" title="Prelude.List.hasAnyNilFalse">hasAnyNilFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
+</dd></dl></dd><dt id="Prelude.List.hasAnyNilFalse"><span class="name function" title="Prelude.List.hasAnyNilFalse">hasAnyNilFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
 (<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="function" title="Prelude.List.hasAny" href="Prelude.List.html#Prelude.List.hasAny">hasAny</a> <span class="data" title="[]">[]</span>
 <span class="boundvar" title="">l</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a></span></dt><dd><p>No list contains an element of the empty list.</p>
-</dd><dt id="Prelude.List.hasAnyByNilFalseStepCase"><span class="name function" title="Prelude.List.hasAnyByNilFalseStepCase">hasAnyByNilFalseStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">p</span> : <span class="boundvar" title="">a</span> ->
-<span class="boundvar" title="">a</span> ->
-<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <a class="function" title="Prelude.List.hasAnyBy" href="Prelude.List.html#Prelude.List.hasAnyBy">hasAnyBy</a> <span class="boundvar" title="">p</span>
-<span class="data" title="[]">[]</span>
-<span class="boundvar" title="">xs</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a>) ->
-<a class="function" title="Prelude.List.hasAnyBy" href="Prelude.List.html#Prelude.List.hasAnyBy">hasAnyBy</a> <span class="boundvar" title="">p</span>
-<span class="data" title="[]">[]</span>
-<span class="boundvar" title="">xs</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<a class="constructor" title="Prelude.Bool.False" href="Prelude.Bool.html#Prelude.Bool.False">False</a></span></dt><dd></dd><dt id="Prelude.List.hasAnyByNilFalse"><span class="name function" title="Prelude.List.hasAnyByNilFalse">hasAnyByNilFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">p</span> : <span class="implicit boundvar" title="">a</span> ->
+</dd><dt id="Prelude.List.hasAnyByNilFalse"><span class="name function" title="Prelude.List.hasAnyByNilFalse">hasAnyByNilFalse</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">p</span> : <span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 (<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
@@ -502,14 +356,24 @@ a custom comparison.</p>
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd><p>Check if any elements of the first list are found in the second, using<br />
 Boolean equality.</p>
-</dd><dt id="Prelude.List.foldrImpl"><span class="name function" title="Prelude.List.foldrImpl">foldrImpl</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">t</span> ->
-<span class="implicit boundvar" title="">acc</span> ->
-<span class="implicit boundvar" title="">acc</span>) ->
-<span class="implicit boundvar" title="">acc</span> ->
-(<span class="implicit boundvar" title="">acc</span> ->
-<span class="implicit boundvar" title="">acc</span>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">t</span> ->
-<span class="implicit boundvar" title="">acc</span></span></dt><dd><p>A tail recursive right fold on Lists.</p>
+</dd><dt id="Prelude.List.foldlMatchesFoldr"><span class="name function" title="Prelude.List.foldlMatchesFoldr">foldlMatchesFoldr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">f</span> : <span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+(<span class="boundvar" title="">q</span> : <span class="implicit boundvar" title="">b</span>) ->
+(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<a class="function" title="Prelude.Foldable.foldl" href="Prelude.Foldable.html#Prelude.Foldable.foldl">foldl</a> <span class="boundvar" title="">f</span>
+<span class="boundvar" title="">q</span>
+<span class="boundvar" title="">xs</span> <a class="type" title="=" href="[builtins].html#=">=</a>
+<a class="function" title="Prelude.List.foldlAsFoldr" href="Prelude.List.html#Prelude.List.foldlAsFoldr">foldlAsFoldr</a> <span class="boundvar" title="">f</span>
+<span class="boundvar" title="">q</span>
+<span class="boundvar" title="">xs</span></span></dt><dd><p>The definition of foldl works the same as the default definition<br />
+in terms of foldr</p>
+</dd><dt id="Prelude.List.foldlAsFoldr"><span class="name function" title="Prelude.List.foldlAsFoldr">foldlAsFoldr</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">b</span> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span>) ->
+<span class="implicit boundvar" title="">b</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
+<span class="implicit boundvar" title="">b</span></span></dt><dd><p>Implement foldl using foldr, for a later equality proof.</p>
 </dd><dt id="Prelude.List.findIndices"><span class="name function" title="Prelude.List.findIndices">findIndices</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
@@ -534,18 +398,23 @@ Boolean equality.</p>
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd></dd><dt id="Prelude.List.elemIndices"><span class="name function" title="Prelude.List.elemIndices">elemIndices</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Find all indices for an element in a list, using a custom equality test.</p>
+</dd><dt id="Prelude.List.elemIndices"><span class="name function" title="Prelude.List.elemIndices">elemIndices</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd></dd><dt id="Prelude.List.elemIndexBy"><span class="name function" title="Prelude.List.elemIndexBy">elemIndexBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Find all indices for an element in a list, using the default equality test for the type of list elements.</p>
+</dd><dt id="Prelude.List.elemIndexBy"><span class="name function" title="Prelude.List.elemIndexBy">elemIndexBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd></dd><dt id="Prelude.List.elemIndex"><span class="name function" title="Prelude.List.elemIndex">elemIndex</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
+<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Find the index of the first occurrence of an element in a list, using a custom equality test.</p>
+</dd><dt id="Prelude.List.elemIndex"><span class="name function" title="Prelude.List.elemIndex">elemIndex</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Classes.Eq" href="Prelude.Classes.html#Prelude.Classes.Eq">Eq</a> <span class="implicit boundvar" title="">a</span> =>
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd></dd><dt id="Prelude.List.elemBy"><span class="name function" title="Prelude.List.elemBy">elemBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a></span></dt><dd><p>Find the index of the first occurrence of an element in a list,<br />
+using the default equality test for the type of list elements.</p>
+</dd><dt id="Prelude.List.elemBy"><span class="name function" title="Prelude.List.elemBy">elemBy</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
 <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <span class="implicit boundvar" title="">a</span> ->
@@ -583,7 +452,8 @@ example,</p>
 <p>It is a special case of deleteBy, which allows the programmer to supply<br />
 their own equality test.</p>
 </dd><dt id="Prelude.List.catMaybes"><span class="name function" title="Prelude.List.catMaybes">catMaybes</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> (<a class="type" title="Prelude.Maybe.Maybe" href="Prelude.Maybe.html#Prelude.Maybe.Maybe">Maybe</a> <span class="implicit boundvar" title="">a</span>) ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd></dd><dt id="Prelude.List.break"><span class="name function" title="Prelude.List.break">break</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Keep the <code>Just</code> elements in a list, discarding the <code>Nothing</code> elements.</p>
+</dd><dt id="Prelude.List.break"><span class="name function" title="Prelude.List.break">break</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">(</a><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span><a class="type" title="Builtins.Pair" href="Builtins.html#Builtins.Pair">,</a>
@@ -592,39 +462,11 @@ prefix of the list that does not satisfy a predicate and the rest of the<br />
 list.</p>
 <pre class="idris"><code>break (&gt;=3) [1,2,3,2,1]
 </code></pre>
-</dd><dt id="Prelude.List.appendNilRightNeutralStepCase"><span class="name function" title="Prelude.List.appendNilRightNeutralStepCase">appendNilRightNeutralStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="data" title="[]">[]</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<span class="boundvar" title="">xs</span>) ->
-<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="data" title="[]">[]</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span></span></dt><dd></dd><dt id="Prelude.List.appendNilRightNeutral"><span class="name function" title="Prelude.List.appendNilRightNeutral">appendNilRightNeutral</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+</dd><dt id="Prelude.List.appendNilRightNeutral"><span class="name function" title="Prelude.List.appendNilRightNeutral">appendNilRightNeutral</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <span class="boundvar" title="">l</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
 <span class="data" title="[]">[]</span> <a class="type" title="=" href="[builtins].html#=">=</a>
 <span class="boundvar" title="">l</span></span></dt><dd><p>The empty list is a right identity for append.</p>
-</dd><dt id="Prelude.List.appendAssociativeStepCase"><span class="name function" title="Prelude.List.appendAssociativeStepCase">appendAssociativeStepCase</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">x</span> : <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">c</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="boundvar" title="">a</span>) ->
-(<span class="boundvar" title="">inductiveHypothesis</span> : <span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">c</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-(<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">c</span>) <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span>) ->
-<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">c</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span> <a class="type" title="=" href="[builtins].html#=">=</a>
-<span class="boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
-(<span class="boundvar" title="">xs</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">c</span>) <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
-<span class="boundvar" title="">r</span></span></dt><dd></dd><dt id="Prelude.List.appendAssociative"><span class="name function" title="Prelude.List.appendAssociative">appendAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+</dd><dt id="Prelude.List.appendAssociative"><span class="name function" title="Prelude.List.appendAssociative">appendAssociative</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">l</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">c</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">r</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
 <span class="boundvar" title="">l</span> <a class="function" title="Prelude.List.++" href="Prelude.List.html#Prelude.List.++">++</a>
@@ -641,13 +483,31 @@ list.</p>
 been removed from <code>xs</code>, e.g.,</p>
 <pre class="idris"><code>(([1,2] ++ [2,3]) \\ [1,2])
 </code></pre>
-<dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infix 5">Non-associative, precedence 5</dd></dl></dd><dt id="Prelude.List.List"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.List.List">List</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
-<span class="type" title="Type">Type</span></span></dt><dd><p>Linked lists</p>
-<dl class="decls"><dt id="Prelude.List.Nil"><span class="name constructor" title="Prelude.List.Nil">Nil</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>The empty list</p>
-</dd><dt id="Prelude.List.::"><span class="name constructor" title="Prelude.List.::">(::)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
-<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Cons cell</p>
-<dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixr 7">Left associative, precedence 7</dd></dl></dd></dl></dd><dt id="Prelude.List.++"><span class="name function" title="Prelude.List.++">(++)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
+<dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infix 5">Non-associative, precedence 5</dd></dl></dd><dt id="Prelude.List.NonEmpty"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.List.NonEmpty">NonEmpty</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Satisfiable if <code>xs</code> is non-empty (e.g., if <code>xs</code> is a cons).</p>
+<dl class="decls"><dt id="Prelude.List.IsNonEmpty"><span class="name constructor" title="Prelude.List.IsNonEmpty">IsNonEmpty</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> (<span class="implicit boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
+<span class="implicit boundvar" title="">xs</span>)</span></dt><dd><p>The proof that a cons cell is non-empty</p>
+</dd></dl></dd><dt id="Prelude.List.List"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.List.List">List</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Generic lists</p>
+<dl class="decls"><dt id="Prelude.List.Nil"><span class="name constructor" title="Prelude.List.Nil">Nil</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">elem</span></span></dt><dd><p>Empty list</p>
+</dd><dt id="Prelude.List.::"><span class="name constructor" title="Prelude.List.::">(::)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">elem</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">elem</span> ->
+<a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">elem</span></span></dt><dd><p>A non-empty list, consisting of a head element and the rest of<br />
+the list.</p>
+<dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixr 7">Left associative, precedence 7</dd></dl></dd></dl></dd><dt id="Prelude.List.InBounds"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.List.InBounds">InBounds</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the potential index">k</span> : <a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a>) ->
+(<span class="documented boundvar" title="the list into which k may be an index">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="Type">Type</span></span></dt><dd><p>Satisfiable if <code>k</code> is a valid index into <code>xs</code></p>
+<dl><dt>k</dt><dd><p>the potential index</p>
+</dd><dt>xs</dt><dd><p>the list into which k may be an index</p>
+</dd></dl><dl class="decls"><dt id="Prelude.List.InFirst"><span class="name constructor" title="Prelude.List.InFirst">InFirst</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.InBounds" href="Prelude.List.html#Prelude.List.InBounds">InBounds</a> <span class="data" title="0">0</span>
+(<span class="implicit boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
+<span class="implicit boundvar" title="">xs</span>)</span></dt><dd><p>Z is a valid index into any cons cell</p>
+</dd><dt id="Prelude.List.InLater"><span class="name constructor" title="Prelude.List.InLater">InLater</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.InBounds" href="Prelude.List.html#Prelude.List.InBounds">InBounds</a> <span class="implicit boundvar" title="">k</span>
+<span class="implicit boundvar" title="">xs</span> ->
+<a class="type" title="Prelude.List.InBounds" href="Prelude.List.html#Prelude.List.InBounds">InBounds</a> (<a class="constructor" title="Prelude.Nat.S" href="Prelude.Nat.html#Prelude.Nat.S">S</a> <span class="implicit boundvar" title="">k</span>)
+(<span class="implicit boundvar" title="">x</span> <a class="constructor" title="Prelude.List.::" href="Prelude.List.html#Prelude.List.::">::</a>
+<span class="implicit boundvar" title="">xs</span>)</span></dt><dd><p>Valid indices can be extended</p>
+</dd></dl></dd><dt id="Prelude.List.++"><span class="name function" title="Prelude.List.++">(++)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Append two lists</p>
 <dl><dt class="fixity">Fixity</dt><dd class="fixity" title="infixr 7">Left associative, precedence 7</dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>

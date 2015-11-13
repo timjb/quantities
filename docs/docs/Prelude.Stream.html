@@ -82,7 +82,12 @@
 <dl><dt>n</dt><dd><p>how many elements to drop</p>
 </dd></dl></dd><dt id="Prelude.Stream.diag"><span class="name function" title="Prelude.Stream.diag">diag</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> (<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span>) ->
 <a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Return the diagonal elements of a stream of streams</p>
-</dd><dt id="Prelude.Stream.Stream"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Stream.Stream">Stream</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
+</dd><dt id="Prelude.Stream.cycle"><span class="name function" title="Prelude.Stream.cycle">cycle</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the sequence to repeat">xs</span> : <a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="implicit boundvar" title="">a</span>) ->
+{<span class="keyword" title="">auto</span> <a class="" title="ok" href="[builtins].html#ok">ok</a> : <a class="type" title="Prelude.List.NonEmpty" href="Prelude.List.html#Prelude.List.NonEmpty">NonEmpty</a> <span class="documented boundvar" title="the sequence to repeat">xs</span>} ->
+<a class="type" title="Prelude.Stream.Stream" href="Prelude.Stream.html#Prelude.Stream.Stream">Stream</a> <span class="implicit boundvar" title="">a</span></span></dt><dd><p>Produce a Stream repeating a sequence</p>
+<dl><dt>xs</dt><dd><p>the sequence to repeat</p>
+</dd><dt>ok</dt><dd><p>proof that the list is non-empty</p>
+</dd></dl></dd><dt id="Prelude.Stream.Stream"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Stream.Stream">Stream</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span> ->
 <span class="type" title="Type">Type</span></span></dt><dd><p>An infinite stream</p>
 <dl class="decls"><dt id="Prelude.Stream.::"><span class="name constructor" title="Prelude.Stream.::">(::)</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="implicit boundvar" title="">a</span> ->
 <a class="type" title="Lazy&#39;" href="[builtins].html#Lazy&#39;">Lazy&#39;</a> <a class="constructor" title="LazyCodata" href="[builtins].html#LazyCodata">LazyCodata</a>

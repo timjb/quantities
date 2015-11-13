@@ -1,13 +1,26 @@
 <!DOCTYPE HTML>
-<html><head><title>IdrisDoc: Builtins</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Builtins<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Builtins</h1><dl class="decls"><dt id="Builtins.Sigma"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.Sigma">Sigma</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the witness @ P the type of the proof">a</span> : <span class="type" title="Type">Type</span>) ->
-(<span class="boundvar" title="">P</span> : <span class="documented boundvar" title="the type of the witness @ P the type of the proof">a</span> ->
+<html><head><title>IdrisDoc: Builtins</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Builtins<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Builtins</h1><dl class="decls"><dt id="Builtins.UPair"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.UPair">UPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the left elements in the pair">A</span> : <span class="type" title="AnyType">AnyType</span>) ->
+(<span class="documented boundvar" title="the type of the left elements in the pair">B</span> : <span class="type" title="AnyType">AnyType</span>) ->
+<span class="type" title="AnyType">AnyType</span></span></dt><dd><p>The non-dependent pair type, also known as conjunction, usable with<br />
+UniqueTypes.</p>
+<dl><dt>A</dt><dd><p>the type of the left elements in the pair</p>
+</dd><dt>B</dt><dd><p>the type of the left elements in the pair</p>
+</dd></dl><dl class="decls"><dt id="Builtins.MkUPair"><span class="name constructor" title="Builtins.MkUPair">MkUPair</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the left element of the pair">a</span> : <span class="implicit boundvar" title="">A</span>) ->
+(<span class="documented boundvar" title="the right element of the pair">b</span> : <span class="implicit boundvar" title="">B</span>) ->
+<a class="type" title="Builtins.UPair" href="Builtins.html#Builtins.UPair">UPair</a> <span class="implicit boundvar" title="">A</span>
+<span class="implicit boundvar" title="">B</span></span></dt><dd><p>A pair of elements</p>
+<dl><dt>a</dt><dd><p>the left element of the pair</p>
+</dd><dt>b</dt><dd><p>the right element of the pair</p>
+</dd></dl></dd></dl></dd><dt id="Builtins.Sigma"><span class="word">data&nbsp;</span><span class="name type" title="Builtins.Sigma">Sigma</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="the type of the witness">a</span> : <span class="type" title="Type">Type</span>) ->
+(<span class="documented boundvar" title="the type of the proof">P</span> : <span class="documented boundvar" title="the type of the witness">a</span> ->
 <span class="type" title="Type">Type</span>) ->
 <span class="type" title="Type">Type</span></span></dt><dd><p>Dependent pairs</p>
 <p>Dependent pairs represent existential quantification - they consist of a<br />
 witness for the existential claim and a proof that the property holds for<br />
 it. Another way to see dependent pairs is as just data - for instance, the<br />
 length of a vector paired with that vector.</p>
-<dl><dt>a</dt><dd><p>the type of the witness @ P the type of the proof</p>
+<dl><dt>a</dt><dd><p>the type of the witness</p>
+</dd><dt>P</dt><dd><p>the type of the proof</p>
 </dd></dl><dl class="decls"><dt id="Builtins.MkSigma"><span class="name constructor" title="Builtins.MkSigma">MkSigma</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
 (<span class="boundvar" title="">pf</span> : <span class="implicit boundvar" title="">P</span> <span class="boundvar" title="">x</span>) ->
 <a class="type" title="Builtins.Sigma" href="Builtins.html#Builtins.Sigma">Sigma</a> <span class="implicit boundvar" title="">a</span>

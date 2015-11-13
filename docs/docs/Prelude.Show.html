@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+<html><head><title>IdrisDoc: Prelude.Show</title><link type="text/css" rel="stylesheet" href="../styles.css"></head><body class="namespace"><div class="wrapper"><header><strong>IdrisDoc</strong>: Prelude.Show<nav><a href="../index.html">Index</a></nav></header><div class="container"><h1>Prelude.Show</h1><dl class="decls"><dt id="Prelude.Show.showParens"><span class="name function" title="Prelude.Show.showParens">showParens</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="documented boundvar" title="whether to add parentheses">b</span> : <a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd><p>Surround a <code>String</code> with parentheses depending on a condition.</p>
+<dl><dt>b</dt><dd><p>whether to add parentheses</p>
+</dd></dl></dd><dt id="Prelude.Show.showLitString"><span class="name function" title="Prelude.Show.showLitString">showLitString</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.List.List" href="Prelude.List.html#Prelude.List.List">List</a> <span class="type" title="Char">Char</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.showLitChar"><span class="name function" title="Prelude.Show.showLitChar">showLitChar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Char">Char</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.showCon"><span class="name function" title="Prelude.Show.showCon">showCon</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="boundvar" title="">d</span> : <a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a>) ->
+(<span class="boundvar" title="">conName</span> : <span class="type" title="String">String</span>) ->
+(<span class="boundvar" title="">shownArgs</span> : <span class="type" title="String">String</span>) ->
+<span class="type" title="String">String</span></span></dt><dd><p>A helper for the common case of showing a non-infix constructor with at<br />
+least one argument, for use with <code>showArg</code>.</p>
+<p>Apply <code>showCon</code> to the precedence context, the constructor name, and the<br />
+args shown with <code>showArg</code> and concatenated. Example:</p>
+<pre><code>data Ann a = MkAnn String a
+
+instance Show a =&gt; Show (Ann a) where
+showPrec d (MkAnn s x) = showCon d &quot;MkAnn&quot; $ showArg s ++ showArg x
+</code></pre>
+</dd><dt id="Prelude.Show.showArg"><span class="name function" title="Prelude.Show.showArg">showArg</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Show" href="Prelude.Show.html#Prelude.Show.Show">Show</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="String">String</span></span></dt><dd><p>A helper for the common case of showing a non-infix constructor with at<br />
+least one argument, for use with <code>showCon</code>.</p>
+<p>This adds a space to the front so the results can be directly<br />
+concatenated. See <code>showCon</code> for details and an example.</p>
+</dd><dt id="Prelude.Show.protectEsc"><span class="name function" title="Prelude.Show.protectEsc">protectEsc</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="type" title="Char">Char</span> ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.primNumShow"><span class="name function" title="Prelude.Show.primNumShow">primNumShow</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="implicit boundvar" title="">a</span> ->
+<span class="type" title="String">String</span>) ->
+<a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a> ->
+<span class="implicit boundvar" title="">a</span> ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.precCon"><span class="name function" title="Prelude.Show.precCon">precCon</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a> ->
+<span class="type" title="Integer">Integer</span></span></dt><dd><p>Gives the constructor index of the Prec as a helper for writing instances.</p>
+</dd><dt id="Prelude.Show.firstCharIs"><span class="name function" title="Prelude.Show.firstCharIs">firstCharIs</span><span class="word">&nbsp;:&nbsp;</span><span class="signature">(<span class="type" title="Char">Char</span> ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a>) ->
+<span class="type" title="String">String</span> ->
+<a class="type" title="Prelude.Bool.Bool" href="Prelude.Bool.html#Prelude.Bool.Bool">Bool</a></span></dt><dd></dd><dt id="Prelude.Show.default#showPrec"><span class="name function" title="Prelude.Show.default#showPrec">default#showPrec</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Show" href="Prelude.Show.html#Prelude.Show.Show">Show</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">d</span> : <a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a>) ->
+(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.default#show"><span class="name function" title="Prelude.Show.default#show">default#show</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Show" href="Prelude.Show.html#Prelude.Show.Show">Show</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="String">String</span></span></dt><dd></dd><dt id="Prelude.Show.Show"><span class="word">class&nbsp;</span><span class="name type" title="Prelude.Show.Show">Show</span><span class="signature">&nbsp;</span></dt><dd><p>Things that have a canonical <code>String</code> representation.</p>
+<dl class="decls"><dt id="Prelude.Show.show"><span class="name function" title="Prelude.Show.show">show</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Show" href="Prelude.Show.html#Prelude.Show.Show">Show</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="String">String</span></span></dt><dd><p>Convert a value to its <code>String</code> representation.</p>
+</dd><dt id="Prelude.Show.showPrec"><span class="name function" title="Prelude.Show.showPrec">showPrec</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Show" href="Prelude.Show.html#Prelude.Show.Show">Show</a> <span class="implicit boundvar" title="">a</span> =>
+(<span class="boundvar" title="">d</span> : <a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a>) ->
+(<span class="boundvar" title="">x</span> : <span class="implicit boundvar" title="">a</span>) ->
+<span class="type" title="String">String</span></span></dt><dd><p>Convert a value to its <code>String</code> representation in a certain precedence<br />
+context.</p>
+<p>A value should produce parentheses around itself if and only if the given<br />
+precedence context is greater than or equal to the precedence of the<br />
+outermost operation represented in the produced <code>String</code>. <em>This is<br />
+different from Haskell</em>, which requires it to be strictly greater. <code>Open</code><br />
+should thus always produce <em>no</em> outermost parens, <code>App</code> should always<br />
+produce outermost parens except on atomic values and those that provide<br />
+their own bracketing, like <code>Pair</code> and <code>List</code>.</p>
+</dd></dl></dd><dt id="Prelude.Show.Prec"><span class="word">data&nbsp;</span><span class="name type" title="Prelude.Show.Prec">Prec</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><span class="type" title="Type">Type</span></span></dt><dd><p>The precedence of an Idris operator or syntactic context.</p>
+<dl class="decls"><dt id="Prelude.Show.Open"><span class="name constructor" title="Prelude.Show.Open">Open</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.Eq"><span class="name constructor" title="Prelude.Show.Eq">Eq</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.Dollar"><span class="name constructor" title="Prelude.Show.Dollar">Dollar</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.Backtick"><span class="name constructor" title="Prelude.Show.Backtick">Backtick</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.User"><span class="name constructor" title="Prelude.Show.User">User</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Nat.Nat" href="Prelude.Nat.html#Prelude.Nat.Nat">Nat</a> ->
+<a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.PrefixMinus"><span class="name constructor" title="Prelude.Show.PrefixMinus">PrefixMinus</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd><dt id="Prelude.Show.App"><span class="name constructor" title="Prelude.Show.App">App</span><span class="word">&nbsp;:&nbsp;</span><span class="signature"><a class="type" title="Prelude.Show.Prec" href="Prelude.Show.html#Prelude.Show.Prec">Prec</a></span></dt><dd></dd></dl></dd></dl></div></div><footer>Produced by IdrisDoc version 1.0</footer></body></html>
