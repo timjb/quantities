@@ -54,7 +54,7 @@ instance Group g => Power g where
     LT => grpPow (inverse a) neutral (fromIntegerNat (-i))
     _  => grpPow a neutral (fromIntegerNat i)
 
-instance [floatmultpower] Power Float where
+instance [floatmultpower] Power Double where
   a ^ 0 = fromInteger 1
   a ^ i = if a == 0 then 0 else case compare i 0 of
     LT => pow (1 / a) (fromIntegerNat (-i))

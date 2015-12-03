@@ -52,7 +52,7 @@ dimensionToQuantity = inject
 record ElemUnit (q : Quantity) where
   constructor MkElemUnit
   name : String
-  conversionRate : Float
+  conversionRate : Double
 
 -- ElemUnit with its quantity hidden
 ElemUnit' : Type
@@ -75,7 +75,7 @@ implicit
 elemUnitToElemUnit'FreeAbGrp : ElemUnit q -> FreeAbGrp ElemUnit'
 elemUnitToElemUnit'FreeAbGrp {q} u = inject (q ** u)
 
-conversionRate' : ElemUnit' -> Float
+conversionRate' : ElemUnit' -> Double
 conversionRate' u = conversionRate (getProof u)
 
 joinedQuantity : FreeAbGrp ElemUnit' -> Quantity
@@ -130,13 +130,13 @@ elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (q ** u)))
 
 ||| Compute conversion factor from the given unit to the base unit of the
 ||| corresponding quantity.
-joinedConversionRate : Unit q -> Float
+joinedConversionRate : Unit q -> Double
 joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
   where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
         fromExponent = ((^) @{floatmultpower}) 10 e
 
 ||| Constructs a new unit given a name and conversion factor from an existing unit.
-defineAsMultipleOf : String -> Float -> Unit q -> ElemUnit q
+defineAsMultipleOf : String -> Double -> Unit q -> ElemUnit q
 defineAsMultipleOf name factor unit = MkElemUnit name (factor * joinedConversionRate unit)
 
 -- Syntax sugar for defining new units
@@ -280,9 +280,9 @@ joinUnits : {q : Quantity} -> {r : Quantity} -> {u : Unit q} -> {v : Unit r} ->
 joinUnits ((x =| v) =| u) = x =| (u <**> v)
 
 
-||| Floats with a unit
+||| Double with a unit
 F : Unit q -> Type
-F u = Measurement u Float
+F u = Measurement u Double
 
 
 infixl 9 |*|,|/|
