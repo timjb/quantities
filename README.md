@@ -87,7 +87,7 @@ For example:
 
 ```idris
 SquareCentimetre : Unit Area
-SquareCentimetre = Centimetre <*> Centimetre -- = Centimetre ^^ 2
+SquareCentimetre = Centimetre <**> Centimetre -- = Centimetre ^^ 2
 
 MetrePerSecond : Unit Speed
 MetrePerSecond = Meter <//> Second
