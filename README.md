@@ -43,7 +43,7 @@ Frequency : Quantity
 Frequency = Time ^ (-1)
 ```
 
-Above we defined the quantities `Area`, `Speed`, `Volume` and `Frequency` in terms of `Length` and `Time`. By convention, we write quantities with a capital letters.
+Above we defined the quantities `Area`, `Speed`, `Volume` and `Frequency` in terms of `Length` and `Time`. By convention, we write quantities with capital letters.
 
 
 ### Dimensions
