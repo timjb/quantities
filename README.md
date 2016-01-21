@@ -21,7 +21,7 @@ To use it in your program, run Idris with
 $ idris -p quantities yourprogram.idr
 ```
 
-**Compatibility: Requires Idris >= 0.9.20**
+**Compatibility: Requires Idris >= 0.10**
 
 ## Documentation
 

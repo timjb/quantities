@@ -11,10 +11,10 @@ record Dimension where
   constructor MkDimension
   name : String
 
-instance Eq Dimension where
+implementation Eq Dimension where
   (MkDimension a) == (MkDimension b) = a == b
 
-instance Ord Dimension where
+implementation Ord Dimension where
   compare (MkDimension a) (MkDimension b) = compare a b
 
 
@@ -62,10 +62,10 @@ private
 name' : ElemUnit' -> String
 name' (q ** u) = name u
 
-instance Eq ElemUnit' where
+implementation Eq ElemUnit' where
   (q ** u) == (p ** v) = p == q && name u == name v
 
-instance Ord ElemUnit' where
+implementation Ord ElemUnit' where
   compare (q ** u) (p ** v) with (compare p q)
     | LT = LT
     | GT = GT
@@ -95,7 +95,7 @@ private
 getElemUnits' : Unit q -> FreeAbGrp ElemUnit'
 getElemUnits' (MkUnit _ us) = us
 
-instance Eq (Unit q) where
+implementation Eq (Unit q) where
   x == y = base10Exponent x == base10Exponent y &&
            getElemUnits' x  == getElemUnits' y
 
@@ -142,7 +142,7 @@ defineAsMultipleOf name factor unit = MkElemUnit name (factor * joinedConversion
 -- Syntax sugar for defining new units
 syntax "< one" [name] equals [factor] [unit] ">" = defineAsMultipleOf name factor unit
 
-instance Show (Unit q) where
+implementation Show (Unit q) where
   show (MkUnit 0 (MkFreeAbGrp [])) = "unitLess"
   show (MkUnit e (MkFreeAbGrp [])) = "ten ^^ " ++ show e
   show (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
@@ -233,28 +233,28 @@ getValue : {q : Quantity} -> {u : Unit q} ->
            Measurement {q} u a -> a
 getValue (x =| _) = x
 
-instance Functor (Measurement {q} u) where
+implementation Functor (Measurement {q} u) where
   map f (x =| _) = f x =| u
 
-instance Eq a => Eq (Measurement {q} u a) where
+implementation Eq a => Eq (Measurement {q} u a) where
   (x =| _) == (y =| _) = x == y
 
-instance Ord a => Ord (Measurement {q} u a) where
+implementation Ord a => Ord (Measurement {q} u a) where
   compare (x =| _) (y =| _) = compare x y
 
-instance Show a => Show (Measurement {q} u a) where
+implementation Show a => Show (Measurement {q} u a) where
   show (x =| _) = show x ++ " =| " ++ show u
 
-instance Num a => Semigroup (Measurement {q} u a) where
+implementation Num a => Semigroup (Measurement {q} u a) where
   (x =| _) <+> (y =| _) = (x + y) =| u
 
-instance Num a => Monoid (Measurement {q} u a) where
+implementation Num a => Monoid (Measurement {q} u a) where
   neutral = fromInteger 0 =| u
 
-instance (Neg a, Num a) => Group (Measurement {q} u a) where
+implementation (Neg a, Num a) => Group (Measurement {q} u a) where
   inverse (x =| _) = (-x) =| u
 
-instance (Neg a, Num a) => AbelianGroup (Measurement {q} u a) where
+implementation (Neg a, Num a) => AbelianGroup (Measurement {q} u a) where
 
 ||| Pretty-print a measurement (using only ASCII characters)
 showMeasurement : Show a => {q : Quantity} -> {u : Unit q} ->
@@ -334,12 +334,12 @@ implicit
 toUnitLess : a -> Measurement unitLess a
 toUnitLess x = x =| unitLess
 
-instance Num a => Num (Measurement unitLess a) where
+implementation Num a => Num (Measurement unitLess a) where
   x + y = (getValue x + getValue y) =| unitLess
   x * y = (getValue x * getValue y) =| unitLess
   fromInteger i = fromInteger i =| unitLess
 
-instance Neg a => Neg (Measurement unitLess a) where
+implementation Neg a => Neg (Measurement unitLess a) where
   negate x = negate (getValue x) =| unitLess
   x - y = (getValue x - getValue y) =| unitLess
   abs x = abs (getValue x) =| unitLess

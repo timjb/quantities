@@ -53,25 +53,25 @@ infixl 6 <<+>>
 (<<+>>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
 (MkFreeAbGrp xs) <<+>> (MkFreeAbGrp ys) = MkFreeAbGrp $ filterValues (\x => x /= 0) $ mergeWithBy compare (+) xs ys
 
-instance Eq a => Eq (FreeAbGrp a) where
+implementation Eq a => Eq (FreeAbGrp a) where
   (MkFreeAbGrp xs) == (MkFreeAbGrp ys) = xs == ys
 
-instance Ord a => Ord (FreeAbGrp a) where
+implementation Ord a => Ord (FreeAbGrp a) where
   compare (MkFreeAbGrp xs) (MkFreeAbGrp ys) = compare xs ys
 
-instance [freeabgrppower] Power (FreeAbGrp a) where
+implementation [freeabgrppower] Power (FreeAbGrp a) where
   (^) = freeAbGrpPower
 
-instance Ord a => Semigroup (FreeAbGrp a) where
+implementation Ord a => Semigroup (FreeAbGrp a) where
   (<+>) = (<<+>>)
 
-instance Ord a => Monoid (FreeAbGrp a) where
+implementation Ord a => Monoid (FreeAbGrp a) where
   neutral = unit
 
-instance Ord a => Group (FreeAbGrp a) where
+implementation Ord a => Group (FreeAbGrp a) where
   inverse = freeAbGrpInverse
 
-instance Ord a => AbelianGroup (FreeAbGrp a) where
+implementation Ord a => AbelianGroup (FreeAbGrp a) where
 
 -- Lift a function A -> G to a group homomorphism between the freely generated
 -- abelian group of A to the group G.
