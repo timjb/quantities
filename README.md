@@ -27,7 +27,7 @@ $ idris -p quantities yourprogram.idr
 
 ### Quantities
 
-Quantities are physical properties that you can measure. They include length, speed, pressure, electric resistance, etc. We can multiply and devide quantities to form new quantities:
+Quantities are physical properties that you can measure. They include length, speed, pressure, electric resistance, etc. We can multiply and divide quantities to form new quantities:
 
 ```idris
 Area : Quantity
