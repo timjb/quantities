@@ -8,7 +8,7 @@ import Quantities.SIDerivedQuantities
 import Quantities.NonSIUnits
 
 %default total
-%access public
+%access public export
 
 
 -- Based on http://en.wikipedia.org/wiki/Imperial_units

@@ -5,7 +5,7 @@ import Quantities.SIPrefixes
 import Quantities.SIBaseQuantities
 
 %default total
-%access public
+%access public export
 
 Metre : ElemUnit Length
 Metre = MkElemUnit "m" 1

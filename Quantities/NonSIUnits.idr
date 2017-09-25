@@ -1,5 +1,6 @@
 module Quantities.NonSIUnits
 
+import Quantities.FreeAbelianGroup
 import Quantities.Core
 import Quantities.SIBaseQuantities
 import Quantities.SIDerivedQuantities
@@ -8,7 +9,7 @@ import Quantities.SIBaseUnits
 import Quantities.SIDerivedUnits
 
 %default total
-%access public
+%access public export
 
 
 -- Based on http://en.wikipedia.org/wiki/Non-SI_units_mentioned_in_the_SI
@@ -71,7 +72,8 @@ Au : ElemUnit Length
 Au = AstronomicalUnit
 
 StandardGravity : ElemUnit Acceleration
-StandardGravity = < one "g_0" equals 9.80665 (Metre <//> (Second ^^ 2)) >
+--StandardGravity = < one "g_0" equals 9.80665 (Metre <//> (Second ^^ 2)) >
+StandardGravity = defineAsMultipleOf "g_0" 9.80665 (Metre <//> (Second ^^ 2))
 G_0 : ElemUnit Acceleration
 G_0 = StandardGravity
 

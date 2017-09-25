@@ -3,7 +3,7 @@ module Quantities.SIBaseQuantities
 import Quantities.Core
 
 %default total
-%access public
+%access public export
 
 Length : Dimension
 Length = MkDimension "Length"

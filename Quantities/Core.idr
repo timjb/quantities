@@ -4,7 +4,7 @@ import public Quantities.FreeAbelianGroup
 import public Quantities.Power
 
 %default total
-%access public
+%access public export
 
 ||| Elementary quantities
 record Dimension where
@@ -37,10 +37,11 @@ infixl 6 </>
 -- Synonyms (quantites are multiplied, not added!)
 ||| Product quantity
 (<*>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
-(<*>) = (<+>)
+(<*>) = (<<+>>)
+
 ||| Quotient quantity
 (</>) : Ord a => FreeAbGrp a -> FreeAbGrp a -> FreeAbGrp a
-(</>) = (<->)
+a </> b = a <*> freeAbGrpInverse b
 
 ||| Convert dimensions to quantities
 implicit
@@ -55,35 +56,41 @@ record ElemUnit (q : Quantity) where
   conversionRate : Double
 
 -- ElemUnit with its quantity hidden
-ElemUnit' : Type
-ElemUnit' = (q : Quantity ** ElemUnit q)
+data SomeElemUnit : Type where
+  MkSomeElemUnit : (q : Quantity) -> ElemUnit q -> SomeElemUnit
+
+quantity : SomeElemUnit -> Quantity
+quantity (MkSomeElemUnit q _) = q
+
+elemUnit : (seu : SomeElemUnit) -> ElemUnit (quantity seu)
+elemUnit (MkSomeElemUnit _ u) = u
 
 private
-name' : ElemUnit' -> String
-name' (q ** u) = name u
+name : SomeElemUnit -> String
+name x = name (elemUnit x)
 
-implementation Eq ElemUnit' where
-  (q ** u) == (p ** v) = p == q && name u == name v
+implementation Eq SomeElemUnit where
+ a == b = quantity a == quantity b && name a == name b
 
-implementation Ord ElemUnit' where
-  compare (q ** u) (p ** v) with (compare p q)
+implementation Ord SomeElemUnit where
+  compare a b with (compare (quantity a) (quantity b))
     | LT = LT
     | GT = GT
-    | EQ = compare (name u) (name v)
+    | EQ = compare (name a) (name b)
 
 implicit
-elemUnitToElemUnit'FreeAbGrp : ElemUnit q -> FreeAbGrp ElemUnit'
-elemUnitToElemUnit'FreeAbGrp {q} u = inject (q ** u)
+elemUnitToSomeElemUnitFreeAbGrp : ElemUnit q -> FreeAbGrp SomeElemUnit
+elemUnitToSomeElemUnitFreeAbGrp {q} u = inject (MkSomeElemUnit q u)
 
-conversionRate' : ElemUnit' -> Double
-conversionRate' u = conversionRate (getProof u)
+conversionRate : SomeElemUnit -> Double
+conversionRate u = conversionRate (elemUnit u)
 
-joinedQuantity : FreeAbGrp ElemUnit' -> Quantity
-joinedQuantity = lift getWitness
+joinedQuantity : FreeAbGrp SomeElemUnit -> Quantity
+joinedQuantity = lift quantity
 
 data Unit : Quantity -> Type where
-  MkUnit : (exponent : Integer) -> (elemUnits' : FreeAbGrp ElemUnit') ->
-           Unit (joinedQuantity elemUnits')
+  MkUnit : (exponent : Integer) -> (elemUnits : FreeAbGrp SomeElemUnit) ->
+           Unit (joinedQuantity elemUnits)
 
 rewriteUnit : r = q -> Unit q -> Unit r
 rewriteUnit eq unit = rewrite eq in unit
@@ -92,12 +99,12 @@ base10Exponent : Unit q -> Integer
 base10Exponent (MkUnit e _) = e
 
 private
-getElemUnits' : Unit q -> FreeAbGrp ElemUnit'
-getElemUnits' (MkUnit _ us) = us
+someElemUnitFreeAbGrp : Unit q -> FreeAbGrp SomeElemUnit
+someElemUnitFreeAbGrp (MkUnit _ us) = us
 
 implementation Eq (Unit q) where
   x == y = base10Exponent x == base10Exponent y &&
-           getElemUnits' x  == getElemUnits' y
+           someElemUnitFreeAbGrp x == someElemUnitFreeAbGrp y
 
 ||| The trivial unit
 One : Unit Scalar
@@ -121,10 +128,10 @@ UnitLess = One
 
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
-elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (q ** u)))
+elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (MkSomeElemUnit q u)))
   where eq = really_believe_me (Refl {x=q})
   -- this should be:
-  -- eq = sym (inject_lift_lem Prelude.Pairs.Sigma.getWitness (q ** u))
+  -- eq = sym (inject_lift_lem Prelude.Pairs.Sigma.fst (q ** u))
   -- but Idris doesn't accept this anymore since 0.9.18 and throws a
   -- unreadable type error :-(
 
@@ -132,7 +139,7 @@ elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (q ** u)))
 ||| corresponding quantity.
 joinedConversionRate : Unit q -> Double
 joinedConversionRate (MkUnit e (MkFreeAbGrp us)) = fromUnits * fromExponent
-  where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate' u) i) us
+  where fromUnits    = product $ map (\(u, i) => ((^) @{floatmultpower}) (conversionRate u) i) us
         fromExponent = ((^) @{floatmultpower}) 10 e
 
 ||| Constructs a new unit given a name and conversion factor from an existing unit.
@@ -147,9 +154,9 @@ implementation Show (Unit q) where
   show (MkUnit e (MkFreeAbGrp [])) = "ten ^^ " ++ show e
   show (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
     else "ten ^^ " ++ show e ++ " <**> " ++ fromUnits
-    where monom : (ElemUnit', Integer) -> String
-          monom (unit, 1) = name' unit
-          monom (unit, i) = name' unit ++ " ^^ " ++ show i
+    where monom : (SomeElemUnit, Integer) -> String
+          monom (unit, 1) = name unit
+          monom (unit, i) = name unit ++ " ^^ " ++ show i
           fromUnits = monom u ++ concatMap ((" <**> " ++) . monom) us
 
 ||| Pretty-print a unit (using only ASCII characters)
@@ -158,12 +165,11 @@ showUnit (MkUnit 0 (MkFreeAbGrp [])) = ""
 showUnit (MkUnit e (MkFreeAbGrp [])) = "10^" ++ show e
 showUnit (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
   else "10^" ++ show e ++ " " ++ fromUnits
-  where monom : (ElemUnit', Integer) -> String
-        monom (unit, 1) = name' unit
-        monom (unit, i) = name' unit ++ "^" ++ show i
+  where monom : (SomeElemUnit, Integer) -> String
+        monom (unit, 1) = name unit
+        monom (unit, i) = name unit ++ "^" ++ show i
         fromUnits = monom u ++ concatMap ((" " ++) . monom) us
 
-private
 toSuperScript : Char -> Char
 toSuperScript '1' = '¹'
 toSuperScript '2' = '²'
@@ -178,7 +184,6 @@ toSuperScript '0' = '⁰'
 toSuperScript '-' = '⁻'
 toSuperScript x   = x
 
-private
 toSuper : String -> String
 toSuper = pack . map toSuperScript . unpack
 
@@ -188,23 +193,23 @@ showUnitUnicode (MkUnit 0 (MkFreeAbGrp [])) = ""
 showUnitUnicode (MkUnit e (MkFreeAbGrp [])) = "10" ++ toSuper (show e)
 showUnitUnicode (MkUnit e (MkFreeAbGrp (u :: us))) = if e == 0 then fromUnits
   else "10" ++ toSuper (show e) ++ " " ++ fromUnits
-  where monom : (ElemUnit', Integer) -> String
-        monom (unit, 1) = name' unit
-        monom (unit, i) = name' unit ++ toSuper (show i)
+  where monom : (SomeElemUnit, Integer) -> String
+        monom (unit, 1) = name unit
+        monom (unit, i) = name unit ++ toSuper (show i)
         fromUnits = monom u ++ concatMap ((" " ++) . monom) us
 
 infixr 10 ^^
 ||| Power unit
 (^^) : Unit q -> (i : Integer) -> Unit (q ^ i)
 (^^) (MkUnit e us) i = rewriteUnit eq (MkUnit (i*e) (us ^ i))
-  where eq = really_believe_me (Refl {x=(lift Prelude.Pairs.Sigma.getWitness (us ^ i))})
+  where eq = really_believe_me (Refl {x=(lift quantity (us ^ i))})
   -- this should be:
   -- eq = sym (lift_power_lem Prelude.Pairs.Sigma.getWitness us i)
   -- but Idris doesn't accept this anymore since 0.9.18 and throws a
   -- unreadable type error :-(
 
 ||| Inverse unit (e.g. the inverse of `second` is `one <//> second` a.k.a. `hertz`)
-unitInverse : Unit q -> Unit (inverse q)
+unitInverse : {q : Quantity} -> Unit q -> Unit (freeAbGrpInverse q)
 unitInverse {q} u = rewrite (freeabgrppower_correct q (-1))
                     in u ^^ (-1)
 
@@ -213,7 +218,7 @@ infixl 6 <**>,<//>
 ||| Product unit
 (<**>) : Unit r -> Unit s -> Unit (r <*> s)
 (<**>) (MkUnit e rs) (MkUnit f ss) = rewriteUnit eq (MkUnit (e+f) (rs <*> ss))
-  where eq = really_believe_me (Refl {x=(lift Prelude.Pairs.Sigma.getWitness (rs <*> ss))})
+  where eq = really_believe_me (Refl {x=(lift quantity (rs <*> ss))})
   -- this should be:
   -- eq = sym (lift_mult_lem Prelude.Pairs.Sigma.getWitness rs ss)
   -- but Idris doesn't accept this anymore since 0.9.18 and throws a

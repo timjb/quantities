@@ -3,7 +3,7 @@ module Quantities.SIPrefixes
 import Quantities.Core
 
 %default total
-%access public
+%access public export
 
 makePrefix : Integer -> Unit q -> Unit q
 makePrefix i (MkUnit e us) = MkUnit (e+i) us

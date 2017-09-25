@@ -6,7 +6,7 @@ import Quantities.SIDerivedQuantities
 import Quantities.SIBaseUnits
 
 %default total
-%access public
+%access public export
 
 Radian : Unit PlaneAngle
 Radian = One

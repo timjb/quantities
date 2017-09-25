@@ -5,6 +5,9 @@ import Quantities.SIBaseQuantities
 import Quantities.ImperialUnits
 import Quantities.SIBaseUnits
 
+%default total
+%access public export
+
 ScreenLength : Dimension
 ScreenLength = MkDimension "ScreenLength"
 

@@ -4,7 +4,7 @@ import Quantities.Core
 import Quantities.SIBaseQuantities
 
 %default total
-%access public
+%access public export
 
 
 -- Examples of coherent derived units in the SI expressed in terms of base

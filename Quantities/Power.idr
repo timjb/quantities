@@ -5,7 +5,7 @@ module Quantities.Power
 infixr 10 ^
 
 %default total
-%access public
+%access public export
 
 
 -- 'Group', '<->' and 'AbelianGroup' are copied from Control.Algebra from 'contrib'.
@@ -35,7 +35,7 @@ interface Monoid a => Group a where
 
 interface Group a => AbelianGroup a where { }
 
-
+public export
 interface Power a where
   (^) : a -> Integer -> a
 
@@ -44,7 +44,6 @@ interface Power a => VerifiedPower a where
                   (x ^ i) ^ j = x ^ (i*j)
 
 -- Inefficient. Use square and multiply!
-private
 grpPow : Group g => g -> g -> Nat -> g
 grpPow _ y Z = y
 grpPow x y (S k) = grpPow x (y <+> x) k
