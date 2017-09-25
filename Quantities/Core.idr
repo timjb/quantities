@@ -65,7 +65,6 @@ quantity (MkSomeElemUnit q _) = q
 elemUnit : (seu : SomeElemUnit) -> ElemUnit (quantity seu)
 elemUnit (MkSomeElemUnit _ u) = u
 
-private
 name : SomeElemUnit -> String
 name x = name (elemUnit x)
 
@@ -98,7 +97,6 @@ rewriteUnit eq unit = rewrite eq in unit
 base10Exponent : Unit q -> Integer
 base10Exponent (MkUnit e _) = e
 
-private
 someElemUnitFreeAbGrp : Unit q -> FreeAbGrp SomeElemUnit
 someElemUnitFreeAbGrp (MkUnit _ us) = us
 
@@ -129,11 +127,7 @@ UnitLess = One
 implicit
 elemUnitToUnit : {q : Quantity} -> ElemUnit q -> Unit q
 elemUnitToUnit {q} u = rewriteUnit eq (MkUnit 0 (inject (MkSomeElemUnit q u)))
-  where eq = really_believe_me (Refl {x=q})
-  -- this should be:
-  -- eq = sym (inject_lift_lem Prelude.Pairs.Sigma.fst (q ** u))
-  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
-  -- unreadable type error :-(
+  where eq = sym (inject_lift_lem quantity (MkSomeElemUnit q u))
 
 ||| Compute conversion factor from the given unit to the base unit of the
 ||| corresponding quantity.
@@ -202,11 +196,7 @@ infixr 10 ^^
 ||| Power unit
 (^^) : Unit q -> (i : Integer) -> Unit (q ^ i)
 (^^) (MkUnit e us) i = rewriteUnit eq (MkUnit (i*e) (us ^ i))
-  where eq = really_believe_me (Refl {x=(lift quantity (us ^ i))})
-  -- this should be:
-  -- eq = sym (lift_power_lem Prelude.Pairs.Sigma.getWitness us i)
-  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
-  -- unreadable type error :-(
+  where eq = sym (lift_power_lem quantity us i)
 
 ||| Inverse unit (e.g. the inverse of `second` is `one <//> second` a.k.a. `hertz`)
 unitInverse : {q : Quantity} -> Unit q -> Unit (freeAbGrpInverse q)
@@ -218,11 +208,7 @@ infixl 6 <**>,<//>
 ||| Product unit
 (<**>) : Unit r -> Unit s -> Unit (r <*> s)
 (<**>) (MkUnit e rs) (MkUnit f ss) = rewriteUnit eq (MkUnit (e+f) (rs <*> ss))
-  where eq = really_believe_me (Refl {x=(lift quantity (rs <*> ss))})
-  -- this should be:
-  -- eq = sym (lift_mult_lem Prelude.Pairs.Sigma.getWitness rs ss)
-  -- but Idris doesn't accept this anymore since 0.9.18 and throws a
-  -- unreadable type error :-(
+  where eq = sym (lift_mult_lem quantity rs ss)
 
 ||| Quotient unit
 (<//>) : Unit r -> Unit s -> Unit (r </> s)

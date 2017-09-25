@@ -5,7 +5,6 @@ import Quantities.Power
 %default total
 %access public export
 
---private
 mergeWithBy : (k -> k -> Ordering) -> (v -> v -> v) ->
               List (k, v) -> List (k, v) -> List (k, v)
 mergeWithBy _ _ [] ys = ys
@@ -15,16 +14,13 @@ mergeWithBy order combine ((k1, v1) :: xs) ((k2, v2) :: ys) = let o = order k1 k
   else if o == GT then (k2, v2) :: mergeWithBy order combine ((k1, v1) :: xs) ys
   else (k1, combine v1 v2) :: mergeWithBy order combine xs ys
 
---private
 mergeWith : Ord k => (v -> v -> v) ->
             List (k, v) -> List (k, v) -> List (k, v)
 mergeWith = mergeWithBy compare
 
---private
 filterValues : (v -> Bool) -> List (k, v) -> List (k, v)
 filterValues p = filter (p . snd)
 
---private
 mapValue : (v -> w) -> List (k, v) -> List (k, w)
 mapValue f = map (\(k, v) => (k, f v))
 
