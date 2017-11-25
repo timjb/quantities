@@ -333,4 +333,6 @@ implementation Num a => Num (Measurement unitLess a) where
 implementation Neg a => Neg (Measurement unitLess a) where
   negate x = negate (getValue x) =| unitLess
   x - y = (getValue x - getValue y) =| unitLess
+
+implementation Abs a => Abs (Measurement unitLess a) where
   abs x = abs (getValue x) =| unitLess
