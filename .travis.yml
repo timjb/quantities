@@ -1,19 +1,8 @@
-env:
- - CABALVER=2.0 GHCVER=8.0.2
+language: nix
 
 before_install:
- - travis_retry sudo add-apt-repository -y ppa:hvr/ghc
- - travis_retry sudo apt-get update
- - travis_retry sudo apt-get install cabal-install-$CABALVER ghc-$GHCVER # see note about happy/alex
- - export PATH=$HOME/.cabal/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH
-
-install:
- - cabal --version
- - echo "$(ghc --version) [$(ghc --print-project-git-commit-id 2> /dev/null || echo '?')]"
- - travis_retry cabal update
- - cabal install idris-1.2.0 --only-dependencies
- - travis_wait cabal install idris-1.2.0
+- nix-channel --add https://nixos.org/channels/nixpkgs-unstable nixpkgs
+- nix-channel --update
 
 script:
-  - idris --install quantities.ipkg
-  - idris --check examples/Documentation.idr examples/Game.idr
+- nix-shell -p 'idrisPackages.with-packages [ ((import <nixpkgs> {}).idrisPackages.callPackage ./quantities.nix {}) ]' --run "idris --check examples/Documentation.idr examples/Game.idr"
