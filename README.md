@@ -2,7 +2,9 @@
 
 Quantities is a library for type-safe physical computations and unit conversions in Idris.
 
-![New Cuyama](images/new-cuyama.jpg)
+<p align="center">
+  <img src="images/new-cuyama.jpg" alt="New Cuyama" />
+</p>
 
 ([Population Explosion!](http://www.flickr.com/photos/7-how-7/4139229048/in/photolist-7iLCA5-7k6s5z-7kan7d-9qNAwp-byuLp3-byuL93-7LTGBJ-9qNAMV-7LRM7r-hUvGJ3-7LK1as-7LJRRh-7LJZuN-7LF4UF-7LK2q5-7LTL3L-7LF2VD-7LJSsf-7LLNXx-7LQL5A-7LQMJY-7LTFgo-7LLLya-7LPJ4n-7LTEAJ-7LLMVX-7LRLu4-7RxVet-7Q9PPZ-7LLM2P-7LMFkF-7LRPFK-7LTJEN-7LNtL6-7LRAjs-7LLL6V-7LSqZJ-7LVMcC-7LRMNa-7LNsda-7LMzHt-7LMApk-7LTDZ9-7LRKHH-7LQK77-7LMBKH-7LRNtX-7QX1rM-7RxV5p-7QX1sx-7LRB1J/) by [7-how-7](http://www.flickr.com/photos/7-how-7/) &ndash; sign first seen on Andrew Kennedy's [Units-of-Measure page](http://research.microsoft.com/en-us/um/people/akenn/units/))
 
@@ -21,7 +23,7 @@ To use it in your program, run Idris with
 $ idris -p quantities yourprogram.idr
 ```
 
-**Compatibility: Tested with Idris 1.1.1**
+**Compatibility: Tested with Idris 1.3.1**
 
 ## Documentation
 
